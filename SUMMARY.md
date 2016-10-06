@@ -1,5 +1,5 @@
 # Summary
 
-* [前言](README.md)
+* [introduction](README.md)
 * linear regression
 
