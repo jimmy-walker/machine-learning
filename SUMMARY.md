@@ -2,6 +2,6 @@
 
 * [introduction](README.md)
 * [basic knowledge](basic/basic-knowledge.md)
-* [linear regression](supervised/linear-regression.md)
-
+* [supervised learning](supervised/supervised-learning.md)
+    * [linear regression](supervised/linear-regression.md)
 
