@@ -42,4 +42,5 @@ predicted= linear.predict(x_test)
 
 [http:\/\/www.cnblogs.com\/lvlvlvlvlv\/p\/5578805.html](http://www.cnblogs.com/lvlvlvlvlv/p/5578805.html)
 [https:\/\/www.zhihu.com\/question\/20822481](https://www.zhihu.com/question/20822481)
-
+http://blog.csdn.net/wsj998689aa/article/details/41558945
+http://lanbing510.info/2016/03/28/Least-Squares-Parameter-Estimation.html
