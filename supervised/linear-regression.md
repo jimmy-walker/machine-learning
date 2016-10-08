@@ -1,6 +1,11 @@
+#Representation
 $$f(x_{i}) = w^{T}x_{i} + b_{i}$$，使得$$f(x_{i}) \simeq y_{i}$$
 
-线性回归主要有两种类型：简单线性回归和多元线性回归。简单线性回归只有一个自变量。而多元线性回归有多个自变量。当最佳匹配的那条线正好是多项式或曲线型回归的，那我们就称他们为多项式回归或曲线回归。
+线性回归主要有两种类型：简单线性回归和多元线性回归。简单线性回归只有一个自变量。而多元线性回归有多个自变量。
+
+#Evalution
+
+#Optimization
 
 python代码
 ```python
@@ -23,3 +28,4 @@ print('Intercept: \n', linear.intercept_)
 #Predict Output
 predicted= linear.predict(x_test)
 ```
+http://www.cnblogs.com/lvlvlvlvlv/p/5578805.html
