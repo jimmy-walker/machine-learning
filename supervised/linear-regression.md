@@ -6,6 +6,8 @@ $$f(x_{i}) = w^{T}x_{i} + b_{i}$$，使得$$f(x_{i}) \simeq y_{i}$$
 #Evalution
 
 #Optimization
+最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。
+
 
 python代码
 ```python
