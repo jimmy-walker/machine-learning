@@ -8,7 +8,7 @@ $$f(x_{i}) = w^{T}x_{i} + b_{i}$$，使得$$f(x_{i}) \simeq y_{i}$$
 #Optimization
 最小二乘法（又称最小平方法）是一种数学**优化**技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。
 J所以最小二乘法是一种优化方法。
-
+最小二乘法的目标：求误差的最小平方和，对应有两种：线性和非线性。线性最小二乘的解是closed-form即$$x=(A^T A)^{-1}A^Tb$$，而非线性最小二乘没有closed-form，通常用迭代法求解。
 
 python代码
 ```python
@@ -32,3 +32,5 @@ print('Intercept: \n', linear.intercept_)
 predicted= linear.predict(x_test)
 ```
 http://www.cnblogs.com/lvlvlvlvlv/p/5578805.html
+https://www.zhihu.com/question/20822481
+
