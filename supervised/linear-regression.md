@@ -1,6 +1,4 @@
 # Representation
-
-公式 
 $$f(x_{i}) = w^{T}x_{i} + b_{i}$$
 
 使得$$f(x_{i}) \simeq y_{i}$$
@@ -88,8 +86,8 @@ predicted= linear.predict(x_test)
 
 # Reference
 
-* [https://www.zhihu.com/question/20822481](https://www.zhihu.com/question/20822481)
+* [https:\/\/www.zhihu.com\/question\/20822481](https://www.zhihu.com/question/20822481)
 
-* [http://nanshu.wang/post/2015-02-10](http://nanshu.wang/post/2015-02-10)
+* [http:\/\/nanshu.wang\/post\/2015-02-10](http://nanshu.wang/post/2015-02-10)
 
 
