@@ -47,7 +47,7 @@ $$f(x_{i}) = w^{T}x_{i} + b_{i}$$
 
     给定一个$$θ$$的初值，然后不断改进，每次改进都使$$J(\theta)$$)更小，直到最小化$$J(\theta)$$的$$\theta$$的值收敛。
     
-    从初始$$\theta$$开始，不断更新：$$\theta_j:=\theta_j-\alpha \frac{\delta}{\delta\theta_j}J(\theta)$$
+    从初始$$\theta$$开始，不断更新，**此公示就是梯度下降核心算法**：$$\theta_j:=\theta_j-\alpha \frac{\delta}{\delta\theta_j}J(\theta)$$
 
     注意，更新是**同时**对所有$$j=0,…,n$$的$$\theta_j$$值进行，即对所有的参数。$$\alpha$$被称作学习率(learning rate)，也是梯度下降的长度，若$$\alpha$$取值较小，则收敛的时间较长；相反，若$$\alpha$$取值较大，则可能错过最优值。**常用的学习率数值$$\alpha$$：0.01,0.03,0.1,0.3,1,3,10.**
         
