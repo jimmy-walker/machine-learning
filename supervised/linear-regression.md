@@ -28,7 +28,7 @@ $$f(x_{i}) = w^{T}x_{i} + b_{i}$$
 
   $$J(\theta)=\sum_{i=1}^m(h_{\theta}(x^{(i)}-y^{(i)}))^2=\frac12(X\theta-\overrightarrow y)^T(X\theta-\overrightarrow y)$$
 
-  令其对每个参数求导（J求偏导）并另导数为0，即：
+  令其对每个参数求导（J求偏导）并令导数为0，即：
 
   $$\nabla_{\theta}J(\theta)=0$$
 
