@@ -16,7 +16,7 @@ $$f(x_{i}) = w^{T}x_{i} + b_{i}$$
 
 1. 通常我们所说的**狭义的最小二乘，指的是在线性回归下采用最小二乘准则（或者说叫做最小平方），进行线性拟合参数求解的、矩阵形式的公式方法**。所以，这里的「最小二乘法」应叫做「最小二乘算法」或者「最小二乘方法」，百度百科「最小二乘法」词条中对应的英文为**The least square method**。
 
-  ** 所以狭义的最小二乘法是一种数学优化技术**。它通过最小化误差的平方和寻找数据的最佳函数匹配。
+    ** 所以狭义的最小二乘法是一种数学优化技术**。它通过最小化误差的平方和寻找数据的最佳函数匹配。
 
 2. 由上述分析可知，广义的最小二乘法是通过平方损失函数建立模型优化目标函数的一种思路，此时求解最优模型过程便具体化为最优化目标函数的过程了。**在具体求解过程中最小二乘有两种情形：线性和非线性。线性最小二乘的解是closed-form即$$\theta=(X^TX)^{-1}X^T\overrightarrow y$$，即狭义的最小二乘法或正规方程。而非线性最小二乘没有closed-form，通常用迭代法求解。而梯度下降法便对应最优化目标函数的一种迭代优化算法\*\*，具体求解的是使得目标函数能达到最优或者近似最优的参数集。
 
@@ -25,19 +25,19 @@ $$f(x_{i}) = w^{T}x_{i} + b_{i}$$
 4. **正规方程**：**对于那些不可逆的矩阵（通常是因为特征之间不独立，如同时包含英尺为单位的尺寸和米
 为单位的尺寸两个特征，也有可能是特征数量大于训练集的数量），正规方程方法是不能用的。**
 
-  先简单将y表示为x的线性函数，则cost function为：
+    先简单将y表示为x的线性函数，则cost function为：
+    
+    $$J(\theta)=\sum_{i=1}^m(h_{\theta}(x^{(i)}-y^{(i)}))^2=\frac12(X\theta-\overrightarrow y)^T(X\theta-\overrightarrow y)$$
 
-  $$J(\theta)=\sum_{i=1}^m(h_{\theta}(x^{(i)}-y^{(i)}))^2=\frac12(X\theta-\overrightarrow y)^T(X\theta-\overrightarrow y)$$
+    令其对每个参数求导（J求偏导）并令导数为0，即：
+    
+    $$\nabla_{\theta}J(\theta)=0$$
+    
+    解之，$$\nabla_{\theta}J(\theta) = X^TX\theta-X^T\overrightarrow y=0$$
 
-  令其对每个参数求导（J求偏导）并令导数为0，即：
+    得到正规方程，$$X^TX\theta=X^T\overrightarrow y$$
 
-  $$\nabla_{\theta}J(\theta)=0$$
-
-  解之，$$\nabla_{\theta}J(\theta) = X^TX\theta-X^T\overrightarrow y=0$$
-
-  得到正规方程，$$X^TX\theta=X^T\overrightarrow y$$
-
-  求解参数，$$\theta=(X^TX)^{-1}X^T\overrightarrow y$$
+    求解参数，$$\theta=(X^TX)^{-1}X^T\overrightarrow y$$
 
 5. **梯度下降**的解法：
     
