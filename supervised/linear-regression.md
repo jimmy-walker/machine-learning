@@ -1,6 +1,6 @@
 # Representation
 
-$$f(x_{i}) = w^{T}x_{i} + b_{i}$$
+$$ f(x_{i}) = w^{T}x_{i} + b_{i} $$
 
 使得$$f(x_{i}) \simeq y_{i}$$
 
