@@ -87,8 +87,8 @@ predicted= linear.predict(x_test)
 
 # Reference
 
-* [https:\/\/www.zhihu.com\/question\/20822481](https://www.zhihu.com/question/20822481)
+* [https://www.zhihu.com/question/20822481](https://www.zhihu.com/question/20822481)
 
-* [http:\/\/nanshu.wang\/post\/2015-02-10\/](http://nanshu.wang/post/2015-02-10/)
+* [http://nanshu.wang/post/2015-02-10](http://nanshu.wang/post/2015-02-10)
 
 
