@@ -25,7 +25,7 @@ $$f(x_{i}) = w^{T}x_{i} + b_{i}$$
 4. **正规方程**：对于那些不可逆的矩阵（通常是因为特征之间不独立，如同时包含英尺为单位的尺寸和米
   为单位的尺寸两个特征，也有可能是特征数量大于训练集的数量），正规方程方法是不能用的。
 
-  先简单将$$y$$表示为$$x$$的线性函数，则cost function为：
+  先简单将$$y$$表示为$$x$$的线性函数$$h(x) = \sum_{i=0}^{n}\theta _ix_i=\theta^Tx$$，则cost function为：
 
   $$J(\theta)=\sum_{i=1}^m(h_{\theta}(x^{(i)}-y^{(i)}))^2=\frac12(X\theta-\overrightarrow y)^T(X\theta-\overrightarrow y)$$
 
