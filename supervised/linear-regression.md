@@ -1,7 +1,7 @@
 # Representation
 
 公式 
-{% math %}f(x_{i}) = w^{T}x_{i} + b_{i}{% endmath %} 
+$$f(x_{i}) = w^{T}x_{i} + b_{i}$$
 
 使得$$f(x_{i}) \simeq y_{i}$$
 
