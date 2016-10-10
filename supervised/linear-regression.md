@@ -28,9 +28,13 @@ $$h(x) = \sum_{i=0}^{n}\theta _ix_i=\theta^Tx$$
 4. **正规方程**：对于那些不可逆的矩阵（通常是因为特征之间不独立，如同时包含英尺为单位的尺寸和米
   为单位的尺寸两个特征，也有可能是特征数量大于训练集的数量），正规方程方法是不能用的。
   根据之前的定义将$$y$$表示为$$x$$的线性函数$$h(x) = \sum_{i=0}^{n}\theta _ix_i=\theta^Tx$$，则cost function为：
-  $$J(\theta)=\sum_{i=1}^m(h_{\theta}(x^{(i)}-y^{(i)}))^2=\frac12(X\theta-\overrightarrow y)^T(X\theta-\overrightarrow y)$$
+
+  $$J(\theta)=\sum_{i=1}^m(h_{\theta}(x^{(i)})-y^{(i)})^2=\frac12(X\theta-\overrightarrow y)^T(X\theta-\overrightarrow y)$$
+
   令其对每个参数求导（J求偏导）并令导数为0，即：
+
   $$\nabla_{\theta}J(\theta)=0$$
+
   解之，$$\nabla_{\theta}J(\theta) = X^TX\theta-X^T\overrightarrow y=0$$
   得到正规方程，$$X^TX\theta=X^T\overrightarrow y$$
   求解参数，**可以忽略上述证明只记住此公式**，$$\theta=(X^TX)^{-1}X^T\overrightarrow y$$
