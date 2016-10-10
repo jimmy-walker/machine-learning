@@ -3,7 +3,7 @@
 先简单将$$y$$表示为$$x$$的线性函数：
 $$h(x) = \sum_{i=0}^{n}\theta _ix_i=\theta^Tx$$
 
-- 其中$$\theta$$称为参数parameters，也叫做权重weights，参数决定了XX到YY的射映空间。
+- 其中$$\theta$$称为参数parameters，也叫做权重weights，参数决定了$$X$$到$$Y$$的射映空间。
 - 而用$$x_0=1$$来表示截距项interceptterm。
   
 线性回归主要有两种类型：简单线性回归和多元线性回归。简单线性回归只有一个自变量。而多元线性回归有多个自变量。
