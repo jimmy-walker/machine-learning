@@ -12,7 +12,7 @@ $$h(x) = \sum_{i=0}^{n}\theta _ix_i=\theta^Tx$$
 # Evalution
 
 回归学习最常用的损失函数（loss function）是平方损失函数，在此情况下，回归问题可以用著名的最小二乘法来解决。
-**记住此代价函数**（损失函数(loss function)或代价函数(cost function)）往往是相同的：
+**记住此代价函数**（损失函数(loss function)或代价函数(cost function)往往是相同的）：
 $$J(\theta)=\sum_{i=1}^m(h_{\theta}(x^{(i)})-y^{(i)})^2$$
 
 注意：**广义的最小二乘准则，是一种对于偏差程度的评估准则，本质上是一种evaluation rule或者说objective funcion**，这里的「最小二乘法」应叫做「最小二乘法则」或者「最小二乘准则」，英文可呼为LSE\(**least square error**\)。可以理解为是通过平方损失函数建立模型优化目标函数的一种思路。
