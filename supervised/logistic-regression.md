@@ -28,6 +28,7 @@ $$P(y=0{\mid}{x};{\theta})=1-h_\theta(x)$$
 
 $$P(y{\mid}{x};{\theta})={(h_\theta(x))}^{y}{(1-h_\theta(x))}^{1-y}$$
 
+经过上述分析，
 
 # Optimization
 
