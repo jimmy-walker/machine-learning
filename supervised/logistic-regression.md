@@ -41,7 +41,7 @@ $$h_\theta(x)=g({\theta^T}{x})=\frac{1}{1+e^{-{\theta^T}{x}}}$$
 
   $$l(\theta)=log(L(\theta))=\sum_{i=1}^{m}y^{(i)}logh_\theta(x^{(i)})+(1-y^{(i)})log(1-h_\theta(x^{(i)}))$$
 
-2. **对偶问题**：相对于求解对数似然函数的最大值，我们当然可以将该目标转换为对偶问题，即求解代价函数$$J(\theta)=-log(\ell(\theta))$$的最小值。因此，我们定义logistic回归的代价函数为：
+2. **对偶问题**：相对于求解对数似然函数的最大值，我们当然可以将该目标转换为对偶问题，即求解代价函数$$J(\theta)=-log(\ell(\theta))$$的最小值。因此，我们定义logistic回归的代价函数为，注意此处的m分之1是用于抵消最大似然估计求极值时常会求导得到的值（但如果用梯度下降来优化则不用）：
 
     $$cost=J(\theta)=-log(\ell(\theta))＝－\frac{1}{m} \sum^m_{i=1} \lgroup y^{(i)} log(g(x)) + (1-y^{(i)})log(1-g(x)) \rgroup$$
 
