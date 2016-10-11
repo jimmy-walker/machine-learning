@@ -28,7 +28,8 @@ $$P(y=0{\mid}{x};{\theta})=1-h_\theta(x)$$
 
 $$P(y{\mid}{x};{\theta})={(h_\theta(x))}^{y}{(1-h_\theta(x))}^{1-y}$$
 
-经过上述分析，
+经过上述分析，通过对数进一步将代价函数化简为，**记住此代价函数**：
+$$l(\theta)=log(L(\theta))=\sum_{i=1}^{m}y^{(i)}logh_\theta(x^{(i)})+(1-y^{(i)})log(1-h_\theta(x^{(i)}))$$
 
 # Optimization
 
