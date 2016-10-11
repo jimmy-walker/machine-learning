@@ -47,7 +47,7 @@ $$P(y{\mid}{x};{\theta})={(h_\theta(x))}^{y}{(1-h_\theta(x))}^{1-y}$$
     
     **所以我们使用极大似然估计的思想，得出代价函数**。
     
-    此外，最小二乘估计是最大似然估计的一种，有心的人还记得上面提到过的线性回归必须满足的条件，即误差项均服从正态分布的假设，如果线性回归记为$$y=\theta x + \epsilon$$的话，对于误差函数$$\epsilon$$，其服从正态分布$$\epsilon \sim N(0, \sigma^2)$$，因此利用正态分布的性质，我们可以得到$$y-\theta x \sim N(0, \sigma^2) \Rightarrow y \sim N(\theta x, \sigma^2)$$。
+    此外，**最小二乘估计是最大似然估计的一种**，有心的人还记得上面提到过的线性回归必须满足的条件，即误差项均服从正态分布的假设，如果线性回归记为$$y=\theta x + \epsilon$$的话，对于误差函数$$\epsilon$$，其服从正态分布$$\epsilon \sim N(0, \sigma^2)$$，因此利用正态分布的性质，我们可以得到$$y-\theta x \sim N(0, \sigma^2) \Rightarrow y \sim N(\theta x, \sigma^2)$$。
     因此，根据极大似然估计的定义，我们要获得产生样本$$y$$可能性最大的一组参数$$\theta$$，因此，似然函数可写为：
     
     $$\ell(\theta)=\prod^m_{i=1} \frac{1}{\sqrt{2\pi}\sigma} exp(- \frac{(y^{(i)}-\theta x)^2}{2 \sigma})$$
@@ -56,7 +56,7 @@ $$P(y{\mid}{x};{\theta})={(h_\theta(x))}^{y}{(1-h_\theta(x))}^{1-y}$$
 
     $$log(\ell(\theta))=mlog(\frac{1}{\sqrt{2\pi}}) + \sum^m_{i=1} -\frac{(y^{(i)}-\theta x)^2}{2 \sigma}$$
 
-    综上所述，要让$$log(\ell(\theta))$$最大，我们需要让$$\sum^m_{i=1}(y^{(i)}-\theta x)^2$$最小，该式即为我们经常提及的线性回归的代价函数，所以，当线性回归的求解过程也利用最大似然估计的思想。
+    综上所述，要让$$log(\ell(\theta))$$最大，我们需要让$$\sum^m_{i=1}(y^{(i)}-\theta x)^2$$最小，**该式即为我们经常提及的线性回归的代价函数**，所以，线性回归的求解过程也利用最大似然估计的思想。
 
 
 # Optimization
