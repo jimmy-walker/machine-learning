@@ -23,13 +23,15 @@ $$h_\theta(x)=g({\theta^T}{x})=\frac{1}{1+e^{-{\theta^T}{x}}}$$
 
     $$P(y=1{\mid}{x};{\theta})=h_\theta(x)$$
 
-$$P(y=0{\mid}{x};{\theta})=1-h_\theta(x)$$
+    $$P(y=0{\mid}{x};{\theta})=1-h_\theta(x)$$
+    
     将logistic函数得到的函数值认为是类别为1的概率，1减去这个值就是类别为0的概率。这两个概率可以写成一个式子来表示：
 
-$$P(y{\mid}{x};{\theta})={(h_\theta(x))}^{y}{(1-h_\theta(x))}^{1-y}$$
+    $$P(y{\mid}{x};{\theta})={(h_\theta(x))}^{y}{(1-h_\theta(x))}^{1-y}$$
 
     经过上述分析，通过对数进一步将代价函数化简为，**记住此代价函数**：
-$$l(\theta)=log(L(\theta))=\sum_{i=1}^{m}y^{(i)}logh_\theta(x^{(i)})+(1-y^{(i)})log(1-h_\theta(x^{(i)}))$$
+    
+    $$l(\theta)=log(L(\theta))=\sum_{i=1}^{m}y^{(i)}logh_\theta(x^{(i)})+(1-y^{(i)})log(1-h_\theta(x^{(i)}))$$
 
 2. 极大似然估计
 
