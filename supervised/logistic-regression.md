@@ -32,7 +32,7 @@ $$P(y{\mid}{x};{\theta})={(h_\theta(x))}^{y}{(1-h_\theta(x))}^{1-y}$$
 $$l(\theta)=log(L(\theta))=\sum_{i=1}^{m}y^{(i)}logh_\theta(x^{(i)})+(1-y^{(i)})log(1-h_\theta(x^{(i)}))$$
 
 # Optimization
-为了最大化这个对数似然函数，显然可以使用梯度下降法，只不过这一次是梯度上升。
+**为了最大化这个对数似然函数，显然可以使用梯度下降法，只不过这一次是梯度上升**。
 对对数似然求参数导数，得到:
 
 $$\frac{\partial}{\partial{\theta_j}}l(\theta)=\sum_{i=1}^{m}(y^{(i)}-h_\theta(x^{(i)}))x^{(i)}_j$$
