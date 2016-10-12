@@ -75,6 +75,5 @@
 学习曲线是样本量与训练集、交叉验证集误差之间的关系，分为高偏差和高方差两种情况\(欠拟合和过拟合\)
 
 # Reference
-
-* [\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[综\]](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[ 训练集\(train set\) 验证集\(validation set\) 测试集\(test set\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)
+- [ 训练集\(train set\) 验证集\(validation set\) 测试集\(test set\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)
 
