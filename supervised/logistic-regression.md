@@ -93,6 +93,10 @@ print('Intercept: \n', model.intercept_)
 predicted= model.predict(x_test)
 ```
 
+    在sklearn中，函数原型为
+    
+    其中penalty表示惩罚项选用何种范数，C表示Inverse of regularization strength即正则化参数的导数，tol
+
 # Reference
 
 - [机器学习之逻辑回归](http://zhikaizhang.cn/2016/06/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/?utm_source=tuicool&utm_medium=referral)
