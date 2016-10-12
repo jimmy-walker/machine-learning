@@ -58,6 +58,7 @@ $$P(y{\mid}{x};{\theta})={(h_\theta(x))}^{y}{(1-h_\theta(x))}^{1-y}$$
 
     综上所述，要让$$log(\ell(\theta))$$最大，我们需要让$$\sum^m_{i=1}(y^{(i)}-\theta x)^2$$最小(因为另外一项是固定值)，**该式即为我们经常提及的线性回归的代价函数**，所以，线性回归的求解过程也利用最大似然估计的思想。
 
+4. 正则化：
 
 # Optimization
 
@@ -91,3 +92,4 @@ predicted= model.predict(x_test)
 
 - [机器学习之逻辑回归](http://zhikaizhang.cn/2016/06/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/?utm_source=tuicool&utm_medium=referral)
 - [机器学习－逻辑回归与最大似然估计](http://www.hanlongfei.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/2015/08/05/mle)
+- [正则化、归一化含义解析](http://sobuhu.com/ml/2012/12/29/normalization-regularization.html)
