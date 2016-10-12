@@ -40,7 +40,7 @@ $$P(y{\mid}{x};{\theta})={(h_\theta(x))}^{y}{(1-h_\theta(x))}^{1-y}$$
 
 2. **对偶问题**：相对于求解对数似然函数的最大值，我们当然可以将该目标转换为对偶问题，即求解代价函数$$J(\theta)=-log(\ell(\theta))$$的最小值。因此，我们定义logistic回归的代价函数为，注意此处的m分之1是用于抵消最大似然估计求极值时常会求导得到的值（但如果用梯度下降来优化则不用）：
 
-    $$cost=J(\theta)=-log(\ell(\theta))＝－\frac{1}{m} \sum^m_{i=1} \lgroup y^{(i)} log(g(x)) + (1-y^{(i)})log(1-g(x)) \rgroup$$
+    $$cost=J(\theta)=-log(\ell(\theta))=-\frac{1}{m} \sum^m_{i=1} \lgroup y^{(i)} log(g(x)) + (1-y^{(i)})log(1-g(x)) \rgroup$$
     
     从代价函数的直观表达上来看，当$$y^{(i)}=1, g(x)=1$$时(预测类别和真实类别相同)，$$J(\theta｜x^{(i)})=0$$；当$$y^{(i)}=1, g(x) \rightarrow 0$$时(预测类别和真实类别相反)，$$J(\theta｜x^{(i)}) \rightarrow \infty$$（注意对数函数前有个负号）。这意味着，当预测结果和真实结果越接近时，预测产生的代价越小，当预测结果和真实结果完全相反时，预测会产生很大的惩罚。该理论同样适用于$$y^{(i)}=0$$的情况。
 
@@ -70,6 +70,8 @@ $$P(y{\mid}{x};{\theta})={(h_\theta(x))}^{y}{(1-h_\theta(x))}^{1-y}$$
     由于模型的参数个数一般是由人为指定和调节的，所以正则化常常是用来限制模型参数值不要过大，也被称为惩罚项。一般是在目标函数(经验风险)中加上一个正则化项。
     
     $$J(\theta) = \frac{1}{2m} \left( \sum_{i=1}^{m}  (h(x^{(i)}) – y^{(i)})^2 + \lambda \sum_{j=1}^{n} \theta_j^2 \right)$$
+
+
 
 # Optimization
 
