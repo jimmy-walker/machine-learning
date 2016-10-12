@@ -94,8 +94,7 @@ predicted= linear.predict(x_test)
 
 # Reference
 
-* [知乎：最小二乘法和梯度下降法有哪些区别？](https://www.zhihu.com/question/20822481)
-
-* [机器学习笔记1 有监督学习 线性回归 LMS算法 正规方程](http://nanshu.wang/post/2015-02-10)
-
+- [知乎：最小二乘法和梯度下降法有哪些区别？](https://www.zhihu.com/question/20822481)
+- [机器学习笔记1 有监督学习 线性回归 LMS算法 正规方程](http://nanshu.wang/post/2015-02-10)
+- [归一化、标准化和正则化的关系](http://blog.csdn.net/zyf89531/article/details/45922151)
 
