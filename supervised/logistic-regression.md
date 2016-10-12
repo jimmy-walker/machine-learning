@@ -93,7 +93,7 @@ print('Intercept: \n', model.intercept_)
 predicted= model.predict(x_test)
 ```
 
-    在sklearn中，函数原型如下，其中penalty表示惩罚项选用何种范数，C表示Inverse of regularization strength即正则化参数的导数，tol表示Tolerance for stopping criteria即算法停止的条件。
+在sklearn中，函数原型如下，其中penalty表示惩罚项选用何种范数，C表示Inverse of regularization strength即正则化参数的导数，tol表示Tolerance for stopping criteria即算法停止的条件。
 
 
 ```python
