@@ -37,7 +37,16 @@
 
 
 # 训练集train set、 验证集validation set、测试集test set
+
 在监督机器学习中，数据集常被分成2~3个部分。
+
+    1. 训练集(train set)：用来估计模型；
+    2. 验证集(validation set)：确定网络结构或者控制模型复杂程度的参数；（J比如判断过拟合等）
+    3. 测试集(test set)：检验最终选择最优的模型的性能如何。
+
+一个典型的划分是训练集占总样本的50％，而其它各占25％，三部分都是从样本中随机抽取。样本少的时候，上面的划分就不合适了。常用的是留少部分做测试集。然后对其余N个样本采用K折交叉验证法。就是将样本打乱，然后均匀分成K份，轮流选择其中K－1份训练，剩余的一份做验证，计算预测误差平方和，最后把K次的预测误差平方和再做平均作为选择最优模型结构的依据。    
+
+但实际应用中，一般只将数据集分成两类，即training set 和test set，大多数文章并不涉及validation set。所以
 
 
 # 交叉验证的一个目的是为了验证模型是否过拟合
@@ -68,5 +77,5 @@
 
 # Reference
 
-* [\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[综\]](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[ 训练集\(train set\) 验证集\(validation set\) 测试集\(test set\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)
+* [\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[\]\(http:\/\/www.cnblogs.com\/xfzhang\/archive\/2013\/05\/24\/3096412.html\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[\[](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[综\]](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)[ 训练集\(train set\) 验证集\(validation set\) 测试集\(test set\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)
 
