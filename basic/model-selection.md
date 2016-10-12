@@ -71,6 +71,10 @@
 
 学习曲线是将训练集误差和交叉验证集误差作为训练集实例数量的函数绘制的图表，分为高偏差和高方差两种情况\(欠拟合和过拟合\)。
 
+1. 高偏差（欠拟合）
+
+2. 
+
 # Reference
 - [ 训练集\(train set\) 验证集\(validation set\) 测试集\(test set\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)
 
