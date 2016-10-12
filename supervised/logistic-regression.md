@@ -93,9 +93,11 @@ print('Intercept: \n', model.intercept_)
 predicted= model.predict(x_test)
 ```
 
-    在sklearn中，函数原型为
-    
-    其中penalty表示惩罚项选用何种范数，C表示Inverse of regularization strength即正则化参数的导数，tol
+    在sklearn中，函数原型如下，其中penalty表示惩罚项选用何种范数，C表示Inverse of regularization strength即正则化参数的导数，tol
+
+    ```python
+    LogisticRegression(penalty='l2', dual=False, tol=0.0001, C=1.0, fit_intercept=True, intercept_scaling=1, class_weight=None, random_state=None, solver='liblinear', max_iter=100, multi_class='ovr', verbose=0, warm_start=False, n_jobs=1)
+    ```
 
 # Reference
 
