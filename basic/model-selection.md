@@ -12,6 +12,8 @@
 
 4. 选择误差$$e_{1},\cdot\cdot\cdot,e_{\ell}$$最小的模型作为最终的模型。
 
+此外，Sklearn提供了一张非常有用的流程图,供我们选择合适的学习方法。
+![](/assets/model selection.png)
 
 # 交叉验证
 
