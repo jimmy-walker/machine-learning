@@ -114,7 +114,9 @@
 2. 
 
 #误差分析
-1. 
+误差分析可以帮助我们系统化地选择该做什么。**J这里将本页的内容串联起来了**
+
+1.  
 
 # Reference
 - [ 训练集\(train set\) 验证集\(validation set\) 测试集\(test set\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)
