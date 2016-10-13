@@ -117,6 +117,11 @@
     - **训练集误差大、交叉验证集误差也大：欠拟合、高偏差、多项式次数d太小、$$\lambda$$太大**；
     - **训练集误差小、交叉验证集误差却很大：过拟合、高方差、多项式次数d太大、$$\lambda$$太小、样本量太少**。
 
+4. sklearn.learning_curve中的learning curve可以很直观的看出我们的model学习的进度,对比发现有没有overfitting的问题。
+
+```python
+learning_curve(estimator, X, y, train_sizes=array([ 0.1  ,  0.325,  0.55 ,  0.775,  1.   ]), cv=None, scoring=None, exploit_incremental_learning=False, n_jobs=1, pre_dispatch='all', verbose=0)
+```
 
 #误差分析
 误差分析可以帮助我们系统化地选择该做什么。**J这里将本页的内容串联起来了**
