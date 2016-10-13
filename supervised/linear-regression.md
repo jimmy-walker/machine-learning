@@ -53,6 +53,22 @@ $$J(\theta)=\sum_{i=1}^m(h_{\theta}(x^{(i)})-y^{(i)})^2$$
   从初始$$\theta$$开始，不断更新，**此公式就是梯度下降核心算法，具体可见《统计学习》的推导**：$$\theta_j:=\theta_j-\alpha \frac{\delta}{\delta\theta_j}J(\theta)$$
 
   注意，更新是**同时**对所有$$j=0,…,n$$的$$\theta_j$$值进行，即对所有的参数。$$\alpha$$被称作学习率\(learning rate\)，也是梯度下降的长度，若$$\alpha$$取值较小，则收敛的时间较长；相反，若$$\alpha$$取值较大，则可能错过最优值。**常用的学习率数值：0.01,0.03,0.1,0.3,1,3,10.**
+##code
+Normalization在数据跨度不一的情况下对机器学习有很重要的作用。特别是各种数据属性还会互相影响的情况之下。**Scikit-learn中标准化的语句是preprocessing.scale()**。scale以后，model就更能从标准化数据中学到东西。
+    
+    1. 引入相关包from sklearn import preprocessing
+
+    ```python
+    X_scaled=preprocessing.scale(X)#normalization step
+    ```
+    2. 处理后数据的均值和方差
+
+    ```python
+    X_scaled.mean(axis=0)
+    array([ 0.,  0.,  0.])
+    X_scaled.std(axis=0)
+    array([ 1.,  1.,  1.])
+    ```
 
 6. **归一化Normalization和标准化Standardization**：**这两者都是缩放，但是目的不同而区别。**
     
