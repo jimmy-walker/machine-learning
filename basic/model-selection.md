@@ -119,9 +119,24 @@
 
 4. sklearn.learning_curve中的learning curve可以很直观的看出我们的model学习的进度,对比发现有没有overfitting的问题。
 
-```python
-learning_curve(estimator, X, y, train_sizes=array([ 0.1  ,  0.325,  0.55 ,  0.775,  1.   ]), cv=None, scoring=None, exploit_incremental_learning=False, n_jobs=1, pre_dispatch='all', verbose=0)
-```
+    ```python
+    learning_curve(estimator, X, y, train_sizes=array([ 0.1  ,  0.325,  0.55 ,  0.775,  1.   ]), cv=None, scoring=None, exploit_incremental_learning=False, n_jobs=1, pre_dispatch='all', verbose=0)
+    ```
+    该函数的作用是可视化学习曲线，帮我们判定我们的模型现在所处的状态，是否过拟合或者欠拟合。
+
+    对于每个train_size（关于train_sizes被设置成[0.1, 0.25, 0.5, 0.75, 1]), 我的理解是同一批数据, copy5组,第一组取(0%-10%)的当 test data, 第二组取(10%-25%) 当 test data,以此类推, 最后一组(75%-100%)的当 test data, 这样的好处是他可以取平均值,减小结果的 bias），进行cv次交叉验证。最后每个loss输出cv个值，一般用平均数表示即可。
+
+    对于不同大小的训练集，确定交叉验证训练和测试的分数。一个交叉验证发生器将整个数据集分割k次，分割成训练集和测试集。不同大小的训练集的子集将会被用来训练评估器并且对于每一个大小的训练子集都会产生一个分数，然后测试集的分数也会计算。然后，对于每一个训练子集，运行k次之后的所有这些分数将会被平均。
+##code
+    ```python
+	train_sizes, train_loss, test_loss= learning_curve(
+	        SVC(gamma=0.01), X, y, cv=10, scoring='mean_squared_error',
+	        train_sizes=[0.1, 0.25, 0.5, 0.75, 1])
+	train_loss_mean = -np.mean(train_loss, axis=1)
+	test_loss_mean = -np.mean(test_loss, axis=1)
+	plt.plot(train_sizes, train_loss_mean, 'o-', color="r",label="Training")
+	plt.plot(train_sizes, test_loss_mean, 'o-', color="g",label="Cross-validation")
+    ```
 
 #误差分析
 误差分析可以帮助我们系统化地选择该做什么。**J这里将本页的内容串联起来了**
