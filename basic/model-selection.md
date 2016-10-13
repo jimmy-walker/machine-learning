@@ -1,4 +1,4 @@
-# 模型选择
+#模型选择
 
 模型选择核心思想就是从某个模型类中选择最佳模型。当我们使用一种新的学习模型或者算法时，那么可是使用交叉验证来对模型进行评价。
 
@@ -15,7 +15,7 @@
 此外，Sklearn提供了一张非常有用的流程图,供我们选择合适的学习方法。
 ![](/assets/model selection.png)
 
-# 交叉验证
+#交叉验证
 
 1. **Holdout验证或称为简单交叉验证**
 
@@ -66,7 +66,7 @@
             k_scores.append(scores.mean())
         ```
 
-# 训练集train set、 验证集validation set、测试集test set
+#训练集train set、 验证集validation set、测试集test set
 
 在监督机器学习中，数据集常被分成2~3个部分。
 - 训练集(train set)：用来估计模型；
@@ -79,7 +79,7 @@
 
 **但实际应用中，一般只将数据集分成两类，即training set 和test set，大多数文章并不涉及validation set。所以我常常没做K折交叉验证，直接训练完，就测试了。**
 
-# 交叉验证的一个目的是为了验证模型是否过拟合
+#交叉验证的一个目的是为了验证模型是否过拟合
 
 1. 过拟合产生的原因：**没有任何的learning algorithm可以彻底避免overfitting**
 
@@ -97,13 +97,15 @@
 
   4. **交叉验证法**
 
-# 学习曲线
+#学习曲线
 
 学习曲线是将训练集误差和交叉验证集误差作为训练集实例数量的函数绘制的图表，分为高偏差和高方差两种情况\(欠拟合和过拟合\)。
 
 1. 高偏差（欠拟合）
 
 2. 
+
+#误差分析
 
 # Reference
 - [ 训练集\(train set\) 验证集\(validation set\) 测试集\(test set\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)
