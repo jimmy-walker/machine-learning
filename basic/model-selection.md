@@ -129,13 +129,11 @@
     对于不同大小的训练集，确定交叉验证训练和测试的分数。一个交叉验证发生器将整个数据集分割k次，分割成训练集和测试集。不同大小的训练集的子集将会被用来训练评估器并且对于每一个大小的训练子集都会产生一个分数，然后测试集的分数也会计算。然后，对于每一个训练子集，运行k次之后的所有这些分数将会被平均。
 ##code
     ```python
-	train_sizes, train_loss, test_loss= learning_curve(
-	        SVC(gamma=0.01), X, y, cv=10, scoring='mean_squared_error',
-	        train_sizes=[0.1, 0.25, 0.5, 0.75, 1])
-	train_loss_mean = -np.mean(train_loss, axis=1)
-	test_loss_mean = -np.mean(test_loss, axis=1)
-	plt.plot(train_sizes, train_loss_mean, 'o-', color="r",label="Training")
-	plt.plot(train_sizes, test_loss_mean, 'o-', color="g",label="Cross-validation")
+        train_sizes, train_loss, test_loss= learning_curve(SVC(gamma=0.01), X, y, cv=10, scoring='mean_squared_error',train_sizes=[0.1, 0.25, 0.5, 0.75, 1])
+        train_loss_mean = -np.mean(train_loss, axis=1)
+        test_loss_mean = -np.mean(test_loss, axis=1)
+        plt.plot(train_sizes, train_loss_mean, 'o-', color="r", label="Training")
+        plt.plot(train_sizes, test_loss_mean, 'o-', color="g", label="Cross-validation")
     ```
 
 #误差分析
