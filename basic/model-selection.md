@@ -37,6 +37,34 @@
 
   方法是只使用原本样本中的一项来当做验证资料，而剩余的则留下来当做训练资料。 这个步骤一直持续到每个样本都被当做一次验证资料。事实上，这等同于 K-fold 交叉验证是一样的，只是这里的K被设置为原本样本个数。
 
+4. sklearn中的cross validation交叉验证对于我们选择正确的model和model的参数是非常有帮助的，我们能直观的看出不同model或者参数对结构准确度的影响。
+##code
+    1. 不需要使用train_test_split分割，而直接使用cross_val_score，传入模型和组数自动帮你得出各个组的得分。
+    ```python
+	from sklearn.cross_validation import cross_val_score 
+	knn = KNeighborsClassifier(n_neighbors=5) 
+	scores = cross_val_score(knn, X, y, cv=5, scoring='accuracy')
+	print(scores)
+
+	X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=4) 
+	knn = KNeighborsClassifier(n_neighbors=5) 
+	knn.fit(X_train, y_train) 
+	y_pred = knn.predict(X_test) 
+	print(knn.score(X_test, y_test))
+    ```
+    2. 还可以用来选参数和模型，用for循环传递进去，注意regression时的评分需要加负号。参见：[Model evaluation: quantifying the quality of predictions](http://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter)
+        ```python
+	# this is how to use cross_val_score to choose model and configs #
+	from sklearn.cross_validation import cross_val_score
+	import matplotlib.pyplot as plt
+	k_range = range(1, 31)
+	k_scores = []
+	for k in k_range:
+            knn = KNeighborsClassifier(n_neighbors=k)
+            ##loss = -cross_val_score(knn, X, y, cv=10, scoring='mean_squared_error') # for regression
+            scores = cross_val_score(knn, X, y, cv=10, scoring='accuracy') # for classification
+            k_scores.append(scores.mean())
+        ```
 
 # 训练集train set、 验证集validation set、测试集test set
 
