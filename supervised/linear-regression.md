@@ -54,7 +54,7 @@ $$J(\theta)=\sum_{i=1}^m(h_{\theta}(x^{(i)})-y^{(i)})^2$$
 
   注意，更新是**同时**对所有$$j=0,…,n$$的$$\theta_j$$值进行，即对所有的参数。$$\alpha$$被称作学习率\(learning rate\)，也是梯度下降的长度，若$$\alpha$$取值较小，则收敛的时间较长；相反，若$$\alpha$$取值较大，则可能错过最优值。**常用的学习率数值：0.01,0.03,0.1,0.3,1,3,10.**
 ##code
-Normalization在数据跨度不一的情况下对机器学习有很重要的作用。特别是各种数据属性还会互相影响的情况之下。**Scikit-learn中标准化的语句是preprocessing.scale()，其实也可以自己进行归一化**。scale以后，model就更能从标准化数据中学到东西。
+Normalization在数据跨度不一的情况下对机器学习有很重要的作用。特别是各种数据属性还会互相影响的情况之下。**Scikit-learn中标准化的语句是preprocessing.scale()，其实也可以自己进行用pandas等进行标准化**。scale以后，model就更能从标准化数据中学到东西。
     
     1. 引入相关包from sklearn import preprocessing
 
