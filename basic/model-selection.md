@@ -125,7 +125,7 @@
     ```
     **通过画出不同训练集大小对应的训练集和验证集准确率，我们能够很轻松滴检测模型是否方差偏高或偏差过高，以及增大训练集是否有用**。
 
-    对于每个train_size，进行cv次交叉验证。最后每个loss输出cv个值，一般用平均数表示即可。
+    对于每个train_size，结合公式中的解释A cross-validation generator splits the whole dataset k times in training and test data. Subsets of the training set with varying sizes will be used to train the estimator and a score for each training subset size and the test set will be computed. Afterwards, the scores will be averaged over all k runs for each training subset size.我的理解是先用cv将数据分成k份，之前在K折交叉验证中轮流选择其中K－1份训练，剩余的一份做验证，计算预测误差平方和，最后把K次的预测误差平方和再做平均作为选择最优模型结构的依据；而现在这里的training是训练集，test其实是验证集，那么就是说对K-1比例的训练集取不同规模进行训练模型，此时可以得到训练集误差，得到一份验证集误差，然后K次循环取平均值，接着再提高规模从而得到新值。
 
     对于不同大小的训练集，确定交叉验证训练和测试的分数。一个交叉验证发生器将整个数据集分割k次，分割成训练集和测试集。不同大小的训练集的子集将会被用来训练评估器并且对于每一个大小的训练子集都会产生一个分数，然后测试集的分数也会计算。然后，对于每一个训练子集，运行k次之后的所有这些分数将会被平均。
 ##code
