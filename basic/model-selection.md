@@ -119,5 +119,5 @@
 # Reference
 - [ 训练集\(train set\) 验证集\(validation set\) 测试集\(test set\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)
 
-- 
+- [Stanford机器学习-第六周.学习曲线、机器学习系统的设计](http://www.myexception.cn/other/2060415.html)
 
