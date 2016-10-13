@@ -108,6 +108,7 @@
 #学习曲线
 
 **学习曲线是一种诊断方法**，将训练集误差和交叉验证集误差作为**训练集实例数量**的函数绘制的图表，分为高偏差和高方差两种情况\(欠拟合和过拟合\)。
+![](/assets/learning curve.png)
 
 1. 高偏差（欠拟合）：通过增加样本量两者误差都很大，即训练集实例数量的增加对于算法的改进无益。
 ![](/assets/high bias.jpg)
@@ -122,7 +123,7 @@
     ```python
     learning_curve(estimator, X, y, train_sizes=array([ 0.1  ,  0.325,  0.55 ,  0.775,  1.   ]), cv=None, scoring=None, exploit_incremental_learning=False, n_jobs=1, pre_dispatch='all', verbose=0)
     ```
-    该函数的作用是可视化学习曲线，帮我们判定我们的模型现在所处的状态，是否过拟合或者欠拟合。
+    **通过画出不同训练集大小对应的训练集和验证集准确率，我们能够很轻松滴检测模型是否方差偏高或偏差过高，以及增大训练集是否有用**。
 
     对于每个train_size（关于train_sizes被设置成[0.1, 0.25, 0.5, 0.75, 1]), 我的理解是同一批数据, copy5组,第一组取(0%-10%)的当 test data, 第二组取(10%-25%) 当 test data,以此类推, 最后一组(75%-100%)的当 test data, 这样的好处是他可以取平均值,减小结果的 bias），进行cv次交叉验证。最后每个loss输出cv个值，一般用平均数表示即可。
 
