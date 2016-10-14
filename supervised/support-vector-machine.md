@@ -25,3 +25,5 @@ predicted= model.predict(x_test)
 在sklearn中，svm.svc()不需要设置参数，直接使用即可。
 
 # Reference
+- [支持向量机通俗导论（理解SVM的三层境界）](http://blog.csdn.net/v_july_v/article/details/7624837)
+- []
