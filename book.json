@@ -13,5 +13,8 @@
         "pageNumbers": false,
         "paperSize": "a4"
     }
+    "styles": {
+        "latex-codecogs": "styles/latex-codecogs.css"
+    }
 }
 
