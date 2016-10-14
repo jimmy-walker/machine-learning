@@ -17,5 +17,6 @@ model.score(X, y)
 #Predict Output
 predicted= model.predict(x_test)
 ```
+在sklearn中，svm.svc()不需要设置参数，直接使用即可。
 
 # Reference
