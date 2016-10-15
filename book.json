@@ -1,5 +1,5 @@
 {
-    "plugins": ["MathJax"],
+    "plugins": ["mathjax"],
     "pdf": {
         "fontSize": 12,
         "footerTemplate": null,
