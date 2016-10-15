@@ -1,5 +1,5 @@
 {
-    "plugins": ["latex-codecogs"],
+    "plugins": ["katex"],
     "pdf": {
         "fontSize": 12,
         "footerTemplate": null,
