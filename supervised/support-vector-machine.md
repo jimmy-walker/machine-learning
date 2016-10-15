@@ -5,6 +5,7 @@ SVM的超平面
 $$w^Tx+b=0$$
 
 SVM的基本想法就是求解能正确划分训练样本并且其几何间隔最大化的超平面。
+
 # Evalution
 
 # Optimization
