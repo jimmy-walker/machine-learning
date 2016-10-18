@@ -101,7 +101,10 @@
 	        & \alpha_i\geq0,i=1,2,\cdots,N
         \end{matrix}$$
 
-        3.
+        3. 存在$$w^\ast,b^\ast,\alpha^\ast$$，$$\alpha^\ast$$是对偶问题的最优解, 此时$$w^\ast,b^\ast$$是原问题的最优解。
+
+        $$w^\ast=\sum_{i=1}^N\alpha_i^\ast y_ix_i\\
+   b^\ast = y_i -\sum_{i=1}^N\alpha_i^\ast y_i(x_i\cdot x_j)$$
 
 # Code
 
