@@ -73,6 +73,9 @@
 
 # Optimization
 
+1. 
+
+
 # Code
 
 ```python
