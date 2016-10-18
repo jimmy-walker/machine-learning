@@ -58,6 +58,7 @@
          \max_{w,b} & \frac{1}{\lVert w\Vert}\\
         s.t. &   y(w\cdot x_i+b)\geq1
         \end{matrix}$$
+    ![](/assets/SVM.png)
 
     4. 等价于$$\Longleftrightarrow$$最终要求解的凸二次规划问题，求解最优解$$w^\ast,b^\ast$$
 
