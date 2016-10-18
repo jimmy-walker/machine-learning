@@ -21,7 +21,6 @@
         核函数 (kernel function)
 
 # Evalution
-
 1.
 
 # Optimization
