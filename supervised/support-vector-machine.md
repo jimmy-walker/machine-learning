@@ -29,9 +29,9 @@
 # Evalution
 
 1. **函数间隔**代表我们认为特征是正例还是反例的确信度。
-    - 定义超平面\(w,b\)关于样本点\(xi,yi\)的函数间隔为γi^=yi\(w⋅xi+b\)。
+    - 定义超平面$$(w,b)$$关于样本点$$(xi,yi)$$的函数间隔为$$\hat{\gamma_i}=y_i(w\cdot x_i+b)$$。
     - 定义超平面$$(w,b)$$关于训练数据集 TT 的函数间隔为$$\hat{\gamma}= \min_{i=1,\cdots,N}\hat{\gamma_i}$$。
-2. 假设将
+2. 假设将$$w$$与$$b$$按比例变为$$\lambda w$$和$$\lambda b$$，这时函数间隔变为$$\lambda $$
 
 # Optimization
 
