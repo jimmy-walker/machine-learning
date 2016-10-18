@@ -112,7 +112,7 @@
 
         5. 分类决策函数为$$f(x)=sign(w^\ast x+b^\ast )=sign(\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast)$$
         
-        其中
+        说明分类决策函数只依赖于输入$$x$$和训练样本输入$$x_i$$的内积。
 
 3. 
 
