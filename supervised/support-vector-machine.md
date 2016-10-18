@@ -35,7 +35,22 @@
     - 定义超平面$$(w,b)$$关于样本点$$(x_i,y_i)$$的几何间隔为$$\gamma_i=y(\frac{w}{\lVert w\Vert}\cdot x_i+\frac{b}{\lVert w\Vert})=\frac{\hat{\gamma_i}}{\lVert w\Vert}$$
     - 定义超平面$$(w,b)$$关于训练数据集$$T$$的几何间隔为$${\gamma}= \min_{i=1,\cdots,N}{\gamma_i}=\frac{\hat{\gamma}}{\lVert w\Vert}$$
 
-3. 假设
+3. 学习策略为间隔最大化。
+    
+    1.  求几何间隔最大的分离超平面：
+
+        $$\begin{matrix}
+         \max_{w,b} & \gamma\\
+        s.t. & y(\frac{w}{\lVert w\Vert}\cdot x_i+\frac{b}{\lVert w\Vert})\geq\gamma
+        \end{matrix}$$
+
+    2. 换成函数间隔最大的分离超平面：
+
+        $$\begin{matrix}
+         \max_{w,b} & \frac{\hat\gamma}{\lVert w\Vert}\\
+        s.t. & y(\frac{w}{\lVert w\Vert}\cdot x_i+\frac{b}{\lVert w\Vert})\geq\frac{\hat\gamma}{\lVert w\Vert}\\
+	  \longrightarrow &   y(w\cdot x_i+b)\geq\hat\gamma
+        \end{matrix}$$  
 
 # Optimization
 
