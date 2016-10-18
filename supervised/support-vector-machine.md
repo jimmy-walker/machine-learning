@@ -106,6 +106,12 @@
         $$w^\ast=\sum_{i=1}^N\alpha_i^\ast y_ix_i\\
    b^\ast = y_i -\sum_{i=1}^N\alpha_i^\ast y_i(x_i\cdot x_j)$$
 
+        4. 最大分离超平面：$$w^\ast\cdot x+b^\ast = 0$$，即：
+
+        $$\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast = 0$$
+
+        5. 分类决策函数为$$f(x)=sign(w^\ast x+b^\ast )=sign(\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast)$$
+
 # Code
 
 ```python
