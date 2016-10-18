@@ -89,8 +89,11 @@
         其中, 拉格朗日乘子向量为$$\alpha=(\alpha_1,\alpha_2,\cdots, \alpha_N)^T, \alpha_i\geq0,i=1,2,\cdots,N$$
     2. 原问题(primal problem)为$$\min_{w,b}\max_\alpha L(w,b,\alpha)$$
     3. 原问题的对偶问题(dual problem)为$$\max_\alpha\min_{w,b} L(w,b,\alpha)$$
+
         1. 先对$$w,b$$求偏导:$$\nabla_w L(w,b,\alpha)=0,\nabla_b L(w,b,\alpha)=0$$
-        2. 
+        
+        得到$$w=\sum_{i=1}^N\alpha_iy_ix_i,\\\sum_{i=1}^N\alpha_iy_i=0$$
+        2. 将上面两式代入拉格朗日函数后，再求对$$\alpha$$的极大
 
 # Code
 
