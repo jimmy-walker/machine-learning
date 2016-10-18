@@ -71,8 +71,6 @@
         s.t. &   y(w\cdot x_i+b)-1\geq0
         \end{matrix}$$
 
-    5. 
-
 # Optimization
 
 # Code
