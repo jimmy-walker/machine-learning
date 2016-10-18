@@ -81,7 +81,7 @@
 
 1. 拉格朗日对偶性
 
-2. 线性可分支持向量机的对偶算法：为了求解线性可分支持向量机的最优化问题，将它作为原始最优化问题，应用拉格朗日对偶性，通过求解对偶问题得到原始问题的最优解。
+2. 线性可分支持向量机的对偶算法：为了求解线性可分支持向量机的最优化问题，将它作为原始最优化问题，应用拉格朗日对偶性，通过求解对偶问题得到原始问题的最优解。**记住该优化过程。**
 
     1. 构造拉格朗日函数：
         $$L(w,b,\alpha)= \frac{1}{2}{\lVert w\Vert}^2-\sum_{i=1}^{N}\alpha_iy_i(w\cdot x_i+b)+\sum_{i=1}^{N}\alpha_i$$
@@ -93,13 +93,13 @@
         1. 先对$$w,b$$求偏导:$$\nabla_w L(w,b,\alpha)=0,\nabla_b L(w,b,\alpha)=0$$
         
         得到$$w=\sum_{i=1}^N\alpha_iy_ix_i,\\\sum_{i=1}^N\alpha_iy_i=0$$
-        2. 将上面两式代入拉格朗日函数后，再求对$$\alpha$$的极大:
+        2. 将上面两式代入拉格朗日函数后，再求对$$\alpha$$的极大，**J利用SMO算法来求该拉格朗日算子，但这里不深究，有必要再学习**。
         $$\begin{matrix}
          \max_{\alpha} & -\frac{1}{2}\sum_{i=1} ^N\sum_{i=1} ^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)+\sum_{i=1}^{N}\alpha_i\\
         s.t. &  \sum_{i=1}^N\alpha_iy_i=0 \\
 	        & \alpha_i\geq0,i=1,2,\cdots,N
         \end{matrix}$$
-
+        3.
 # Code
 
 ```python
