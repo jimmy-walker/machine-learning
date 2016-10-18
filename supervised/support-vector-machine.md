@@ -21,7 +21,7 @@
         核函数 (kernel function)
 
 # Evalution
-1.
+1.函数间隔代表我们认为特征是正例还是反例的确信度
 
 # Optimization
 
