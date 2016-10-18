@@ -93,7 +93,12 @@
         1. 先对$$w,b$$求偏导:$$\nabla_w L(w,b,\alpha)=0,\nabla_b L(w,b,\alpha)=0$$
         
         得到$$w=\sum_{i=1}^N\alpha_iy_ix_i,\\\sum_{i=1}^N\alpha_iy_i=0$$
-        2. 将上面两式代入拉格朗日函数后，再求对$$\alpha$$的极大
+        2. 将上面两式代入拉格朗日函数后，再求对$$\alpha$$的极大:
+        $$\begin{matrix}
+         \max_{\alpha} & -\frac{1}{2}\sum_{i=1} ^N\sum_{i=1} ^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)+\sum_{i=1}^{N}\alpha_i\\
+        s.t. &  \sum_{i=1}^N\alpha_iy_i=0 \\
+	        & \alpha_i\geq0,i=1,2,\cdots,N
+        \end{matrix}$$
 
 # Code
 
