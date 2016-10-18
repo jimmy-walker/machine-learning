@@ -7,6 +7,7 @@
 
     分类决策函数是：$$f(x)=sign(wx+b)$$
 
+3. 其与logistic regression的区别在于，logistic regression需要学习到$$\theta$$
 
 SVM的基本想法就是求解能正确划分训练样本并且其几何间隔最大化的超平面。
 
