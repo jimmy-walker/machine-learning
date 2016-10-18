@@ -1,5 +1,5 @@
 # Representation
-支持向量机，因其英文名为support vector machine，故一般简称SVM，通俗来讲，它是一种二类分类模型，**其基本模型定义为特征空间上的间隔最大的线性分类器，其学习策略便是间隔最大化，最终可转化为一个凸二次规划问题的求解**。
+支持向量机，因其英文名为support vector machine，故一般简称SVM，通俗来讲，它是一种二类分类模型，**其基本模型定义为特征空间上的间隔最大的线性分类器，其学习策略（即评价）便是间隔最大化，最终可转化为一个凸二次规划问题的求解（即优化）**。
 
 SVM的超平面
 $$w^Tx+b=0$$
@@ -28,3 +28,6 @@ predicted= model.predict(x_test)
 # Reference
 - [支持向量机通俗导论（理解SVM的三层境界）](http://blog.csdn.net/v_july_v/article/details/7624837)
 - [机器学习常见算法个人总结（面试用）](http://kubicode.me/2015/08/16/Machine%20Learning/Algorithm-Summary-for-Interview/)
+- [支持向量机SVM](https://clyyuanzi.gitbooks.io/julymlnotes/content/svm.html)
+- [C-SVM模型](https://json0071.gitbooks.io/svm/content/c-svm.html)
+- 
