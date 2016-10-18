@@ -29,11 +29,11 @@
 # Evalution
 
 1. **函数间隔**代表我们认为特征是正例还是反例的确信度。
-    - 定义超平面$$(w,b)$$关于样本点$$(x_i,y_i)$$的函数间隔为$$\hat{\gamma_i}=y_i(w\cdot x_i+b)$$。
-    - 定义超平面$$(w,b)$$关于训练数据集$$T$$的函数间隔为$$\hat{\gamma}= \min_{i=1,\cdots,N}\hat{\gamma_i}$$。
+    - 定义超平面$$(w,b)$$关于样本点$$(x_i,y_i)$$的函数间隔为$$\hat{\gamma_i}=y_i(w\cdot x_i+b)$$
+    - 定义超平面$$(w,b)$$关于训练数据集$$T$$的函数间隔为$$\hat{\gamma}= \min_{i=1,\cdots,N}\hat{\gamma_i}$$
 2. **几何间隔**：如果超平面将$$w$$与$$b$$按比例变为$$\lambda w$$和$$\lambda b$$，这时函数间隔变为$$\lambda \hat{\gamma}$$，可是超平面并没有改变，因此为了求解方便，我们定义不随之改变的几何间隔。
-    - 定义超平面$$(w,b)$$关于样本点$$(x_i,y_i)$$的几何间隔为$$\gamma_i=y(\frac{w}{\lVert w\Vert}\cdot x_i+\frac{b}{\lVert w\Vert})=\frac{\hat{\gamma_i}}{\lVert w\Vert}$$。
-    - 定义超平面$$(w,b)$$关于训练数据集$$T$$的几何间隔为$${\gamma}= \min_{i=1,\cdots,N}{\gamma_i}=\frac{\hat{\gamma}}{\lVert w\Vert}$$。
+    - 定义超平面$$(w,b)$$关于样本点$$(x_i,y_i)$$的几何间隔为$$\gamma_i=y(\frac{w}{\lVert w\Vert}\cdot x_i+\frac{b}{\lVert w\Vert})=\frac{\hat{\gamma_i}}{\lVert w\Vert}$$
+    - 定义超平面$$(w,b)$$关于训练数据集$$T$$的几何间隔为$${\gamma}= \min_{i=1,\cdots,N}{\gamma_i}=\frac{\hat{\gamma}}{\lVert w\Vert}$$
 
 3. 假设
 
