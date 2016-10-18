@@ -111,6 +111,8 @@
         $$\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast = 0$$
 
         5. 分类决策函数为$$f(x)=sign(w^\ast x+b^\ast )=sign(\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast)$$
+        
+        其中
 
 3. 
 
