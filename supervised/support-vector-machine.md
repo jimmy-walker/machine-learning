@@ -51,6 +51,20 @@
         s.t. & y(\frac{w}{\lVert w\Vert}\cdot x_i+\frac{b}{\lVert w\Vert})\geq\frac{\hat\gamma}{\lVert w\Vert}\\
 	  \longrightarrow &   y(w\cdot x_i+b)\geq\hat\gamma
         \end{matrix}$$  
+    
+    3. 函数间隔的取值不影响最优化问题的解，因为其与$$w$$与$$b$$有关，因此我们可以取$$\hat\gamma=1$$,从而将问题转换为$$w$$与$$b$$的问题。
+        
+        $$\begin{matrix}
+         \max_{w,b} & \frac{1}{\lVert w\Vert}\\
+        s.t. &   y(w\cdot x_i+b)\geq1
+        \end{matrix}$$
+
+    4. 等价于$$\Longleftrightarrow$$最终要求解的凸二次规划问题，求解最优解$$w^\ast,b^\ast$$
+
+        $$\begin{matrix}
+         \min_{w,b} & \frac{1}{2}{\lVert w\Vert}^2\\
+        s.t. &   y(w\cdot x_i+b)-1\geq0
+        \end{matrix}$$
 
 # Optimization
 
