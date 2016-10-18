@@ -73,7 +73,7 @@
 
 # Optimization
 
-1. 
+1. 拉格朗日对偶性
 
 
 # Code
