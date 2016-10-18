@@ -10,11 +10,14 @@
 3. 其与logistic regression的区别在于，logistic regression需要学习到$$\theta$$，使得正例的特征远大于0，负例的特征远小于0，**强调在全部训练实例上达到这个目标**，而**SVM更关心靠近中间分割线上的点，不要求在所有点上达到最优**。在形式上，SVM使用$$b$$代替$$\theta_0$$，由于$$x_0=1$$，所以得到$$\theta^Tx=w^Tx+b$$。
 
 4. 支持向量机一共分为三种情况：
-    - 线性可分支持向量机：
+    - 线性可分支持向量机：针对训练数据线性可分
+        
         硬间隔最大化 (hard margin maximization)
-    - 线性支持向量机：
+    - 线性支持向量机：针对训练数据近似线性可分
+        
         软间隔最大化 (soft margin maximization)
-    - 非线性支持向量机：
+    - 非线性支持向量机：针对训练数据线性不可分
+        
         核函数 (kernel function)
 
 # Evalution
