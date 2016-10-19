@@ -131,7 +131,7 @@ s.t. \quad  \xi_{i} \ge 0$$
     ![](/assets/non linear.jpg)
     
     1. 假设存在一个从输入空间$$\chi$$到特征空间$$\mathcal{H}$$的映射$$\phi(x)$$，使得对所有$$x,z\in \mathcal{H}$$，函数$$K(x,z)$$满足条件：$$K(x,z)=\phi(x)\cdot\phi(x)$$，则称$$K(x,z)$$为核函数，$$\phi(x)$$为映射函数。
-
+    2. 
 
 # Code
 ```python
