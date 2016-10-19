@@ -138,7 +138,7 @@
    ![](/assets/non linear.jpg)
 
     1. 假设存在一个从输入空间$$\chi$$到特征空间$$\mathcal{H}$$的映射$$\phi(x)$$，使得对所有$$x,z\in \mathcal{H}$$，函数$$K(x,z)$$满足条件：$$K(x,z)=\phi(x)\cdot\phi(x)$$，则称$$K(x,z)$$为核函数，$$\phi(x)$$为映射函数。
-  
+    2.   
     3. 常用核函数
 
         1. 多项式核函数$$K(x,z)=(x*z+1)^p$$
