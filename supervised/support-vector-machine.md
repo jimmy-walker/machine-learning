@@ -82,8 +82,8 @@
 1. 拉格朗日对偶性
 
 2. 线性可分支持向量机的对偶算法：为了求解线性可分支持向量机的最优化问题，将它作为原始最优化问题，应用拉格朗日对偶性，通过求解对偶问题得到原始问题的最优解。**记住该优化过程。**
-    
-    注意：**引入对偶问题的原因**在于：**对偶问题往往更加容易求解(结合拉格朗日和kkt条件)**；可以很自然的**引用核函数**（拉格朗日表达式里面有内积，而核函数也是通过内积进行映射的）。
+
+  注意：**引入对偶问题的原因**在于：**对偶问题往往更加容易求解\(结合拉格朗日和kkt条件\)**；可以很自然的**引用核函数**（拉格朗日表达式里面有内积，而核函数也是通过内积进行映射的）。
 
   1. 构造拉格朗日函数：
 
@@ -92,48 +92,60 @@
     其中, 拉格朗日乘子向量为$$\alpha=(\alpha_1,\alpha_2,\cdots, \alpha_N)^T, \alpha_i\geq0,i=1,2,\cdots,N$$
 
   2. 原问题\(primal problem\)为$$\min_{w,b}\max_\alpha L(w,b,\alpha)$$
+
   3. 原问题的对偶问题\(dual problem\)为$$\max_\alpha\min_{w,b} L(w,b,\alpha)$$
 
     1. 先对$$w,b$$求偏导:$$\nabla_w L(w,b,\alpha)=0,\nabla_b L(w,b,\alpha)=0$$
-    
-        得到$$w=\sum_{i=1}^N\alpha_iy_ix_i,\\\sum_{i=1}^N\alpha_iy_i=0$$
+
+      得到$$w=\sum_{i=1}^N\alpha_iy_ix_i,\\\sum_{i=1}^N\alpha_iy_i=0$$
 
     2. 将上面两式代入拉格朗日函数后，再求对$$\alpha$$的极大，**J利用SMO算法来求该拉格朗日算子，但这里不深究，有必要再学习**。
 
-        $$\begin{matrix}
+      $$\begin{matrix}
       \max_{\alpha} & -\frac{1}{2}\sum_{i=1} ^N\sum_{i=1} ^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)+\sum_{i=1}^{N}\alpha_i\\
       s.t. &  \sum_{i=1}^N\alpha_iy_i=0 \\
-       & \alpha_i\geq0,i=1,2,\cdots,N
+      & \alpha_i\geq0,i=1,2,\cdots,N
       \end{matrix}$$
 
     3. 存在$$w^\ast,b^\ast,\alpha^\ast$$，$$\alpha^\ast$$是对偶问题的最优解, 此时$$w^\ast,b^\ast$$是原问题的最优解。
 
-        $$w^\ast=\sum_{i=1}^N\alpha_i^\ast y_ix_i\\
+      $$w^\ast=\sum_{i=1}^N\alpha_i^\ast y_ix_i\\
       b^\ast = y_i -\sum_{i=1}^N\alpha_i^\ast y_i(x_i\cdot x_j)$$
 
     4. 最大分离超平面：$$w^\ast\cdot x+b^\ast = 0$$，即：
 
-        $$\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast = 0$$
+      $$\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast = 0$$
 
     5. 分类决策函数为$$f(x)=sign(w^\ast x+b^\ast )=sign(\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast)$$
-        说明分类决策函数只依赖于输入$$x$$和训练样本输入$$x_i$$的内积，**此外由KKT条件可知，因为$$c_i(x^\ast)$$若为0，就表示该样本是在边界上，就表示是支持向量，所以支持向量的$$\alpha_i^\ast$$大于0，其他的$$\alpha_i^\ast$$等于0（设想为了满足KKT，只能这项为0，才能保证乘积为0），不用计算内积。**
+      说明分类决策函数只依赖于输入$$x$$和训练样本输入$$x_i$$的内积，**此外由KKT条件可知，因为********若为0，就表示该样本是在边界上，就表示是支持向量，所以支持向量的********大于0，其他的********等于0（设想为了满足KKT，只能这项为0，才能保证乘积为0），不用计算内积。**
 
-3. 若训练数据是线性不可分（不存在任何线性分类器可以将其正确分类），或者数据存在噪声。线性不可分意味着某些样本点不能满足函数间隔大于等于1的约束条件。引入松弛变量使得错分样本得到惩罚。 其他推导过程和线性可分差不多，暂时**记住下面公式**。
-    $$y_i(w^{T}x_{i})-1+\xi_{i} \ge 0 , \xi_{i} \ge 0$$
-    ![](/assets/soft margin maximization.png)
-    $$\min_{w,b,\xi}\quad \frac{1}{2}{\lVert w\Vert}^2 + C\sum_{i}\xi_{i}\\
-s.t.\quad y_i(w\cdot x_{i})-1+\xi_{i} \ge 0,\quad i=1,2,...,N \\
-s.t. \quad  \xi_{i} \ge 0$$
-    
-    其等价于最优化问题：$$\sum_{i=1}^{N}[1-y_i(w\cdot x_i+b)]_+ + \lambda{\lVert w\Vert}^2$$
+
+
+3. 若训练数据是线性不可分（不存在任何线性分类器可以将其正确分类），或者数据存在噪声。
+  线性不可分意味着某些样本点不能满足函数间隔大于等于1的约束条件。引入松弛变量使得错分样本得到惩罚。 其他推导过程和线性可分差不多，暂时**记住下面公式**。
+
+  $$y_i(w^{T}x_{i})-1+\xi_{i} \ge 0 , \xi_{i} \ge 0$$
+
+  ![](/assets/soft margin maximization.png)
+
+  $$\min_{w,b,\xi}\quad \frac{1}{2}{\lVert w\Vert}^2 + C\sum_{i}\xi_{i}\\
+  s.t.\quad y_i(w\cdot x_{i})-1+\xi_{i} \ge 0,\quad i=1,2,...,N \\
+  s.t. \quad  \xi_{i} \ge 0$$
+
+  其等价于最优化问题：$$\sum_{i=1}^{N}[1-y_i(w\cdot x_i+b)]_+ + \lambda{\lVert w\Vert}^2$$
 
 4. 非线性分类问题是指通过利用非线性模型才能很好地进行分类的问题。我们无法用直线（线性模型）将正负例正确分开，但可以用一条椭圆曲线（非线性模型）将他们正确分开。**核函数的作用**：首先使用变换将原空间的数据映射到新空间；然后在新空间用线性分类学习方法从雪莲数据中学习分类模型。
-    ![](/assets/non linear.jpg)
-    
-    1. 假设存在一个从输入空间$$\chi$$到特征空间$$\mathcal{H}$$的映射$$\phi(x)$$，使得对所有$$x,z\in \mathcal{H}$$，函数$$K(x,z)$$满足条件：$$K(x,z)=\phi(x)\cdot\phi(x)$$，则称$$K(x,z)$$为核函数，$$\phi(x)$$为映射函数。
-    2. 
+   ![](/assets/non linear.jpg)
+
+  1. 假设存在一个从输入空间$$\chi$$到特征空间$$\mathcal{H}$$的映射$$\phi(x)$$，使得对所有$$x,z\in \mathcal{H}$$，函数$$K(x,z)$$满足条件：$$K(x,z)=\phi(x)\cdot\phi(x)$$，则称$$K(x,z)$$为核函数，$$\phi(x)$$为映射函数。
+  3. 常用核函数
+    1. 多项式核函数
+    2. 高斯核函数
+    3. 字符串核函数
+
 
 # Code
+
 ```python
 #Import Library
 from sklearn import svm
@@ -156,3 +168,4 @@ predicted= model.predict(x_test)
 * [支持向量机SVM](https://clyyuanzi.gitbooks.io/julymlnotes/content/svm.html)
 * [C-SVM模型](https://json0071.gitbooks.io/svm/content/c-svm.html)
 * [支持向量机-Scikit-learn 使用手册中文版](https://xacecask2.gitbooks.io/scikit-learn-user-guide-chinese-version/content/sec1.4.html)
+
