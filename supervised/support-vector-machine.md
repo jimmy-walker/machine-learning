@@ -126,7 +126,8 @@ s.t.\quad y_i(w\cdot x_{i})-1+\xi_{i} \ge 0,\quad i=1,2,...,N \\
 s.t. \quad  \xi_{i} \ge 0$$
     
     其等价于最优化问题：$$\sum_{i=1}^{N}[1-y_i(w\cdot x_i+b)]_+ + \lambda{\lVert w\Vert}^2$$
-4. 
+
+4. 将输入特征x（线性不可分）映射到高维特征R空间，可以在R空间上让SVM进行线性可以变，这就是核函数的作用。
 
 # Code
 
