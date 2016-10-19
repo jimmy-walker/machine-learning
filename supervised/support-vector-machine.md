@@ -91,10 +91,6 @@
 
   2. 原问题\(primal problem\)为$$\min_{w,b}\max_\alpha L(w,b,\alpha)$$
   3. 原问题的对偶问题\(dual problem\)为$$\max_\alpha\min_{w,b} L(w,b,\alpha)$$
-    引入对偶问题的原因：
-    - 对偶问题往往更加容易求解(结合拉格朗日和kkt条件)
-    - 可以很自然的引用核函数（拉格朗日表达式里面有内积，而核函数也是通过
-内积进行映射的）
 
     1. 先对$$w,b$$求偏导:$$\nabla_w L(w,b,\alpha)=0,\nabla_b L(w,b,\alpha)=0$$
     
