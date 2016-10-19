@@ -127,7 +127,10 @@ s.t. \quad  \xi_{i} \ge 0$$
     
     其等价于最优化问题：$$\sum_{i=1}^{N}[1-y_i(w\cdot x_i+b)]_+ + \lambda{\lVert w\Vert}^2$$
 
-4. **核函数的作用**：首先使用变换将原空间的数据映射到新空间；然后在新空间用线性分类学习方法从雪莲数据中学习分类模型。
+4. 非线性分类问题是指通过利用非线性模型才能很好地进行分类的问题。我们无法用直线（线性模型）将正负例正确分开，但可以用一条椭圆曲线（非线性模型）将他们正确分开。**核函数的作用**：首先使用变换将原空间的数据映射到新空间；然后在新空间用线性分类学习方法从雪莲数据中学习分类模型。
+    ![](/assets/non linear.jpg)
+    
+    1. 
 
 # Code
 
@@ -152,4 +155,4 @@ predicted= model.predict(x_test)
 * [机器学习常见算法个人总结（面试用）](http://kubicode.me/2015/08/16/Machine%20Learning/Algorithm-Summary-for-Interview/)
 * [支持向量机SVM](https://clyyuanzi.gitbooks.io/julymlnotes/content/svm.html)
 * [C-SVM模型](https://json0071.gitbooks.io/svm/content/c-svm.html)
-
+* [支持向量机-Scikit-learn 使用手册中文版](https://xacecask2.gitbooks.io/scikit-learn-user-guide-chinese-version/content/sec1.4.html)
