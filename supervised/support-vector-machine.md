@@ -122,7 +122,6 @@
     $$\min_{w,b,\xi}\quad \frac{1}{2}{\lVert w\Vert}^2 + C\sum_{i}\xi_{i}\\
 s.t.\quad y_i(w\cdot x_{i})-1+\xi_{i} \ge 0,\quad i=1,2,...,N \\
 s.t. \quad  \xi_{i} \ge 0$$
-    其等价于最优化问题：$$$$
 
 4. 
 
@@ -149,5 +148,4 @@ predicted= model.predict(x_test)
 * [机器学习常见算法个人总结（面试用）](http://kubicode.me/2015/08/16/Machine%20Learning/Algorithm-Summary-for-Interview/)
 * [支持向量机SVM](https://clyyuanzi.gitbooks.io/julymlnotes/content/svm.html)
 * [C-SVM模型](https://json0071.gitbooks.io/svm/content/c-svm.html)
-* 
 
