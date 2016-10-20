@@ -152,7 +152,7 @@
   3. 常用核函数
 
     1. 多项式核函数$$K(x,z)=(x*z+1)^p$$
-    2. 高斯核函数$$K(x,z)=exp(-\frac{{\lVert x-z\Vert}^2}{2\sigma^2})$$
+    2. 高斯核函数$$K(x,z)=exp(-\frac{{\lVert x-z \Vert}^2}{2\sigma^2})$$
     3. 字符串核函数：用于字符串处理中。
 
 
