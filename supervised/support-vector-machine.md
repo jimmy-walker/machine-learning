@@ -138,7 +138,13 @@
   ![](/assets/non linear.jpg)
 
   1. 假设存在一个从输入空间$$\chi$$到特征空间$$\mathcal{H}$$的映射$$\phi(x)$$，使得对所有$$x,z\in \mathcal{H}$$，函数$$K(x,z)$$满足条件：$$K(x,z)=\phi(x)\cdot\phi(x)$$，则称$$K(x,z)$$为核函数，$$\phi(x)$$为映射函数。
-  2. 只需将线性支持向量机（即是线性不可分的情况，但是我这里公式写的蛮烦了就没有写出来，可以参照线性可分支持向量机的$$max$$加一个负号换成$$min$$即可，形式上是一样的）对偶形式 
+  2. 只需将线性支持向量机（即是线性不可分的情况，但是我这里公式写的蛮烦了就没有写出来，可以参照线性可分支持向量机的$$max$$加一个负号换成$$min$$即可，形式上是一样的）对偶形式中的内积换成核函数即可。
+
+    $$\begin{matrix}
+      \min_{\alpha} & \frac{1}{2}\sum_{i=1} ^N\sum_{i=1} ^N\alpha_i\alpha_jy_iy_jK(x_i, x_j)-\sum_{i=1}^{N}\alpha_i\\
+      s.t. &  \sum_{i=1}^N\alpha_iy_i=0 \\
+       & 0 \leqslant\alpha_i\leqslant C,i=1,2,\cdots,N
+      \end{matrix}$$
   3. 常用核函数
 
     1. 多项式核函数$$K(x,z)=(x*z+1)^p$$
