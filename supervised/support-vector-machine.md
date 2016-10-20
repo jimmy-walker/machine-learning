@@ -99,9 +99,9 @@
 
         $$\begin{matrix}
         \max_{\alpha} & -\frac{1}{2}\sum_{i=1} ^N\sum_{i=1} ^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)+\sum_{i=1}^{N}\alpha_i\\
-    s.t. &  \sum_{i=1}^N\alpha_iy_i=0 \\
-    & \alpha_i\geq0,i=1,2,\cdots,N
-    \end{matrix}$$
+        s.t. &  \sum_{i=1}^N\alpha_iy_i=0 \\
+        & \alpha_i\geq0,i=1,2,\cdots,N
+        \end{matrix}$$
 
     3. 存在$$w^\ast,b^\ast,\alpha^\ast$$，$$\alpha^\ast$$是对偶问题的最优解, 此时$$w^\ast,b^\ast$$是原问题的最优解。
     $$w^\ast=\sum_{i=1}^N\alpha_i^\ast y_ix_i\\
