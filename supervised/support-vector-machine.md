@@ -146,14 +146,22 @@
     2. 高斯核函数$$K(x,z)= \exp(- \frac{\lVert x-z\Vert^2}{2\sigma^2})$$
     3. 字符串核函数：用于字符串处理中。
 
-4. **拉格朗日对偶性**：在约束最优化问题中，我们经常使用拉格朗日对偶性(Lagrange Duality)将原始问题转换为其对偶问题，通过解对偶问题而得到原始问题的解。
+4. **拉格朗日对偶性**：在约束最优化问题中，我们经常使用拉格朗日对偶性(Lagrange Duality)将原始问题转换为其对偶问题，通过解对偶问题而得到原始问题的解。称此约束最优化问题为原始最优化问题或原始问题。
     
     1. 原始问题：假设$$f(x),c_i(x),h_j(x)$$是定义在$$R^n$$上的连续可微函数，则约束最优化问题表述如下
 
         $$\begin{equation} \min_{x\in R^n}{\;f(x)} \end{equation}$$
         $$\begin{align} s.t. \quad &c_i(x)\leq 0, \quad i=1,2,\cdots,k\ &h_j(x) = 0, \quad j=1,2,\cdots,l \end{align}$$
 
-    2.
+    2. 拉格朗日函数：
+
+        $$L(x,\alpha,\beta) = f(x) + \sum_{i=1}^{k}{\alpha_i ci(x)} + \sum_{j=1}^{l}{\beta_j h_j(x)}$$
+
+        这里，$$x = (x_1,x_2,\cdots,x_n)^T \in R^n，\alpha_i, \beta_i$$是拉格朗日乘子, $$\alpha_i \geq 0$$。
+
+        从而我们考虑$$x$$的函数：$$\theta_p(x) = \max_{\alpha,\beta:\alpha_i \geq 0}{L(x,\alpha,\beta)}$$，这里的$$P$$表示原始问题。
+
+    3. 
 
 # Code
 
@@ -180,3 +188,4 @@ predicted= model.predict(x_test)
 * [C-SVM模型](https://json0071.gitbooks.io/svm/content/c-svm.html)
 * [支持向量机-Scikit-learn 使用手册中文版](https://xacecask2.gitbooks.io/scikit-learn-user-guide-chinese-version/content/sec1.4.html)
 * [sklearn中SVC的讲解](http://scikit-learn.org/stable/modules/svm.html#svm-mathematical-formulation)
+* [拉格朗日对偶性](http://changxu.wang/2015/04/23/la-ge-lang-ri-dui-ou-xing/)
