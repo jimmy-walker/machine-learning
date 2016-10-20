@@ -99,7 +99,7 @@
 
     得到$$w=\sum_{i=1}^N\alpha_iy_ix_i,\\\sum_{i=1}^N\alpha_iy_i=0$$
 
-    1. 将上面两式代入拉格朗日函数后，再求对$$\alpha$$的极大，**J利用SMO算法来求该拉格朗日算子，但这里不深究，有必要再学习**。
+    2. 将上面两式代入拉格朗日函数后，再求对$$\alpha$$的极大，**J利用SMO算法来求该拉格朗日算子，但这里不深究，有必要再学习**。
 
     $$\begin{matrix}
     \max_{\alpha} & -\frac{1}{2}\sum_{i=1} ^N\sum_{i=1} ^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)+\sum_{i=1}^{N}\alpha_i\\
@@ -107,16 +107,16 @@
     & \alpha_i\geq0,i=1,2,\cdots,N
     \end{matrix}$$
 
-    1. 存在$$w^\ast,b^\ast,\alpha^\ast$$，$$\alpha^\ast$$是对偶问题的最优解, 此时$$w^\ast,b^\ast$$是原问题的最优解。
+    3. 存在$$w^\ast,b^\ast,\alpha^\ast$$，$$\alpha^\ast$$是对偶问题的最优解, 此时$$w^\ast,b^\ast$$是原问题的最优解。
 
     $$w^\ast=\sum_{i=1}^N\alpha_i^\ast y_ix_i\\
     b^\ast = y_i -\sum_{i=1}^N\alpha_i^\ast y_i(x_i\cdot x_j)$$
 
-    1. 最大分离超平面：$$w^\ast\cdot x+b^\ast = 0$$，即：
+    4. 最大分离超平面：$$w^\ast\cdot x+b^\ast = 0$$，即：
 
     $$\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast = 0$$
 
-    1. 分类决策函数为$$f(x)=sign(w^\ast x+b^\ast )=sign(\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast)$$
+    5. 分类决策函数为$$f(x)=sign(w^\ast x+b^\ast )=sign(\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast)$$
       说明分类决策函数只依赖于输入$$x$$和训练样本输入$$x_i$$的内积，此外由KKT条件可知，因为$$c_i(x^\ast)$$若为0，就表示该样本是在边界上，就表示是支持向量，所以支持向量的$$\alpha_i^\ast$$大于0，其他的$$\alpha_i^\ast$$等于0（设想为了满足KKT，只能这项为0，才能保证乘积为0），$$不用计算内积$$。
 
 
@@ -145,6 +145,10 @@
       s.t. &  \sum_{i=1}^N\alpha_iy_i=0 \\
        & 0 \leqslant\alpha_i\leqslant C,i=1,2,\cdots,N
       \end{matrix}$$
+
+    得到最终的分类决策函数为：
+    $$d$$
+
   3. 常用核函数
 
     1. 多项式核函数$$K(x,z)=(x*z+1)^p$$
