@@ -153,15 +153,38 @@
         $$\begin{equation} \min_{x\in R^n}{\;f(x)} \end{equation}$$
         $$\begin{align} s.t. \quad &c_i(x)\leq 0, \quad i=1,2,\cdots,k\ &h_j(x) = 0, \quad j=1,2,\cdots,l \end{align}$$
 
-    2. 拉格朗日函数：
+    2. 广义拉格朗日函数：
 
         $$L(x,\alpha,\beta) = f(x) + \sum_{i=1}^{k}{\alpha_i ci(x)} + \sum_{j=1}^{l}{\beta_j h_j(x)}$$
 
         这里，$$x = (x_1,x_2,\cdots,x_n)^T \in R^n，\alpha_i, \beta_i$$是拉格朗日乘子, $$\alpha_i \geq 0$$。
 
         从而我们考虑$$x$$的函数：$$\theta_p(x) = \max_{\alpha,\beta:\alpha_i \geq 0}{L(x,\alpha,\beta)}$$，这里的$$P$$表示原始问题。
+        
+        由约束条件可知，下面公式右侧的**广义拉格朗日函数的极小极大问题与原始问题是等价**的：
 
-    3. 
+        $$\min_{x}{\theta_p(X)} = \min_{x}{\max_{\alpha,\beta:\alpha_i \geq 0}{L(x,\alpha,\beta)}}$$
+
+        定义原始问题的最优值为：$$p^\ast = \min_{x}{\theta_p(x)}$$
+
+    3. 对偶问题，下面公式右侧称为**广义拉格朗日函数的极大极小问题**
+
+        $$\max_{\alpha,\beta:\alpha_i \geq 0}{\theta_D(\alpha,\beta)} = \max_{\alpha,\beta:\alpha_i \geq 0}{\min_{x}{L(x,\alpha,\beta)}}$$
+
+        定义对偶问题的最优值为：$$d^\ast = \max_{\alpha,\beta:\alpha_i \geq 0}{\theta_D(\alpha,\beta)}$$
+
+    4. 原始问题与对偶问题的关系：若满足Karush-Kuhn-Tucker(KKT)条件，则原始问题和对偶问题的最优值相等。
+
+        $$\begin{gather}
+        \nabla_x L(x^\ast, \alpha^\ast, \beta^\ast) = 0 \\
+
+        \nabla_\alpha L(x^\ast, \alpha^\ast, \beta^\ast) = 0\\
+        \nabla_\beta L(x^\ast, \alpha^\ast, \beta^\ast) = 0\\
+        \alpha_i^\ast c_i(x^\ast) = 0, \quad i = 1,2,\cdots,k\\
+        c_i(x^\ast) \leq 0, \quad i = 1,2,\cdots,k\\
+        \alpha_i^\ast \geq 0, \quad i = 1,2,\cdots,k\\
+        h_j(x^\ast) = 0, \quad j = 1,2,\cdots,l
+        \end{gather}$$
 
 # Code
 
