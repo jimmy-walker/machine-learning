@@ -146,7 +146,7 @@
        & 0 \leqslant\alpha_i\leqslant C,i=1,2,\cdots,N
       \end{matrix}$$
 
-    得到最终的分类决策函数为：
+    得到最终的分类决策函数：
     $$d$$
 
   3. 常用核函数
