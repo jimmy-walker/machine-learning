@@ -96,7 +96,6 @@
 得到$$w=\sum_{i=1}^N\alpha_iy_ix_i,\\\sum_{i=1}^N\alpha_iy_i=0$$
 
     2. 将上面两式代入拉格朗日函数后，再求对$$\alpha$$的极大，**J利用SMO算法来求该拉格朗日算子，但这里不深究，有必要再学习**。
-
     $$\begin{matrix}
     \max_{\alpha} & -\frac{1}{2}\sum_{i=1} ^N\sum_{i=1} ^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)+\sum_{i=1}^{N}\alpha_i\\
     s.t. &  \sum_{i=1}^N\alpha_iy_i=0 \\
