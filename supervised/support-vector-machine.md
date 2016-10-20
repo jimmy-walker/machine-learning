@@ -146,7 +146,7 @@
   3. 常用核函数
 
     1. 多项式核函数$$K(x,z)=(x*z+1)^p$$
-    2. 高斯核函数
+    2. 高斯核函数$$K$$
     3. 字符串核函数：用于字符串处理中。
 
 # Code
@@ -164,7 +164,7 @@ model.score(X, y)
 predicted= model.predict(x_test)
 ```
 
-在sklearn中，svm.svc\(\)不需要设置参数，直接使用即可。
+在sklearn中，svm.svc\(\)不需要设置参数，直接使用即可。这个svc函数对应线性支持向量机，即第二种情况；初始化时通过选项kernel指定用什么核。具体可参加sklearn的官方文档。因为很多网上教程都是照搬翻译官方文档的。
 
 # Reference
 
@@ -173,4 +173,4 @@ predicted= model.predict(x_test)
 * [支持向量机SVM](https://clyyuanzi.gitbooks.io/julymlnotes/content/svm.html)
 * [C-SVM模型](https://json0071.gitbooks.io/svm/content/c-svm.html)
 * [支持向量机-Scikit-learn 使用手册中文版](https://xacecask2.gitbooks.io/scikit-learn-user-guide-chinese-version/content/sec1.4.html)
-
+* [sklearn中SVC的讲解](http://scikit-learn.org/stable/modules/svm.html#svm-mathematical-formulation)
