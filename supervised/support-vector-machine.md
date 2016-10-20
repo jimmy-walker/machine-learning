@@ -146,9 +146,14 @@
     2. 高斯核函数$$K(x,z)= \exp(- \frac{\lVert x-z\Vert^2}{2\sigma^2})$$
     3. 字符串核函数：用于字符串处理中。
 
-4. **拉格朗日对偶性**
+4. **拉格朗日对偶性**：在约束最优化问题中，我们经常使用拉格朗日对偶性(Lagrange Duality)将原始问题转换为其对偶问题，通过解对偶问题而得到原始问题的解。
     
-    1. 
+    1. 原始问题：假设$$f(x),c_i(x),h_j(x)$$是定义在$$R^n$$上的连续可微函数，则约束最优化问题表述如下
+
+        $$\begin{equation} \min_{x\in R^n}{\;f(x)} \end{equation}$$
+        $$\begin{align} s.t. \quad &c_i(x)\leq 0, \quad i=1,2,\cdots,k\ &h_j(x) = 0, \quad j=1,2,\cdots,l \end{align}$$
+
+    2.
 
 # Code
 
