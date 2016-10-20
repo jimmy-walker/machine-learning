@@ -94,7 +94,6 @@
   2. 原问题\(primal problem\)为$$\min_{w,b}\max_\alpha L(w,b,\alpha)$$
 
   3. 原问题的对偶问题\(dual problem\)为$$\max_\alpha\min_{w,b} L(w,b,\alpha)$$
-
     1. 先对$$w,b$$求偏导:$$\nabla_w L(w,b,\alpha)=0,\nabla_b L(w,b,\alpha)=0$$
     
     得到$$w=\sum_{i=1}^N\alpha_iy_ix_i,\\\sum_{i=1}^N\alpha_iy_i=0$$
@@ -117,7 +116,7 @@
     $$\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast = 0$$
 
     5. 分类决策函数为$$f(x)=sign(w^\ast x+b^\ast )=sign(\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast)$$
-      说明分类决策函数只依赖于输入$$x$$和训练样本输入$$x_i$$的内积，此外由KKT条件可知，因为$$c_i(x^\ast)$$若为0，就表示该样本是在边界上，就表示是支持向量，所以支持向量的$$\alpha_i^\ast$$大于0，其他的$$\alpha_i^\ast$$等于0（设想为了满足KKT，只能这项为0，才能保证乘积为0），不用计算内积。
+      说明分类决策函数只依赖于输入$$x$$和训练样本输入$$x_i$$的内积，此外由KKT条件可知，因为$$c_i(x^\ast)$$若为0，就表示该样本是在边界上，就表示是支持向量，所以支持向量的$$\alpha_i^\ast$$大于0，其他的$$\alpha_i^\ast$$等于0（设想为了满足KKT，只能这项为0，才能保证乘积为0），**不用计算内积**。
 
 
 
