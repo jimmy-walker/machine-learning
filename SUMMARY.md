@@ -7,4 +7,5 @@
     * [linear regression](supervised/linear-regression.md)
     * [logistic regression](supervised/logistic-regression.md)
     * [support vector machine](supervised/support-vector-machine.md)
+    * [decision tree](supervised/decision-tree.md)
 
