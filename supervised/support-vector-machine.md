@@ -97,31 +97,31 @@
 
     1. 先对$$w,b$$求偏导:$$\nabla_w L(w,b,\alpha)=0,\nabla_b L(w,b,\alpha)=0$$
 
-      得到$$w=\sum_{i=1}^N\alpha_iy_ix_i,\\\sum_{i=1}^N\alpha_iy_i=0$$
+    得到$$w=\sum_{i=1}^N\alpha_iy_ix_i,\\\sum_{i=1}^N\alpha_iy_i=0$$
 
-    2. 将上面两式代入拉格朗日函数后，再求对$$\alpha$$的极大，**J利用SMO算法来求该拉格朗日算子，但这里不深究，有必要再学习**。
+    1. 将上面两式代入拉格朗日函数后，再求对$$\alpha$$的极大，**J利用SMO算法来求该拉格朗日算子，但这里不深究，有必要再学习**。
 
-      $$\begin{matrix}
-      \max_{\alpha} & -\frac{1}{2}\sum_{i=1} ^N\sum_{i=1} ^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)+\sum_{i=1}^{N}\alpha_i\\
-      s.t. &  \sum_{i=1}^N\alpha_iy_i=0 \\
-      & \alpha_i\geq0,i=1,2,\cdots,N
-      \end{matrix}$$
+    $$\begin{matrix}
+    \max_{\alpha} & -\frac{1}{2}\sum_{i=1} ^N\sum_{i=1} ^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)+\sum_{i=1}^{N}\alpha_i\\
+    s.t. &  \sum_{i=1}^N\alpha_iy_i=0 \\
+    & \alpha_i\geq0,i=1,2,\cdots,N
+    \end{matrix}$$
 
-    3. 存在$$w^\ast,b^\ast,\alpha^\ast$$，$$\alpha^\ast$$是对偶问题的最优解, 此时$$w^\ast,b^\ast$$是原问题的最优解。
+    1. 存在$$w^\ast,b^\ast,\alpha^\ast$$，$$\alpha^\ast$$是对偶问题的最优解, 此时$$w^\ast,b^\ast$$是原问题的最优解。
 
-      $$w^\ast=\sum_{i=1}^N\alpha_i^\ast y_ix_i\\
-      b^\ast = y_i -\sum_{i=1}^N\alpha_i^\ast y_i(x_i\cdot x_j)$$
+    $$w^\ast=\sum_{i=1}^N\alpha_i^\ast y_ix_i\\
+    b^\ast = y_i -\sum_{i=1}^N\alpha_i^\ast y_i(x_i\cdot x_j)$$
 
-    4. 最大分离超平面：$$w^\ast\cdot x+b^\ast = 0$$，即：
+    1. 最大分离超平面：$$w^\ast\cdot x+b^\ast = 0$$，即：
 
-      $$\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast = 0$$
+    $$\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast = 0$$
 
-    5. 分类决策函数为$$f(x)=sign(w^\ast x+b^\ast )=sign(\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast)$$
-      说明分类决策函数只依赖于输入$$x$$和训练样本输入$$x_i$$的内积，**此外由KKT条件可知，因为********若为0，就表示该样本是在边界上，就表示是支持向量，所以支持向量的********大于0，其他的********等于0（设想为了满足KKT，只能这项为0，才能保证乘积为0），不用计算内积。**
+    1. 分类决策函数为$$f(x)=sign(w^\ast x+b^\ast )=sign(\sum_{i=1}^N\alpha_i^\ast y_i(x\cdot x_i)+b^\ast)$$
+      说明分类决策函数只依赖于输入$$x$$和训练样本输入$$x_i$$的内积，**此外由KKT条件可知，因为$$c_i(x^\ast)$$若为0，就表示该样本是在边界上，就表示是支持向量，所以支持向量的_**\*\***_大于0，其他的_**\*\***_等于0（设想为了满足KKT，只能这项为0，才能保证乘积为0），不用计算内积。\*\*
 
 
 
-3. 若训练数据是线性不可分（不存在任何线性分类器可以将其正确分类），或者数据存在噪声。
+1. 若训练数据是线性不可分（不存在任何线性分类器可以将其正确分类），或者数据存在噪声。
   线性不可分意味着某些样本点不能满足函数间隔大于等于1的约束条件。引入松弛变量使得错分样本得到惩罚。 其他推导过程和线性可分差不多，暂时**记住下面公式**。
 
   $$y_i(w^{T}x_{i})-1+\xi_{i} \ge 0 , \xi_{i} \ge 0$$
@@ -134,16 +134,17 @@
 
   其等价于最优化问题：$$\sum_{i=1}^{N}[1-y_i(w\cdot x_i+b)]_+ + \lambda{\lVert w\Vert}^2$$
 
-4. 非线性分类问题是指通过利用非线性模型才能很好地进行分类的问题。我们无法用直线（线性模型）将正负例正确分开，但可以用一条椭圆曲线（非线性模型）将他们正确分开。**核函数的作用**：首先使用变换将原空间的数据映射到新空间；然后在新空间用线性分类学习方法从雪莲数据中学习分类模型。
-   ![](/assets/non linear.jpg)
+2. 非线性分类问题是指通过利用非线性模型才能很好地进行分类的问题。我们无法用直线（线性模型）将正负例正确分开，但可以用一条椭圆曲线（非线性模型）将他们正确分开。**核函数的作用**：首先使用变换将原空间的数据映射到新空间；然后在新空间用线性分类学习方法从雪莲数据中学习分类模型。
+  ![](/assets/non linear.jpg)
 
-    1. 假设存在一个从输入空间$$\chi$$到特征空间$$\mathcal{H}$$的映射$$\phi(x)$$，使得对所有$$x,z\in \mathcal{H}$$，函数$$K(x,z)$$满足条件：$$K(x,z)=\phi(x)\cdot\phi(x)$$，则称$$K(x,z)$$为核函数，$$\phi(x)$$为映射函数。
-    2. 只需将线性支持向量机对偶形式 
-    3. 常用核函数
+  1. 假设存在一个从输入空间$$\chi$$到特征空间$$\mathcal{H}$$的映射$$\phi(x)$$，使得对所有$$x,z\in \mathcal{H}$$，函数$$K(x,z)$$满足条件：$$K(x,z)=\phi(x)\cdot\phi(x)$$，则称$$K(x,z)$$为核函数，$$\phi(x)$$为映射函数。
+  2. 只需将线性支持向量机对偶形式 
+  3. 常用核函数
 
-        1. 多项式核函数$$K(x,z)=(x*z+1)^p$$
-        2. 高斯核函数$$K(x,z)=exp(-\frac{{\lVert x-z\Vert}^2}{2\sigma^2})$$
-        3. 字符串核函数：用于字符串处理中。
+    1. 多项式核函数$$K(x,z)=(x*z+1)^p$$
+    2. 高斯核函数$$K(x,z)=exp(-\frac{{\lVert x-z\Vert}^2}{2\sigma^2})$$
+    3. 字符串核函数：用于字符串处理中。
+
 
 
 # Code
