@@ -173,7 +173,7 @@
 
         定义对偶问题的最优值为：$$d^\ast = \max_{\alpha,\beta:\alpha_i \geq 0}{\theta_D(\alpha,\beta)}$$
 
-    4. 原始问题与对偶问题的关系：若满足Karush-Kuhn-Tucker(KKT)条件，则原始问题和对偶问题的最优值相等。
+    4. 原始问题与对偶问题的关系：**若满足Karush-Kuhn-Tucker(KKT)条件，则原始问题和对偶问题的最优值相等**。
 
         $$\begin{gather}
         \nabla_x L(x^\ast, \alpha^\ast, \beta^\ast) = 0 \\
