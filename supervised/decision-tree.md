@@ -54,6 +54,6 @@ predicted= model.predict(x_test)
 
 # Reference
 
-* \[决策树
-  \]\([http:\/\/www.wengweitao.com\/jue-ce-shu.html](http://www.wengweitao.com/jue-ce-shu.html)\)
+* [决策树]\([http:\/\/www.wengweitao.com\/jue-ce-shu.html](http://www.wengweitao.com/jue-ce-shu.html)\)
+* [随机森林与决策树](https://clyyuanzi.gitbooks.io/julymlnotes/content/rf.html)
 
