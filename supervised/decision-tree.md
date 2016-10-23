@@ -25,6 +25,7 @@
   2. **选择一个最优特征，按照这一特征将训练数据分割成子集**，使得各个子集有一个在当前条件下最好的分类；
 
   3. 如果这些子集已经基本被正确分类，那么就把这些子集分到所对应的叶节点中去；
+
   4. 如果还有子集未能基本正确分类，那么就对这些子集选择新的最优特征，继续对其进行分割
 
   5. 如此递归下去，直到全部基本正确分类，最后每一个子集都被分配到叶节点上，即都有了明确的分类，这就生成了一棵决策树。
@@ -32,7 +33,8 @@
   6. 以上生成的决策树对训练数据有很好的分类能力，但**可能发生过拟合的情况。我们需要对生成的决策树进行自下而上的剪枝**（去掉过于细分的叶结点，使其回退到父节点或者更高的结点，使树变得更简单），使其具有更好的泛化能力。
 
 
-2. ID3：
+
+1. ID3：
 
 # Code
 
@@ -53,7 +55,6 @@ predicted= model.predict(x_test)
 ```
 
 # Reference
-
-* [决策树]\([http:\/\/www.wengweitao.com\/jue-ce-shu.html](http://www.wengweitao.com/jue-ce-shu.html)\)
-* [随机森林与决策树](https://clyyuanzi.gitbooks.io/julymlnotes/content/rf.html)
+- [决策树](http://www.wengweitao.com/jue-ce-shu.html)
+- [随机森林与决策树](https://clyyuanzi.gitbooks.io/julymlnotes/content/rf.html)
 
