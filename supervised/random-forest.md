@@ -3,8 +3,6 @@
 
 **随机森林在以以决策树为基学习器构建Bagging集成的基础上，进一步在决策树的训练过程中引入随机属性选择，记住此模型**。
 
-随机森林是有很多随机得决策树构成，**它们之间没有关联**。得到随机森林后，在预测时分别对每一个决策树进行判断，最后使用Bagging的思想进行结果的输出（也就是投票的思想）。
-
 # Algorithm: this in not algorithm like others, so I combine the evaluation and optimisation into one algorithm.
 在随机森林中，每个决策树的生成过程如下所示：（建立第i棵树，原始训练集为S）
 
