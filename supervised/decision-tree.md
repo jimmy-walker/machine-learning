@@ -174,7 +174,7 @@ model.score(X, y)
 predicted= model.predict(x_test)
 ```
 
-sklearn中的决策树算法就是CART的加强版。
+sklearn中的决策树算法就是CART的加强版。scikit-learn uses an optimised version of the CART algorithm.
 
 # Reference
 
