@@ -179,5 +179,4 @@ sklearn中的决策树算法就是CART的加强版。scikit-learn uses an optimi
 # Reference
 
 * [决策树](http://www.wengweitao.com/jue-ce-shu.html)
-* [随机森林与决策树](https://clyyuanzi.gitbooks.io/julymlnotes/content/rf.html)
 
