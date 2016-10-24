@@ -35,9 +35,9 @@ n_jobs=1, random_state=None, verbose=0, warm_start=False, class_weight=None)
 
 1. max\_features
     随机森林允许单个决策树使用特征的最大数量，python中常见的选项有:
-  1. Auto\/None:简单地选取所有特征，每棵树都没有限制
-  2. sqrt：每棵子树可以利用总特征数的平方根个，同log2
-  3. 0.2\(0.X\): 允许每个随机森林的子树可以利用特征数目20%
+    - Auto\/None:简单地选取所有特征，每棵树都没有限制
+    - sqrt：每棵子树可以利用总特征数的平方根个，同log2
+    - 0.2\(0.X\): 允许每个随机森林的子树可以利用特征数目20%
     增加max\_features一般能提高模型的性能，因为在每个节点上，我们有更多的选择可以考虑。然而，这未必完全是对的，因为它降低了单个树的多样性，而这正是随机森林独特的优点。但是，可以肯定，增加max\_features会降低算法的速度。因此，需要适当的平衡和选择最佳max\_features。
 
 2. n\_estimators 
