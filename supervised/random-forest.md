@@ -34,6 +34,7 @@ n_jobs=1, random_state=None, verbose=0, warm_start=False, class_weight=None)
 参数调参中主要需要调整3个参数：
 
 1. max\_features
+
     随机森林允许单个决策树使用特征的最大数量，python中常见的选项有:
 
     - Auto\/None:简单地选取所有特征，每棵树都没有限制
