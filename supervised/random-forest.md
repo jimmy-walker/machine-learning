@@ -30,7 +30,7 @@ max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_lea
 max_features='auto', max_leaf_nodes=None, bootstrap=True, oob_score=False, 
 n_jobs=1, random_state=None, verbose=0, warm_start=False, class_weight=None)
 ```
-参数调参中主要需要调整3个参数（以python为例）
+参数调参中主要需要调整3个参数：
 
 1. max\_features
 
