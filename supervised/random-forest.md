@@ -24,14 +24,13 @@ model.fit(X, y)
 predicted= model.predict(x_test)
 ```
 
-主要有3个参数（以python为例）
-
 ```python
 sklearn.ensemble.RandomForestClassifier(n_estimators=10, criterion='gini', 
 max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, 
 max_features='auto', max_leaf_nodes=None, bootstrap=True, oob_score=False, 
 n_jobs=1, random_state=None, verbose=0, warm_start=False, class_weight=None)
 ```
+参数调参中主要需要调整3个参数（以python为例）
 
 1. max\_features
 
