@@ -9,4 +9,5 @@
     * [support vector machine](supervised/support-vector-machine.md)
     * [decision tree](supervised/decision-tree.md)
     * [random forest](supervised/random-forest.md)
+    * [GBDT](supervised/gbdt.md)
 
