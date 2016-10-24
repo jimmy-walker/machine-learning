@@ -80,4 +80,4 @@ n_jobs=1, random_state=None, verbose=0, warm_start=False, class_weight=None)
 
 # Reference
 - [Random Forest入门](https://www.zybuluo.com/hshustc/note/179319)
-- 
+- [集成学习（Boosting,Bagging和随机森林）](http://blog.csdn.net/u014665416/article/details/51557318)
