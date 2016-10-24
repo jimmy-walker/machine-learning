@@ -32,10 +32,6 @@
 
   6. 以上生成的决策树对训练数据有很好的分类能力，但**可能发生过拟合的情况。我们需要对生成的决策树进行自下而上的剪枝**（去掉过于细分的叶结点，使其回退到父节点或者更高的结点，使树变得更简单），使其具有更好的泛化能力。
 
-
-
-1. ID3：
-
 # Code
 
 ```python
@@ -55,6 +51,7 @@ predicted= model.predict(x_test)
 ```
 
 # Reference
-- [决策树](http://www.wengweitao.com/jue-ce-shu.html)
-- [随机森林与决策树](https://clyyuanzi.gitbooks.io/julymlnotes/content/rf.html)
+
+* [决策树](http://www.wengweitao.com/jue-ce-shu.html)
+* [随机森林与决策树](https://clyyuanzi.gitbooks.io/julymlnotes/content/rf.html)
 
