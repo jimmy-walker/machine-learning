@@ -26,3 +26,4 @@ predicted= model.predict(x_test)
 ```
 # Reference
 - [【机器学习】迭代决策树GBRT（渐进梯度回归树）](http://blog.csdn.net/dianacody/article/details/40688783)
+- [Boosted Tree](http://www.52cs.org/?p=429)
