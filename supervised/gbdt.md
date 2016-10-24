@@ -1,4 +1,9 @@
 # Representation
+GBDT这个算法有很多名字，但都是同一个算法：
+GBRT (Gradient BoostRegression Tree) 渐进梯度回归树
+GBDT (Gradient BoostDecision Tree) 渐进梯度决策树
+MART (MultipleAdditive Regression Tree) 多决策回归树
+Tree Net决策树网络
 
 # Evalution
 # Optimization
