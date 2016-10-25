@@ -1,18 +1,22 @@
 # Representation
+
 GBDT这个算法有很多名字，但都是同一个算法：
 
-GBRT (Gradient BoostRegression Tree) 渐进梯度回归树
+- GBRT (Gradient BoostRegression Tree) 渐进梯度回归树
 
-GBDT (Gradient BoostDecision Tree) 渐进梯度决策树
+- GBDT (Gradient BoostDecision Tree) 渐进梯度决策树
 
-MART (MultipleAdditive Regression Tree) 多决策回归树
+- MART (MultipleAdditive Regression Tree) 多决策回归树
 
-Tree Net决策树网络
+- TN (Tree Net) 决策树网络
+
 
 # Evalution
+
 # Optimization
 
 # Code
+
 ```python
 #Import Library
 from sklearn.ensemble import GradientBoostingClassifier
@@ -24,6 +28,9 @@ model.fit(X, y)
 #Predict Output
 predicted= model.predict(x_test)
 ```
+
 # Reference
-- [【机器学习】迭代决策树GBRT（渐进梯度回归树）](http://blog.csdn.net/dianacody/article/details/40688783)
-- [Boosted Tree](http://www.52cs.org/?p=429)
+
+* [【机器学习】迭代决策树GBRT（渐进梯度回归树）](http://blog.csdn.net/dianacody/article/details/40688783)
+* [Boosted Tree](http://www.52cs.org/?p=429)
+
