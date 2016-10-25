@@ -9,18 +9,19 @@
 
 2. Gradient Boosting是一种Boosting的方法，它主要的思想是，**每一次建立模型是在之前建立模型损失函数的梯度下降方向（负梯度方向）**。它的每一次计算都是为了减少上一次的residual，而为了减少这些residual，它会在residual减少的gradient方向上建立一个新的model。**新model建立的目的是为了使先前模型得残差往梯度方向减少，与传统的boosting算法对正错样本赋予不同加权的做法有着极大的区别**。算法描述如下，**记住算法思想**：
 
-- Input:
+    - Input:
 
-  * 训练数据集：$$T=\{(x_1,y_1),(x_2,y_2)…(x_N,y_N)\}$$
-  * 可导的损失函数：$$L(y,f(x))$$
-  * 迭代的次数：$$M$$
+        * 训练数据集：$$T=\{(x_1,y_1),(x_2,y_2)…(x_N,y_N)\}$$
+        * 可导的损失函数：$$L(y,f(x))$$
+        * 迭代的次数：$$M$$
 
-    Output:
+    - Output:
 
-  * 最终模型：$$f\(x\)$$
+        * 最终模型：$$f(x)$$
 
-    Procedure:
-    使用一个常量进行模型的初始化\[Math Processing Error\]
+    - Procedure:
+
+        1. 使用一个常量进行模型的初始化\[Math Processing Error\]
     f0\(x\)=argminγ∑i=1nL\(yi,γ\)
     循环\[Math Processing Error\]m∈{1….M}
     计算残差\[Math Processing Error\]
