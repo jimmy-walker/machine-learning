@@ -20,7 +20,7 @@
 
     ![](/assets/boosting.png)
 
-5. AdaBoost VS Bagging：**AdaBoost只适用于二分类任务，Bagging适用于多分类、回归等任务**。
+5. AdaBoost VS GBDT：**AdaBoost采用原始的boosting算法，而GBDT采用改进的Gradient boosting**。
 
 6. **Bagging是并行式集成学习代表方法**。**基于“自助采样法”（bootstrap sampling）**。
 
