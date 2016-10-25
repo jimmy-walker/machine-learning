@@ -66,4 +66,4 @@ predicted= model.predict(x_test)
 * [【机器学习】迭代决策树GBRT（渐进梯度回归树）](http://blog.csdn.net/dianacody/article/details/40688783)
 * [Boosted Tree](http://www.52cs.org/?p=429)
 * [第06章：深入浅出ML之Boosting家族](http://www.52caml.com/head_first_ml/ml-chapter6-boosting-family/)
-
+* [从Gradient Boosting 到GBT](http://kubicode.me/2016/04/24/Machine%20Learning/From-Gradient-Boosting-to-GBT/)
