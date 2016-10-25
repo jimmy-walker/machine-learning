@@ -21,17 +21,19 @@
 
     - Procedure:
 
-        1. 使用一个常量进行模型的初始化\[Math Processing Error\]
-    f0\(x\)=argminγ∑i=1nL\(yi,γ\)
-    循环\[Math Processing Error\]m∈{1….M}
-    计算残差\[Math Processing Error\]
-    rim=−\[∂L\(yi,f\(xi\)\)∂f\(xi\)\]f\(xi\)=fm−1\(xi\)i=1…n
-    使用训练集\[Math Processing Error\]{\(xi,rim\)}对弱分类器\[Math Processing Error\]Gm\(x\)进行拟合
-    通过线性搜索进行乘子\[Math Processing Error\]γm的计算\[Math Processing Error\]
-    γm=argminγ∑i=1nL\(yi,fm−1\(xi\)+γmGm\(xi\)\)
-    进行模型的更新:\[Math Processing Error\]
-    fm\(x\)=fm−1\(x\)+γmGm\(x\)
-    输出最终的模型\[Math Processing Error\]
+        1. 使用一个常量进行模型的初始化：$$f_0(x) = \underset{\gamma}{argmin} \sum_{i=1}^n L(y_i,\gamma)$$
+
+        2. 循环：$$m \in \{1….M\}$$
+
+            1. 计算残差：$$r_{im}=-\left[ \frac{\partial L(y_i,f(x_i))}{\partial f(x_i)}  \right]_{f(x_i)=f_{m-1}(x_i)} \quad i=1…n$$
+
+            2. 使用训练集$$\{(x_i,r_{im})\}$$对弱分类器$$G_m(x)$$进行拟合
+
+            3. 通过线性搜索进行乘子$$\gamma_m$$的计算：$$\gamma_m = \underset{\gamma}{argmin} \sum_{i=1}^n L \left(y_i,f_{m-1}(x_i)+\gamma_m G_m(x_i) \right)$$
+
+            4. 进行模型的更新：$$f_m(x) = f_{m-1}(x)+\gamma_m G_m(x)$$
+
+        3. 输出最终的模型：$$f_M(x)$$
 
 
 
