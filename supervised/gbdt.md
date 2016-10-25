@@ -1,19 +1,16 @@
 # Representation
 
-GBDT这个算法有很多名字，但都是同一个算法：
+1. GBDT这个算法有很多名字，但都是同一个算法：
 
-- GBRT (Gradient BoostRegression Tree) 渐进梯度回归树
+    - GBRT (Gradient BoostRegression Tree) 渐进梯度回归树
+    - GBDT (Gradient BoostDecision Tree) 渐进梯度决策树
+    - MART (MultipleAdditive Regression Tree) 多决策回归树
+    - TN (Tree Net) 决策树网络
 
-- GBDT (Gradient BoostDecision Tree) 渐进梯度决策树
-
-- MART (MultipleAdditive Regression Tree) 多决策回归树
-
-- TN (Tree Net) 决策树网络
+2. Gradient Boosting是一种Boosting的方法，它主要的思想是，**每一次建立模型是在之前建立模型损失函数的梯度下降方向**。
 
 
-# Evalution
-
-# Optimization
+# Algorithm: the same as random forest.
 
 # Code
 
