@@ -7,7 +7,7 @@
     - MART (MultipleAdditive Regression Tree) 多决策回归树
     - TN (Tree Net) 决策树网络
 
-2. Gradient Boosting是一种Boosting的方法，它主要的思想是，**每一次建立模型是在之前建立模型损失函数的梯度下降方向**。
+2. Gradient Boosting是一种Boosting的方法，它主要的思想是，**每一次建立模型是在之前建立模型损失函数的梯度下降方向（负梯度方向）**。
 
 
 # Algorithm: the same as random forest.
