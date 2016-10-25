@@ -10,7 +10,7 @@
 
   2. 个体学习器间不存在依赖关系、可同时生成的并行化方法，代表算法Bagging和“随机森林”RF。
 
-4. **提升(Boosting)方法是串行式集成学习代表方法**，应用广泛且有效。在分类问题中，它通过改变训练样本的权重，学习多个分类器，并将这些分类器进行线性组合,提高分类性能。代表算法为AdaBoost。
+4. **提升(Boosting)方法是串行式集成学习代表方法**。在分类问题中，它通过改变训练样本的权重，学习多个分类器，并将这些分类器进行线性组合,提高分类性能。代表算法为AdaBoost。
 
 5. AdaBoost VS Bagging：**AdaBoost只适用于二分类任务，Bagging适用于多分类、回归等任务**。
 
@@ -93,4 +93,4 @@ n_jobs=1, random_state=None, verbose=0, warm_start=False, class_weight=None)
 
 * [Random Forest入门](https://www.zybuluo.com/hshustc/note/179319)
 * [集成学习（Boosting,Bagging和随机森林）](http://blog.csdn.net/u014665416/article/details/51557318)
-
+* [boosting方法(Adaboost,GBDT)](http://www.duzelong.com/wordpress/201509/archives1614/)
