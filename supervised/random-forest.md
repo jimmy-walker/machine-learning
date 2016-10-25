@@ -10,7 +10,15 @@
 
   2. 个体学习器间不存在依赖关系、可同时生成的并行化方法，代表算法Bagging和“随机森林”RF。
 
-4. **提升(Boosting)方法是串行式集成学习代表方法**。在分类问题中，它通过改变训练样本的权重，学习多个分类器，并将这些分类器进行线性组合,提高分类性能。代表算法为AdaBoost。
+4. **提升(Boosting)方法是串行式集成学习代表方法**。在分类问题中，它通过改变训练样本的权重，学习多个分类器，并将这些分类器进行线性组合,提高分类性能。代表算法为AdaBoost。下图中红色和蓝色的点就是数据，点越大表示权重越高。
+
+    1. 在算法初始化阶段，为每一个样本赋予一个相等的weight，换言之，每个样本在开始都是一样重要的。
+    
+    2. 接下来，每一次训练后得到的模型，对数据点的估计会有所差异，所以在每一步结束后，我们需要对weight进行处理，而处理的方式就是通过增加错分类的样本点的weight，同时减少分类正确的样本点的weight。这样能够确保，如果某些点经常被分错，那么就会被“严重关注”，也就会被赋予一个很高的weight。
+
+    3. 然后等进行了N次迭代（迭代次数由用户指定），将会得到N个简单的base learner，最后将它们组合起来，可以对它们进行加权（错误率越大的base learner 其权重值越小，错误率越小的基分类器权重值越大）、或者让它们进行投票等得到一个最终的模型。
+
+    ![](/assets/boosting.png)
 
 5. AdaBoost VS Bagging：**AdaBoost只适用于二分类任务，Bagging适用于多分类、回归等任务**。
 
@@ -94,3 +102,5 @@ n_jobs=1, random_state=None, verbose=0, warm_start=False, class_weight=None)
 * [Random Forest入门](https://www.zybuluo.com/hshustc/note/179319)
 * [集成学习（Boosting,Bagging和随机森林）](http://blog.csdn.net/u014665416/article/details/51557318)
 * [boosting方法(Adaboost,GBDT)](http://www.duzelong.com/wordpress/201509/archives1614/)
+* [Gradient Tree Boosting Algorithm](http://www.csuldw.com/2015/08/19/2015-08-19%20GBDT/)
+* [机器学习中的数学(3)-模型组合(Model Combining)之Boosting与Gradient Boosting](http://www.cnblogs.com/LeftNotEasy/archive/2011/01/02/machine-learning-boosting-and-gradient-boosting.html)
