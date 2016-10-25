@@ -13,7 +13,7 @@
 $$\{ \\   \quad\, 输入：训练数据集D=\{(x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \cdots, (x^{(M)}, y^{(M)})\}, x^{(i)} \in \mathcal{X} \subseteq R^n, y^{(i)} \in \mathcal{Y}; \\   \qquad\quad\; 损失函数L(y, f(x)); \\   \quad 输出：提升树\hat{f}(x). \\   \quad 过程: \\   \qquad (1). 初始化模型 \\   \qquad\qquad\qquad f_0(x) = \arg \min_c \sum_{i=1}^{M} L(y^{(i)}, c)； \\   \qquad\; (2). 循环训练K个模型 k=1,2,\cdots,K \\   \qquad\qquad (a). 计算残差：对于i=1,2,\cdots,M \\   \qquad\qquad\qquad\qquad r_{ki} = -\left[ \frac{\partial L(y^{(i)}, \; f(x^{(i)}))} {\partial f(x^{(i)})} \right]_{f(x) = f_{k-1}(x)} \\   \qquad\qquad (b). 拟合残差r_{ki}学习一个回归树，得到第k颗树的叶结点区域R_{kj}，\quad j=1,2,\cdots,J \\   \qquad\qquad (c). 对j=1,2,\cdots,J, 计算：\\   \qquad\qquad\qquad\qquad c_{kj} = \arg \min_c \sum_{x^{(i)} \in R_{kj}} L(y^{(i)}, \; f_{k-1}(x^{(i)}) + c)\\   \qquad\qquad (d). 更新模型：\\   \qquad\qquad\qquad\qquad    f_k(x) = f_{k-1}(x) + \sum_{j=1}^{J} c_{kj} I(x \in R_{kj}) \\   \qquad\; (3). 得到回归提升树 \\   \qquad\qquad\qquad \hat{f}(x) = f_K(x) = \sum_{k=1}^{K} \sum_{j=1}^{J} c_{kj} I(x \in R_{kj}) \\    \}$$
 
 - 第(1)步初始化，估计使损失函数极小化的常数值（是一个只有根结点的树）；
-- 第(2)(a)步计算损失函数的负梯度在当前模型的值，将它作为残差的估计。(对于平方损失函数，他就是残差；对于一般损失函数，它就是残差的近似值)
+- 第(2)(a)步计算损失函数的负梯度在当前模型的值，将它作为残差的估计（**因为我们将残差近似等于当前模型中损失函数的负梯度值，因为要求第k个，所以使用第k-1的模型来求**）。(对于平方损失函数，他就是残差；对于一般损失函数，它就是残差的近似值)
 - 第(2)(b)步估计回归树的结点区域，以拟合残差的近似值；
 - 第(2)(c)步利用线性搜索估计叶结点区域的值，使损失函数极小化；
 - 第(2)(d)步更新回归树。
