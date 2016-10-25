@@ -5,6 +5,7 @@
 决策树有内部节点和叶子节点组成，内部节点表示特征，叶子节点表示一个类，决策时，从根节点开始对实例的测试，根据测试结果把实例分配到子节点继续测试，直到叶子节点即可确定其类型。
 
 ![](/assets/decision tree.png)
+![](/assets/decision tree.gif)
 
 # Evalution
 
