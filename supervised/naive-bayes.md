@@ -27,6 +27,8 @@
     后验概率最大化：$$ y=arg\min_{c_k}\frac{P(Y=c_k)\prod_j P(X^{(j)}=x^{(j)}\mid Y=c_k)}{\sum_kP(Y=c_k)\prod_jP(X^{(j)}=x^{(j)}\mid Y=c_k)}\
 =arg\min{c_k}{P(Y=c_k)\prod_j P(X^{(j)}=x^{(j)}\mid Y=c_k)}$$
 
+    在上式中，因为分母对于所有的c_k都是相同的，所以可以只求分子的极值。
+
 # Evalution
 
 # Optimization
