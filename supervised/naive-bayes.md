@@ -12,7 +12,7 @@
 
     输入: 线性可分训练集$$T={(x_1,y_1),(x_2,y_2),\cdots,(x_N,y_N)}$$, 其中$$x_i\in{\scr {X}}=R^n, y_i\in{\scr {Y}}={c_1,\cdots,c_K}$$，$$X,Y$$分别是定义在$${\scr{X,Y}}$$上的随机向量和随机变量。
 
-    **注意：随机变量的意义在于产生一系列样本，因为不能说样本属于某集合。**$$x_i=(x_i^{(1)},x_i^{(2)},\cdots,x_i^{(n)})^T \\xi^{(j)}=(a_{j1},a_{j2},\cdots,a_{js_j})$$
+    **注意：随机变量的意义在于产生一系列样本，因为不能说样本属于某集合。**$$x_i=(x_i^{(1)},x_i^{(2)},\cdots,x_i^{(n)})^T \\xi^{(j)}=(a_{j1},a_{j2},\cdots,a_{jS_j})$$
 
     后验概率分布：$$P(Y=c_k\mid X=x)=\frac{P(X=X\mid Y=c_k)P(Y=c_k)}{P(X)}\\qquad\qquad\qquad\qquad =\frac{P(X=x\mid Y=c_k)P(Y=c_k)}{\sum_kP(X=x\mid Y=c_k)P(Y=c_k)}\\qquad\qquad\qquad\stackrel{条件独立性}=\frac{P(Y=c_k)\prod_j P(X^{(j)}=x^{(j)}\mid Y=c_k)}{\sum_kP(Y=c_k)\prod_jP(X^{(j)}=x^{(j)}\mid Y=c_k)}$$
 
