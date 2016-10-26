@@ -14,9 +14,9 @@
 
     **注意：随机变量的意义在于产生一系列样本，因为不能说样本属于某集合。**$$x_i=(x_i^{(1)},x_i^{(2)},\cdots,x_i^{(n)})^T \\xi^{(j)}=(a_{j1},a_{j2},\cdots,a_{jS_j})$$
 
-    先验概率分布：
+    先验概率分布：$$P(Y=c_k), k = 1,2,...,K$$
 
-    条件概率分布：
+    条件概率分布：$$P(X=x \mid Y=c_k)$$
 
     后验概率分布：$$P(Y=c_k\mid X=x)=\frac{P(X=X\mid Y=c_k)P(Y=c_k)}{P(X)}\\qquad\qquad\qquad\qquad =\frac{P(X=x\mid Y=c_k)P(Y=c_k)}{\sum_kP(X=x\mid Y=c_k)P(Y=c_k)}\\qquad\qquad\qquad\stackrel{条件独立性}=\frac{P(Y=c_k)\prod_j P(X^{(j)}=x^{(j)}\mid Y=c_k)}{\sum_kP(Y=c_k)\prod_jP(X^{(j)}=x^{(j)}\mid Y=c_k)}$$
 
