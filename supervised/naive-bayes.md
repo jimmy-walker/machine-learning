@@ -24,6 +24,8 @@
 
   后验概率分布：$$P(Y=c_k\mid X=x)=\frac{P(X=X\mid Y=c_k)P(Y=c_k)}{P(X)}\\ =\frac{P(X=x\mid Y=c_k)P(Y=c_k)}{\sum_kP(X=x\mid Y=c_k)P(Y=c_k)}\\\stackrel{条件独立性}=\frac{P(Y=c_k)\prod_j P(X^{(j)}=x^{(j)}\mid Y=c_k)}{\sum_kP(Y=c_k)\prod_jP(X^{(j)}=x^{(j)}\mid Y=c_k)}$$
 
+    后验概率最大化：$$ y=arg\min_{c_k}\frac{P(Y=c_k)\prod_j P(X^{(j)}=x^{(j)}\mid Y=c_k)}{\sum_kP(Y=c_k)\prod_jP(X^{(j)}=x^{(j)}\mid Y=c_k)}\
+=arg\min{c_k}{P(Y=c_k)\prod_j P(X^{(j)}=x^{(j)}\mid Y=c_k)}$$
 
 # Evalution
 
