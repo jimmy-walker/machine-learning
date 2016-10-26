@@ -57,6 +57,10 @@
 
     2. 贝叶斯估计：用极大似然估计可能会出现所要估计的概率值为0的情况。这时会影响到后验概率的计算结果，使分类产生偏差。解决这一问题的方法是采用贝叶斯估计。
 
+    $$P(Y=c_k)=\frac{\sum_{i=1}^{N}I(y_i=c_k)+\lambda}{N+K\lambda}$$
+
+    $$P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x^{(j)}=a_{jl}|y_i=c_k)+\lambda}{N+S_j\lambda}$$
+
 # Code
 
 ```python
