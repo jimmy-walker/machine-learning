@@ -61,6 +61,8 @@
 
     $$P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x^{(j)}=a_{jl}|y_i=c_k)+\lambda}{N+S_j\lambda}$$
 
+4. 
+
 # Code
 
 ```python
