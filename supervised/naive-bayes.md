@@ -1,4 +1,5 @@
 # Representation
+朴素贝叶斯法是基于贝叶斯定理与特征条件独立假设的分类方法。对于给定的训练数据集，首先基于特征条件独立假设学习输入/输出的联合概率分布；然后基于此模型，对于给定的输入x，利用贝叶斯定理求出后验概率最大的输出y。
 
 # Evalution
 
@@ -17,3 +18,4 @@ model.fit(X, y)
 predicted= model.predict(x_test)
 ```
 # Reference
+* [朴素贝叶斯法](http://www.wengweitao.com/po-su-bei-xie-si-fa.html)
