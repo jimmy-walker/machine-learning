@@ -51,6 +51,8 @@
     
     $$P(Y=c_k)=\frac{\sum_{i=1}^{N}I(y_i=c_k)}{N}$$
 
+    $$P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x^{(j)}=a_{jl}|y_i=c_k)}{N}$$
+
 # Code
 
 ```python
