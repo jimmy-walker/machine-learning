@@ -61,7 +61,9 @@
 
     $$P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x^{(j)}=a_{jl}|y_i=c_k)+\lambda}{N+S_j\lambda}$$
 
-4. 
+4. 特征为离散值时直接统计即可（表示统计概率）
+特征为连续值的时候假定特征符合高斯分布:[Math Processing Error]g(x,n,u)
+那么[Math Processing Error]
 
 # Code
 
@@ -81,4 +83,4 @@ predicted= model.predict(x_test)
 
 * [朴素贝叶斯法](http://www.wengweitao.com/po-su-bei-xie-si-fa.html)
 * [贝叶斯网络](http://clyyuanzi.github.io/2016/03/17/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C/)
-
+* [朴素贝叶斯理论推导与三种常见模型](http://blog.csdn.net/u012162613/article/details/48323777)
