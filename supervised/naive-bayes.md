@@ -52,4 +52,4 @@ predicted= model.predict(x_test)
 # Reference
 
 * [朴素贝叶斯法](http://www.wengweitao.com/po-su-bei-xie-si-fa.html)
-
+* [贝叶斯网络](http://clyyuanzi.github.io/2016/03/17/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C/)
