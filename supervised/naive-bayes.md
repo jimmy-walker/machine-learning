@@ -16,7 +16,7 @@
 
     先验概率分布：$$P(Y=c_k), k = 1,2,...,K$$
 
-    条件概率分布：$$P(X=x \mid Y=c_k)$$
+    条件概率分布：$$P(X=x \mid Y=c_k)=P(X^{(1)}=x^{(1)},...,X^{(n)}=x^{(n)}|Y=c_k)$$
 
     后验概率分布：$$P(Y=c_k\mid X=x)=\frac{P(X=X\mid Y=c_k)P(Y=c_k)}{P(X)}\\qquad\qquad\qquad\qquad =\frac{P(X=x\mid Y=c_k)P(Y=c_k)}{\sum_kP(X=x\mid Y=c_k)P(Y=c_k)}\\qquad\qquad\qquad\stackrel{条件独立性}=\frac{P(Y=c_k)\prod_j P(X^{(j)}=x^{(j)}\mid Y=c_k)}{\sum_kP(Y=c_k)\prod_jP(X^{(j)}=x^{(j)}\mid Y=c_k)}$$
 
