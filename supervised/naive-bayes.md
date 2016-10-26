@@ -61,7 +61,7 @@
 
     $$P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x^{(j)}=a_{jl}|y_i=c_k)+\lambda}{N+S_j\lambda}$$
 
-4. 特征为离散值时直接统计即可（表示统计概率）
+4. 在优化中的I函数是用来统计特征的。当特征为离散时，直接统计即可。但是当特征为连续值时，需要进行转换，才能统计。
 特征为连续值的时候假定特征符合高斯分布:[Math Processing Error]g(x,n,u)
 那么[Math Processing Error]
 
