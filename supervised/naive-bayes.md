@@ -46,6 +46,7 @@
 
     该模型对观察序列的**联合概率分布p\(x,y\)建模（优化训练数据的联合分布概率）**，在获取联合概率分布之后，可以通过贝叶斯公式得到条件概率分布。生成式模型所带的信息要比判别模型更丰富。除此之外，生成模型较为容易的实现增量学习。比如朴素贝叶斯等。
 
+
 2. 朴素贝叶斯分类器的**事件模型（event model）：多项式模型、高斯模型、伯努利模型**。
 
   所有的模型参数都可以通过训练集的相关频率来估计。常用方法是概率的最大似然估计和贝叶斯估计。
@@ -99,22 +100,31 @@
 
     当特征值$$x_{i}$$为0时，$$P(x_{i}|y_{k})=1-P(x_{i}=1|y_{k})$$；
 
+
 3. 在朴素贝叶斯法中，学习意味着估计$$P(Y=c_k)$$和$$P(X^{(j)}=x^{(j)}|Y=c_k)$$。由上述分析可知，可以运用极大似然估计和贝叶斯估计来估计相应的概率。**这里给出多项式模型的情况，高斯模型并不要用极大似然估计！注意其中I函数在两者相等时取1，两者不等时取0**。**记住此优化就是利用极大似然或贝叶斯来估计参数。**
 
-  1. 极大似然估计：具体原理见logsitic regression中的分析，这里直接给出了得到的答案。
+  1. 极大似然估计：《统计学习方法》中直接给出了得到的答案。
 
     $$P(Y=c_k)=\frac{\sum_{i=1}^{N}I(y_i=c_k)}{N}$$
 
     $$P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x^{(j)}=a_{jl}|y_i=c_k)}{N}$$
 
-  2. 贝叶斯估计：用极大似然估计可能会出现所要估计的概率值为0的情况。这时会影响到后验概率的计算结果，使分类产生偏差。解决这一问题的方法是采用贝叶斯估计。等价于在随机变量各个取值的频数上赋予一个正数$$\lambda$$。常取$$\lambda$$成为拉普拉斯平滑。这里直接给出了得到的答案。
+    这里搜索了网上的证明方法，给出启示：**极大似然估计，就是将被估计量当作参数**。
 
-    $$P(Y=c_k)=\frac{\sum_{i=1}^{N}I(y_i=c_k)+\lambda}{N+K\lambda}$$
+    令参数$$P(Y=c_k)=\theta_k$$，其中$$k\in \left\{ 1,2..K \right\}$$。
 
-    $$P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x^{(j)}=a_{jl}|y_i=c_k)+\lambda}{N+S_j\lambda}$$
+那么随机变量Y的概率可以用参数来表示为一个紧凑的形式，I是指示函数成立时，I=1；否则I=0。
 
-4. 贝叶斯估计：**贝叶斯估计与朴素贝叶斯是不同的概念**。
+极大似然函数，其中N为样本总数，为样本中的样本数目，取对数得到，要求该函数的最大值，注意到约束条件可以用拉格朗日乘子法，即，求导就可以得到：联立所有的k以及约束条件得到\theta\_k=\frac{N\_k}{N} ，完毕
 
+1. 贝叶斯估计：用极大似然估计可能会出现所要估计的概率值为0的情况。这时会影响到后验概率的计算结果，使分类产生偏差。解决这一问题的方法是采用贝叶斯估计。等价于在随机变量各个取值的频数上赋予一个正数$$\lambda$$。常取$$\lambda$$成为拉普拉斯平滑。这里直接给出了得到的答案。
+
+  $$P(Y=c_k)=\frac{\sum_{i=1}^{N}I(y_i=c_k)+\lambda}{N+K\lambda}$$
+
+  $$P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x^{(j)}=a_{jl}|y_i=c_k)+\lambda}{N+S_j\lambda}$$
+
+
+1. 贝叶斯估计：**贝叶斯估计与朴素贝叶斯是不同的概念**。
 
 # Code
 
@@ -125,16 +135,19 @@ from sklearn.naive_bayes import GaussianNB
 # Create SVM classification object
 model = GaussianNB()
 # there is other distribution for multinomial classes like Bernoulli Naive Bayes, Refer link
-#from sklearn.naive_bayes import BernoulliNB;clf = BernoulliNB()
-#from sklearn.naive_bayes import MultinomialNB;clf = MultinomialNB()
+#from sklearn.naive_bayes import BernoulliNB
+;clf = BernoulliNB()
+#from sklearn.naive_bayes import MultinomialNB
+;clf = MultinomialNB()
 # Train the model using the training sets and check score
 model.fit(X, y)
 #Predict Output
 predicted= model.predict(x_test)
 ```
+
 sklearn中一共有三种模型：MultinomialNB，BernoulliNB和GaussianNB。
 
-用法大致相同，**参数alpha=1.0（当多项式和伯努利时候启用的拉普拉斯平滑算子）；fit_prior=False（当多项式和伯努利时候启用：是否根据现有数据计算先验概率分布P(Y)，如果false，表示启用统一分布；但如果给了class_prior，那么就不会根据现有数据计算先验概率，高斯中是priors参数）**。
+用法大致相同，**参数alpha=1.0（当多项式和伯努利时候启用的拉普拉斯平滑算子）；fit\_prior=False（当多项式和伯努利时候启用：是否根据现有数据计算先验概率分布P\(Y\)，如果false，表示启用统一分布；但如果给了class\_prior，那么就不会根据现有数据计算先验概率，高斯中是priors参数）**。
 
 # Reference
 
