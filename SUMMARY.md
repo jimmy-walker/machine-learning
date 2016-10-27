@@ -11,4 +11,6 @@
     * [random forest](supervised/random-forest.md)
     * [GBDT](supervised/gbdt.md)
     * [naive bayes](supervised/naive-bayes.md)
+* [unsupervised learning](unsupervised-learning.md)
+    * [K means](unsupervised/k-means.md)
 
