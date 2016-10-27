@@ -113,7 +113,7 @@
 
     那么随机变量Y的概率可以用参数来表示为一个紧凑的形式（**也就是将本来需要列出各个情况的概率用一个式子来表达**），P(Y)=∑k=1KθkI(Y=ck)，I是指示函数Y=ck成立时，I=1；否则I=0。
 
-    极大似然函数$$L(\theta_k;y_1,y_2..y_N)=\prod_{i=1}^{N}P(y_i) =\prod_{k=1}^{K}\theta_k^{N_k}$$，其中N为样本总数，$$N_k$$为样本中$$Y=c_k$$的样本数目。
+    极大似然函数$$L(y_1,y_2..y_N;\theta_k)=\prod_{i=1}^{N}P(y_i) =\prod_{k=1}^{K}\theta_k^{N_k}$$，其中N为样本总数，$$N_k$$为样本中$$Y=c_k$$的样本数目。
 
     取对数得到$$l(\theta_k)=ln(L(\theta))=\sum_{k=1}^{K}{N_k ln\theta_k}$$，要求该函数的最大值，注意到约束条件$$\sum_{k=1}^{K}{\theta_k} =1$$可以用拉格朗日乘子法，即$$l(\theta_k,\lambda)=\sum_{k=1}^{K}{N_k ln\theta_k} +\lambda(\sum_{k=1}^{K}{\theta_k} -1)$$，求导就可以得到：$$\frac{N_k}{\theta_k}+\lambda=0$$。联立所有的k以及约束条件得到$$\theta_k=\frac{N_k}{N}$$，证明完毕。
 
