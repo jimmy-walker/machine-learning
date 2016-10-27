@@ -128,8 +128,10 @@ p(x|y=c_{k} )=\prod_{j=1}^{n} p(x^{(j)}|y=c_{k})\\
 =log\prod_{i=1}^{N} p(x_{i}|y_{i};\varphi   )p(y_{i};\varphi)\\
 =log\prod_{i=1}^{N} (\prod_{j=1}^{n} p(x_{i}^{(j)} |y_{i} ;\varphi))p(y_{i};\varphi)\\
 =\sum_{i=1}^{N}{(logp(y_{i} ,\varphi )+\sum_{j=1}^{n}{logp(x_{i}^{(j)}|y_{i};\varphi)})}\\ 
-=\sum_{i=1}^{N}{[\sum_{k=1}^{K}{logp(y=c_{k} )}^{I(y_{i}=c_{k})} +\sum_{j=1}^{n}{\sum_{l=1}^{S_{j}}{logp(x^{(j)} =a_{jl} |y_{i}=c_{k})^{I(x_{i}^{(j)} =a_{jl},y_{i}=c_{k})}}}]}\\ 
-=\sum_{i=1}^{N}{[\sum_{k=1}^{K}{I(y_{i}=c_{k})logp(y=c_{k} )}+\sum_{j=1}^{n}{\sum_{l=1}^{S_{j}}{I(x_{i}^{(j)} =a_{jl},y_{i}=c_{k})logp(x^{(j)} =a_{jl} |y_{i}=c_{k})}}]}$$ 
+=\sum_{i=1}^{N}{[\sum_{k=1}^{K}{logp(y=c_{k} )}^{I(y_{i}=c_{k})}\\
++\sum_{j=1}^{n}{\sum_{l=1}^{S_{j}}{logp(x^{(j)} =a_{jl} |y_{i}=c_{k})^{I(x_{i}^{(j)} =a_{jl},y_{i}=c_{k})}}}]}\\ 
+=\sum_{i=1}^{N}{[\sum_{k=1}^{K}{I(y_{i}=c_{k})logp(y=c_{k})}\\
++\sum_{j=1}^{n}{\sum_{l=1}^{S_{j}}{I(x_{i}^{(j)} =a_{jl},y_{i}=c_{k})logp(x^{(j)} =a_{jl} |y_{i}=c_{k})}}]}$$ 
 
     在上式中是把$${p(y=c_{k}),p(x^{(j)}=a_{jl}|y=c_{k}),j=1,2,...,n;l=1,2,...,S_{j};k=1,2,...,K}$$作为参数，有这么多参数，当然因为有$$\sum_{k=1}^{K}{p(y=c_{k})} =1$$等约束，实际参数会少一点。
 
