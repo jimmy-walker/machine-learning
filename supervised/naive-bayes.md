@@ -119,12 +119,24 @@
 
     $$p(y)=\prod_{k=1}^{K} p(y=c_{k} )^{I(y=c_{k})}\\
 p(x|y=c_{k} )=\prod_{j=1}^{n} p(x^{(j)}|y=c_{k})\\
-=\prod_{j=1}^{n}\prod_{l=1}^{S_{j} }  p(x^{(j)}={a_{jl } } |y=c_{k}  )^{I(x^{(j)}={a_{jl } } ,y=c_{k}) }$$
+=\prod_{j=1}^{n}\prod_{l=1}^{S_{j} }  p(x^{(j)}={a_{jl}}|y=c_{k})^{I(x^{(j)}={a_{jl}},y=c_{k})}$$
 
-    为叙述方便起见，下面以$$\varphi$$代表参数集合$${p(y=c_{k} ),p(x^{(j)}=a_{jl}|y=c_{k})}$$。
+    为叙述方便起见，下面以$$\varphi$$代表参数集合$${p(y=c_{k}),p(x^{(j)}=a_{jl}|y=c_{k})}$$。
 
-    首先写出 log 似然函数
-    那么随机变量Y的概率可以用参数来表示为一个紧凑的形式（**也就是将本来需要列出各个情况的概率用一个式子来表达**），$$P(Y)=\prod_{k=1}^{K} \theta_k^{I(Y=c_k)}$$，I是指示函数Y=ck成立时，I=1；否则I=0。
+    首先写出log似然函数：
+
+    $$\iota (
+\varphi )=log\prod_{i=1}^{N} p(x_{i} ,y_{i};\varphi)\\
+=log\prod_{i=1}^{N} p(x_{i}|y_{i};\varphi   )p(y_{i};\varphi)\\
+=log\prod_{i=1}^{N} (\prod_{j=1}^{n} p(x_{i}^{(j)} |y_{i} ;\varphi))p(y_{i};\varphi)\\
+=\sum_{i=1}^{N}{(logp(y_{i} ,\varphi )+\sum_{j=1}^{n}{logp(x_{i}^{(j)}|y_{i};\varphi)})}\\ 
+=\sum_{i=1}^{N}{[\sum_{k=1}^{K}{logp(y=c_{k} )}^{I(y_{i}=c_{k})} +\sum_{j=1}^{n}{\sum_{l=1}^{S_{j}}{logp(x^{(j)} =a_{jl} |y_{i}=c_{k})^{I(x_{i}^{(j)} =a_{jl},y_{i}=c_{k})}}}]}\\ 
+=\sum_{i=1}^{N}{[\sum_{k=1}^{K}{I(y_{i}=c_{k})logp(y=c_{k} )}+\sum_{j=1}^{n}{\sum_{l=1}^{S_{j}}{I(x_{i}^{(j)} =a_{jl},y_{i}=c_{k})logp(x^{(j)} =a_{jl} |y_{i}=c_{k})}}]}$$ 
+
+    在上式中是把$${p(y=c_{k}),p(x^{(j)}=a_{jl}|y=c_{k}),j=1,2,...,n;l=1,2,...,S_{j};k=1,2,...,K}$$作为参数，有这么多参数，当然因为有$$\sum_{k=1}^{K}{p(y=c_{k})} =1$$等约束，实际参数会少一点。
+    J所以分成了两部分，可以分开讨论！！！！但是始终是从P(X,Y)开始讨论开的。
+
+    那么随机变量Y的概率可以用参数来表示为一个紧凑的形式（**也就是将本来需要列出各个情况的概率用一个式子来表达**），P(Y)=∏k=1KθkI(Y=ck)，I是指示函数Y=ck成立时，I=1；否则I=0。
 
     极大似然函数$$L(y_1,y_2..y_N;\theta_k)=\prod_{i=1}^{N}P(y_i) =\prod_{k=1}^{K}\theta_k^{N_k}$$，其中N为样本总数，$$N_k$$为样本中$$Y=c_k$$的样本数目。
 
