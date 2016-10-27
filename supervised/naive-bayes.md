@@ -137,7 +137,7 @@ predicted= model.predict(x_test)
 ```
 sklearn中一共有三种模型：MultinomialNB，BernoulliNB和GaussianNB。
 
-用法大致相同，**参数alpha=1.0（当多项式和伯努利时候启用的拉普拉斯平滑算子）；class_prior/priors=False（当多项式和伯努利时候启用：是否假设先验概率分布P(Y)，如果false，表示启用统一分布）**。
+用法大致相同，**参数alpha=1.0（当多项式和伯努利时候启用的拉普拉斯平滑算子）；fit_prior=False（当多项式和伯努利时候启用：是否根据现有数据计算先验概率分布P(Y)，如果false，表示启用统一分布；但如果给了class_prior，那么就不会根据现有数据计算先验概率，高斯中是priors参数）**。
 
 # Reference
 
