@@ -159,4 +159,4 @@ sklearn中一共有三种模型：MultinomialNB，BernoulliNB和GaussianNB。
 * [贝叶斯网络](http://clyyuanzi.github.io/2016/03/17/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C/)
 * [朴素贝叶斯理论推导与三种常见模型](http://blog.csdn.net/u012162613/article/details/48323777)
 * [朴素贝叶斯](https://github.com/endymecy/spark-ml-source-analysis/blob/master/%E5%88%86%E7%B1%BB%E5%92%8C%E5%9B%9E%E5%BD%92/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/nb.md)
-
+* [极大似然估计法推出朴素贝叶斯法中的先验概率估计公式？](https://www.zhihu.com/question/33959624)
