@@ -135,6 +135,8 @@ model.fit(X, y)
 #Predict Output
 predicted= model.predict(x_test)
 ```
+sklearn中一共有三种模型：MultinomialNB，BernoulliNB和GaussianNB。
+用法大致相同，参数alpha=0；fit_prior=False。
 
 # Reference
 
