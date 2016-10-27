@@ -149,7 +149,6 @@ p(x|y=c_{k} )=\prod_{j=1}^{n} p(x^{(j)}|y=c_{k})\\
 
     $$P(X^{(j)}=a_{jl}|Y=c_k)=\frac{\sum_{i=1}^{N}I(x^{(j)}=a_{jl}|y_i=c_k)+\lambda}{N+S_j\lambda}$$
 
-
 4. 贝叶斯估计：**贝叶斯估计与朴素贝叶斯是不同的概念**。
 
 
