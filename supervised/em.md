@@ -3,6 +3,9 @@ EM算法是一种迭代算法，**用于含有隐变量(hidden variable)的概�
 
 如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。但是当模型含有隐含变量的时候就不能简单的用这些方法来估计，EM就是一种含有隐含变量的概率模型参数的极大似然估计法。
 
+似然函数是一种关于统计模型中的参数的函数，表示模型参数中的似然性。
+
+
 # Reference
 - [EM算法学习笔记](http://blog.csdn.net/mytestmy/article/details/38778147)
 - [从最大似然到EM算法浅解](http://blog.csdn.net/zouxy09/article/details/8537620)
