@@ -23,7 +23,7 @@ PCA是一种统计技术，**经常应用于人面部识别和图像压缩以及
 
   方差是协方差的一种特殊情况，即当两个变量是相同时：$$\operatorname{var}(X) = \operatorname{cov}(X, X) = \mathrm{E}((X - \mathrm{E}(X))^2)$$
 
-  协方差从随机标量推广到随机向量，则得到协方差矩阵\(Covariance Matrix\)定义：$$\operatorname{cov}(\mathrm{X}) = \mathrm{E}((\mathrm{X}-\mathrm{E}(\mathrm{X}))(\mathrm{X}-\mathrm{E}(\mathrm{X}))^\mathsf{T})$$
+  **协方差从随机标量推广到随机向量（即上面的例子是标量，如果是两个向量，则得到四个值，称为矩阵）**，则得到协方差矩阵\(Covariance Matrix\)定义：$$\operatorname{cov}(\mathrm{X}) = \mathrm{E}((\mathrm{X}-\mathrm{E}(\mathrm{X}))(\mathrm{X}-\mathrm{E}(\mathrm{X}))^\mathsf{T})$$
 
   其中，X是一个随机向量。显然一个随机向量的协方差矩阵是一个方阵，比如X中的$$x_i$$与$$x_j$$。而两个向量变量的协方差是一个矩阵,其每个元素是各个向量元素之间的协方差。
 
