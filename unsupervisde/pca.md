@@ -133,4 +133,4 @@ array([[ 1. , 1. ],
 
 * [从协方差到PCA算法步骤详解](http://blog.csdn.net/fngy123/article/details/45153163)
 * [scikit-learn中PCA的使用方法](http://blog.csdn.net/u012162613/article/details/42192293)
-
+* [特征值分解和主成份分析](http://blog.jqian.net/post/pca.html)
