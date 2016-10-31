@@ -25,7 +25,7 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 
   2. E步：记$$\theta^{(0)}$$为第$$i$$次迭代参数$$\theta$$的估计值，在第$$i+1$$次迭代的E步，计算
 
-    $$Q(\theta, \theta^{(i)}) = E_Z[\log P(Y, Z|\theta) | Y, \theta^{(i)}]\\= \sum_Z \log P(Y, Z | \theta) P (Z|Y, \theta^{(i)})$$
+    $$Q(\theta, \theta^{(i)}) = E_z[\log P(Y, Z|\theta) | Y, \theta^{(i)}]\\= \sum_z \log P(Y, Z | \theta) P (Z|Y, \theta^{(i)})$$
 
   3. 
 
