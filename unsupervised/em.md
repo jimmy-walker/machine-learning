@@ -82,4 +82,5 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 * [似然函数](https://zh.wikipedia.org/zh-hans/%E4%BC%BC%E7%84%B6%E5%87%BD%E6%95%B0)
 * [EM算法](http://m.it610.com/article/3660270.htm)
 * [统计学习方法 李航---第9章 EM算法及其推广](http://blog.csdn.net/demon7639/article/details/51011424)
+* [EM算法](http://www.itgo.me/a/1561093116381699138/EM)
 
