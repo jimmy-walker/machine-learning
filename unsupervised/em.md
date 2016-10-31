@@ -24,13 +24,13 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 
   $$L(\theta)-L(\theta^{(i)})=log(\sum_zP(Y|Z,\theta)P(Z|\theta))-logP(Y|\theta^{(i)})$$
 
-  由此式推得到：$$B(\theta, \theta^{(i)})=L(\theta^{(i)})+\sum P(Z|Y,\theta^{(i)})log\frac{P(Y|Z,\theta)P(Z|\theta)}{P(Z|Y,\theta^{(i)})P(Y|\theta^{(i)})}\\L(\theta)\ge B(\theta, \theta^{(i)})$$
+  由此式推得到：$$B(\theta, \theta^{(i)})=L(\theta^{(i)})+\sum_z P(Z|Y,\theta^{(i)})log\frac{P(Y|Z,\theta)P(Z|\theta)}{P(Z|Y,\theta^{(i)})P(Y|\theta^{(i)})}\\L(\theta)\ge B(\theta, \theta^{(i)})$$
 
   **B函数是目标式的一个下界，只要其变大，那么目标式子也变大。**
 
-  从而推得式子：$$\theta^{(i+1)}=argmax_{\theta} B(\theta, \theta^{(i)})$$
+  从而推得式子：$$\theta^{(i+1)}=argmax_{\theta}B(\theta, \theta^{(i)})$$
 
-  分析B函数，得到等价式子：$$\theta^{(i+1)}=argmax(Q(\theta, \theta^{(i)}))$$
+  分析B函数，得到等价式子：$$\theta^{(i+1)}=argmax_{\theta}Q(\theta, \theta^{(i)})$$
 
   总结：**EM算法的一次迭代，即求Q函数及其最大化，EM算法是通过不断求解下界的极大化逼近求解对数似然函数极大化的算法。**下图中相交处是$$\theta^{(i)}$$，即表示B函数是一个下界。而之后找$$\theta^{(i+1)}$$使得B函数极大化，Q函数也会极大化，从而导致不完全数据Y的对数似然函数也最大化。
 
