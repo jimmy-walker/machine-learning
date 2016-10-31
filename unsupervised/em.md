@@ -14,65 +14,66 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 
 2. EM算法推导。
 
-    面对一个含有隐变量的概率模型，目标是极大化观测数据（不完全数据），即极大化下式（**不完全数据Y的对数似然函数**）。
+  面对一个含有隐变量的概率模型，目标是极大化观测数据（不完全数据），即极大化下式（**不完全数据Y的对数似然函数**）。
 
-    $$L(θ)=logP(Y|θ)=log\sum_{z}P(Y,Z|θ)=log(\sum_{z}P(Y|Z,\theta)P(Z|\theta))$$
+  $$L(θ)=logP(Y|θ)=log\sum_{z}P(Y,Z|θ)=log(\sum_{z}P(Y|Z,\theta)P(Z|\theta))$$
 
-    极大化的主要困难是上式中含有未观测数据并有包含和（或积分）的对数，EM算法则是通过迭代逐步近似极大化$$L(\theta)$$的，**如果采用梯度下降等方法求导，则隐变量数目上升，无法求解，所以用迭代法**。
+  极大化的主要困难是上式中含有未观测数据并有包含和（或积分）的对数，EM算法则是通过迭代逐步近似极大化L(θ)的，**如果采用梯度下降等方法求导，则隐变量数目上升，无法求解，所以才用迭代法**。
 
-    事实上，EM算法是通过迭代步近似极大化$$L(\theta)$$的。假设在第i次迭代后$$\theta$$的估计值$$\theta^i.$$。我们希望新估计值能使$$L(\theta)$$增加，即$$L(\theta)>L(\theta^{(i)})$$，并逐步达到极大值。为此，考虑两者的差： 
+  事实上，EM算法是通过迭代步近似极大化$$L(\theta)$$的。假设在第i次迭代后$$\theta$$的估计值$$\theta^i.$$。我们希望新估计值能使$$L(\theta)$$增加，即$$L(\theta)>L(\theta^{(i)})$$，并逐步达到极大值。为此，考虑两者的差：
 
-    $$L(\theta)-L(\theta^{(i)})=log(\sum_zP(Y|Z,\theta)P(Z|\theta))-logP(Y|\theta^{(i)})$$
+  $$L(\theta)-L(\theta^{(i)})=log(\sum_zP(Y|Z,\theta)P(Z|\theta))-logP(Y|\theta^{(i)})$$
 
-    由此式推得到：$$B(\theta, \theta^{(i)})=L(\theta^{(i)})+\sum P(Z|Y,\theta^{(i)})log\frac{P(Y|Z,\theta)P(Z|\theta)}{P(Z|Y,\theta^{(i)})P(Y|\theta^{(i)})}\\L(\theta)\ge B(\theta, \theta^{(i)})$$
+  由此式推得到：$$B(\theta, \theta^{(i)})=L(\theta^{(i)})+\sum P(Z|Y,\theta^{(i)})log\frac{P(Y|Z,\theta)P(Z|\theta)}{P(Z|Y,\theta^{(i)})P(Y|\theta^{(i)})}\\L(\theta)\ge B(\theta, \theta^{(i)})$$
 
-    **B函数是目标式的一个下界，只要其变大，那么目标式子也变大。**
+  **B函数是目标式的一个下界，只要其变大，那么目标式子也变大。**
 
-    从而推得式子：$$\theta^{(i+1)}=argmax_{\theta} B(\theta, \theta^{(i)})$$
+  从而推得式子：$$\theta^{(i+1)}=argmax_{\theta} B(\theta, \theta^{(i)})$$
 
-    分析B函数，得到等价式子：$$\theta^{(i+1)}=argmax(Q(\theta, \theta^{(i)}))$$
+  分析B函数，得到等价式子：$$\theta^{(i+1)}=argmax(Q(\theta, \theta^{(i)}))$$
 
-    总结：**EM算法的一次迭代，即求Q函数及其最大化，EM算法是通过不断求解下界的极大化逼近求解对数似然函数极大化的算法。**下图中相交处是$$\theta^{(i)}$$，即表示B函数是一个下界。而之后找$$\theta^{(i+1)}$$使得B函数极大化，Q函数也会极大化，从而导致不完全数据Y的对数似然函数也最大化。
+  总结：**EM算法的一次迭代，即求Q函数及其最大化，EM算法是通过不断求解下界的极大化逼近求解对数似然函数极大化的算法。**下图中相交处是$$\theta^{(i)}$$，即表示B函数是一个下界。而之后找$$\theta^{(i+1)}$$使得B函数极大化，Q函数也会极大化，从而导致不完全数据Y的对数似然函数也最大化。
 
-    ![](/assets/EM.png)
+  ![](/assets/EM.png)
 
 3. EM算法。
 
-    输入：观测数据$$Y$$，隐变量数据$$Z$$，联合分布$$P(Y,Z|\theta)$$，条件分布$$P(Z|Y,\theta)$$；
+  输入：观测数据$$Y$$，隐变量数据$$Z$$，联合分布$$P(Y,Z|\theta)$$，条件分布$$P(Z|Y,\theta)$$；
 
-    输出：模型参数$$\theta$$。
+  输出：模型参数$$\theta$$。
 
-    1. 选择参数的初值$$\theta^{(0)}$$，开始迭代；
+  1. 选择参数的初值$$\theta^{(0)}$$，开始迭代；
 
-    2. E步：记$$\theta^{(0)}$$为第$$i$$次迭代参数$$\theta$$的估计值，在第$$i+1$$次迭代的E步，计算
+  2. E步：记$$\theta^{(0)}$$为第$$i$$次迭代参数$$\theta$$的估计值，在第$$i+1$$次迭代的E步，计算
 
-        $$Q(\theta, \theta^{(i)}) = E_z[\log P(Y, Z|\theta) | Y, \theta^{(i)}]\\= \sum_z \log P(Y, Z | \theta) P (Z|Y, \theta^{(i)})$$
-    
-        这里，$$P(Z|Y, \theta^{(i)})$$是在给定观测数据Y和当前的参数估计$$\theta^{(i)}$$下隐变量数据Z的条件概率分布；
+    $$Q(\theta, \theta^{(i)}) = E_z[\log P(Y, Z|\theta) | Y, \theta^{(i)}]\\= \sum_z \log P(Y, Z | \theta) P (Z|Y, \theta^{(i)})$$
 
-    3. 求使$$Q(\theta, \theta^{(i)})$$极大化的$$\theta$$，确定第$$i+1$$次迭代的参数的估计值$$\theta^{(i+1)}$$
+    这里，$$P(Z|Y, \theta^{(i)})$$是在给定观测数据Y和当前的参数估计$$\theta^{(i)}$$下隐变量数据Z的条件概率分布；
 
-        $$\theta^{(i+1)} = \arg \max_{\theta} Q(\theta, \theta^{(i)})$$
+  3. 求使$$Q(\theta, \theta^{(i)})$$极大化的$$\theta$$，确定第$$i+1$$次迭代的参数的估计值$$\theta^{(i+1)}$$
 
-    4. 重复第(2)步和第(3)步，直到收敛。
+    $$\theta^{(i+1)} = \arg \max_{\theta} Q(\theta, \theta^{(i)})$$
+
+  4. 重复第\(2\)步和第\(3\)步，直到收敛。
 
     其中的函数$$Q(\theta, \theta^{(i)})$$是**EM算法的核心。称为Q函数**。
 
     Q函数：完全数据的对数似然函数$$\log P(Y, Z | \theta)$$关于在给定观测数据Y和当前参数$$\theta^{(i)}$$下对未观测数据Z的条件概率分布$$P(Z|Y, \theta^{i})$$的期望:
-  
+
     $$Q(\theta, \theta^{(i)}) = E_Z[\log P(Y, Z|\theta) | Y, \theta^{(i)}]\\= \sum_Z P(Z | Y, \theta^{(i)}) \log P(Y, Z | \theta)$$
 
     算法说明：
 
-    1. 参数的初值可以任意选择。但需注意EM算法对初值是敏感的。**常用的办法是选取几个不同的初值进行迭代，然后对得到的各个估计值加以比较，从中选择最好的。**
+  5. 参数的初值可以任意选择。但需注意EM算法对初值是敏感的。**常用的办法是选取几个不同的初值进行迭代，然后对得到的各个估计值加以比较，从中选择最好的。**
 
     2.E步求$$Q(\theta, \theta^{(i)})$$。Q函数式中Z是未观测数据，Y是观测数据。注意，$$Q(\theta, \theta^{(i)})$$的第1个变量$$\theta$$表示要极大化的参数，第2个变量$$\theta^{(i)}$$表示参数的当前估计值。每次迭代实际在求Q函数及其极大。
 
-    3. M步求$$Q(\theta, \theta^{(i)})$$的极大化，得到$$\theta^{(i+1)}$$，完成一次迭代$$\theta^{(i)}\rightarrow\theta^{(i+1)}$$。后面将证明每次迭代使似然函数增大或达到局部极值。
+  6. M步求$$Q(\theta, \theta^{(i)})$$的极大化，得到$$\theta^{(i+1)}$$，完成一次迭代$$\theta^{(i)}\rightarrow\theta^{(i+1)}$$。后面将证明每次迭代使似然函数增大或达到局部极值。
 
-    4. 给出停止迭代的条件，一般是$$\theta$$或是Q函数更新的差值小于某一较小的正数。
+  7. 给出停止迭代的条件，一般是$$\theta$$或是Q函数更新的差值小于某一较小的正数。
 
-3. EM算法推导k-means
+
+4. EM算法推导k-means
 
 
 # Reference
@@ -80,3 +81,4 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 * [似然函数](https://zh.wikipedia.org/zh-hans/%E4%BC%BC%E7%84%B6%E5%87%BD%E6%95%B0)
 * [EM算法](http://m.it610.com/article/3660270.htm)
 * [统计学习方法 李航---第9章 EM算法及其推广](http://blog.csdn.net/demon7639/article/details/51011424)
+
