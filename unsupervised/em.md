@@ -30,6 +30,8 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 
     从而推得式子：$$\theta^{(i+1)}=argmax_{\theta} B(\theta, \theta^{(i)})$$
 
+    分析B函数，得到等价式子：$$\theta^{(i+1)}=argmax(Q(\theta, \theta^{(i)}))$$
+
 3. EM算法。
 
     输入：观测数据$$Y$$，隐变量数据$$Z$$，联合分布$$P(Y,Z|\theta)$$，条件分布$$P(Z|Y,\theta)$$；
