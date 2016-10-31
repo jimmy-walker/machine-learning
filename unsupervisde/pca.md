@@ -10,7 +10,7 @@ PCA是一种统计技术，**经常应用于人面部识别和图像压缩以及
 
 1. 协方差矩阵
 
- 协方差(Covariance)用于衡量两个变量的总体误差。设两个随机变量$$X$$和$$Y$$的期望值分别为$$\mathrm{E}(X)$$和$$\mathrm{E}(Y)$$，则其协方差定义为：$$\operatorname{cov}(X, Y) = \mathrm{E}((X - \mathrm{E}(X)) (Y - \mathrm{E}(Y)))$$
+    协方差(Covariance)用于衡量两个变量的总体误差。设两个随机变量$$X$$和$$Y$$的期望值分别为$$\mathrm{E}(X)$$和$$\mathrm{E}(Y)$$，则其协方差定义为：$$\operatorname{cov}(X, Y) = \mathrm{E}((X - \mathrm{E}(X)) (Y - \mathrm{E}(Y)))$$
 
  ```
  X 1.1 1.9 3
