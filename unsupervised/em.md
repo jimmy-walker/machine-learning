@@ -31,6 +31,16 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 
   3. 求使$$Q(\theta, \theta^{(i)})$$极大化的$$\theta$$，确定第$$i+1$$次迭代的参数的估计值$$\theta^{(i+1)}$$
 
+    $$\theta^{(i+1)} = \arg \max_{\theta} Q(\theta, \theta^{(i)})$$
+
+  4. 重复第(2)步和第(3)步，直到收敛。
+
+  其中的函数$$Q(\theta, \theta^{(i)})$$是**EM算法的核心。称为Q函数**。
+
+  Q函数：完全数据的对数似然函数$$\log P(Y, Z | \theta)$$关于在给定观测数据Y和当前参数$$\theta^{(i)}$$下对未观测数据Z的条件概率分布$$P(Z|Y, \theta^{i})$$的期望:
+  
+  
+
 3. EM算法推导k-means
 
 
