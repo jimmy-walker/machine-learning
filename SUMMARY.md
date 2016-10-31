@@ -15,5 +15,5 @@
     * [EM](supervised/em.md)
 * [unsupervised learning](unsupervised/unsupervised-learning.md)
     * [K means](unsupervised/k-means.md)
-    * [PCA](unsupervisde/pca.md)
+    * [PCA](unsupervised/pca.md)
 
