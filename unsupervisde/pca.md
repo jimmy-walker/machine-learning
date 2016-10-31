@@ -23,9 +23,9 @@ PCA是一种统计技术，**经常应用于人面部识别和图像压缩以及
 
   方差是协方差的一种特殊情况，即当两个变量是相同时：$$\operatorname{var}(X) = \operatorname{cov}(X, X) = \mathrm{E}((X - \mathrm{E}(X))^2)$$
 
-  **协方差从随机标量推广到随机向量（即上面的例子是标量，如果是两个向量，则得到四个值，称为矩阵）**，则得到协方差矩阵\(Covariance Matrix\)定义：$$\operatorname{cov}(\mathrm{X}) = \mathrm{E}((\mathrm{X}-\mathrm{E}(\mathrm{X}))(\mathrm{X}-\mathrm{E}(\mathrm{X}))^\mathsf{T})$$
+  **协方差从随机变量推广到随机向量（即上面的例子是一个随机变量，只有一个X，而随机向量由多个随机变量组成的向量）**，则得到协方差矩阵\(Covariance Matrix\)定义：$$\operatorname{cov}(\mathrm{X}) = \mathrm{E}((\mathrm{X}-\mathrm{E}(\mathrm{X}))(\mathrm{X}-\mathrm{E}(\mathrm{X}))^\mathsf{T})$$
 
-  其中，X是一个随机向量。显然一个随机向量的协方差矩阵是一个方阵。
+  其中，X是一个随机向量。显然一个随机向量的协方差矩阵是一个方阵。J因为随机向量中的随机变量互相计算协方差，从而组成矩阵。
 
   **协方差矩阵是计算不同维度间的协方差，要时刻牢记这一点。样本矩阵的每行是一个样本，每列为一个维度**。比如下文的例子是$$x$$与$$y$$。
 
