@@ -5,6 +5,7 @@ EM算法是一种迭代算法，**用于含有隐变量(hidden variable)的概�
 
 1. 似然函数是一种关于统计模型中的参数的函数，表示模型参数中的似然性。**注意与最大似然估计中的似然函数是联合概率乘积不同，这里是单一的似然函数。**
 
+2. 
 
 # Reference
 - [EM算法学习笔记](http://blog.csdn.net/mytestmy/article/details/38778147)
