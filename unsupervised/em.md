@@ -39,7 +39,7 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 
   Q函数：完全数据的对数似然函数$$\log P(Y, Z | \theta)$$关于在给定观测数据Y和当前参数$$\theta^{(i)}$$下对未观测数据Z的条件概率分布$$P(Z|Y, \theta^{i})$$的期望:
   
-  
+  $$Q(\theta, \theta^{(i)}) = E_Z[\log P(Y, Z|\theta) | Y, \theta^{(i)}]\\= \sum_Z P(Z | Y, \theta^{(i)}) \log P(Y, Z | \theta)$$
 
 3. EM算法推导k-means
 
@@ -48,4 +48,4 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 
 * [似然函数](https://zh.wikipedia.org/zh-hans/%E4%BC%BC%E7%84%B6%E5%87%BD%E6%95%B0)
 * [EM算法](http://m.it610.com/article/3660270.htm)
-
+* [统计学习方法 李航---第9章 EM算法及其推广](http://blog.csdn.net/demon7639/article/details/51011424)
