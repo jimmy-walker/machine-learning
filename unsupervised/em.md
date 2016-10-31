@@ -74,7 +74,8 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 
 
 4. EM算法推导k-means
-
+    
+    
 
 # Reference
 
