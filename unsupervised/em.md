@@ -16,27 +16,27 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 
     输入：观测数据$$Y$$，隐变量数据$$Z$$，联合分布$$P(Y,Z|\theta)$$，条件分布$$P(Z|Y,\theta)$$；
 
-   输出：模型参数$$\theta$$。
+    输出：模型参数$$\theta$$。
 
     1. 选择参数的初值$$\theta^{(0)}$$，开始迭代；
 
-  2. E步：记$$\theta^{(0)}$$为第$$i$$次迭代参数$$\theta$$的估计值，在第$$i+1$$次迭代的E步，计算
+    2. E步：记$$\theta^{(0)}$$为第$$i$$次迭代参数$$\theta$$的估计值，在第$$i+1$$次迭代的E步，计算
 
-    $$Q(\theta, \theta^{(i)}) = E_z[\log P(Y, Z|\theta) | Y, \theta^{(i)}]\\= \sum_z \log P(Y, Z | \theta) P (Z|Y, \theta^{(i)})$$
+        $$Q(\theta, \theta^{(i)}) = E_z[\log P(Y, Z|\theta) | Y, \theta^{(i)}]\\= \sum_z \log P(Y, Z | \theta) P (Z|Y, \theta^{(i)})$$
     
-    这里，$$P(Z|Y, \theta^{(i)})$$是在给定观测数据Y和当前的参数估计$$\theta^{(i)}$$下隐变量数据Z的条件概率分布；
+        这里，$$P(Z|Y, \theta^{(i)})$$是在给定观测数据Y和当前的参数估计$$\theta^{(i)}$$下隐变量数据Z的条件概率分布；
 
-  3. 求使$$Q(\theta, \theta^{(i)})$$极大化的$$\theta$$，确定第$$i+1$$次迭代的参数的估计值$$\theta^{(i+1)}$$
+    3. 求使$$Q(\theta, \theta^{(i)})$$极大化的$$\theta$$，确定第$$i+1$$次迭代的参数的估计值$$\theta^{(i+1)}$$
 
-    $$\theta^{(i+1)} = \arg \max_{\theta} Q(\theta, \theta^{(i)})$$
+        $$\theta^{(i+1)} = \arg \max_{\theta} Q(\theta, \theta^{(i)})$$
 
-  4. 重复第(2)步和第(3)步，直到收敛。
+    4. 重复第(2)步和第(3)步，直到收敛。
 
-  其中的函数$$Q(\theta, \theta^{(i)})$$是**EM算法的核心。称为Q函数**。
+    其中的函数$$Q(\theta, \theta^{(i)})$$是**EM算法的核心。称为Q函数**。
 
-  Q函数：完全数据的对数似然函数$$\log P(Y, Z | \theta)$$关于在给定观测数据Y和当前参数$$\theta^{(i)}$$下对未观测数据Z的条件概率分布$$P(Z|Y, \theta^{i})$$的期望:
+    Q函数：完全数据的对数似然函数$$\log P(Y, Z | \theta)$$关于在给定观测数据Y和当前参数$$\theta^{(i)}$$下对未观测数据Z的条件概率分布$$P(Z|Y, \theta^{i})$$的期望:
   
-  $$Q(\theta, \theta^{(i)}) = E_Z[\log P(Y, Z|\theta) | Y, \theta^{(i)}]\\= \sum_Z P(Z | Y, \theta^{(i)}) \log P(Y, Z | \theta)$$
+    $$Q(\theta, \theta^{(i)}) = E_Z[\log P(Y, Z|\theta) | Y, \theta^{(i)}]\\= \sum_Z P(Z | Y, \theta^{(i)}) \log P(Y, Z | \theta)$$
 
   算法说明：
 
