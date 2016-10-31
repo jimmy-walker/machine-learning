@@ -13,6 +13,8 @@ EM算法是一种迭代算法，**用于含有隐变量(hidden variable)的概�
 
 2. EM算法
 
+3. EM算法推导k-means
+
 # Reference
 - [EM算法学习笔记](http://blog.csdn.net/mytestmy/article/details/38778147)
 - [从最大似然到EM算法浅解](http://blog.csdn.net/zouxy09/article/details/8537620)
