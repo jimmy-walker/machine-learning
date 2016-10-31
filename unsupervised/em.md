@@ -24,7 +24,8 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 
     $$L(\theta)-L(\theta^{(i)})=log(\sum_zP(Y|Z,\theta)P(Z|\theta))-logP(Y|\theta^{(i)})$$
 
-    由此式推得到：$$$$
+    由此式推得到：$$B(\theta, \theta^{(i)})=L(\theta^{(i)})+\sum P(Z|Y,\theta^{(i)})log\frac{P(Y|Z,\theta)P(Z|\theta)}{P(Z|Y,\theta^{(i)})P(Y|\theta^{(i)})}\\L(\theta)\ge B(\theta, \theta^{(i)})$$
+
 3. EM算法。
 
     输入：观测数据$$Y$$，隐变量数据$$Z$$，联合分布$$P(Y,Z|\theta)$$，条件分布$$P(Z|Y,\theta)$$；
