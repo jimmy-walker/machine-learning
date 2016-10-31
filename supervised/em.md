@@ -1,5 +1,5 @@
 # Representation
-EM算法是一种迭代算法，用于含有隐变量(hidden variable)的概率模型参数的极大似然估计，或极大后验概率估计。EM算法的每次迭代由两步组成：E步，求期望(expectation)；M步，求极大( maximization )，所以这一算法称为期望极大算法(expectation maximization algorithm)，简称EM算法。 
+EM算法是一种迭代算法，用于含有隐变量(hidden variable)的概率模型参数的极大似然估计，或极大后验概率估计。EM算法的每次迭代由两步组成：**E步，求期望(expectation)；M步，求极大( maximization )，所以这一算法称为期望极大算法**(expectation maximization algorithm)，简称EM算法。 
 
 
 如果概率模型的变量都是观测变量，那么给定数据之后就可以直接使用极大似然法或者贝叶斯估计模型参数。
