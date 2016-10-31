@@ -4,7 +4,7 @@
 
     根据给定的距离度量（如欧式距离），在训练集$$T$$中找出与$$x$$距离最近的$$k$$个点，并把涵盖这些点的领域记为$$N_k(x)$$，根据决策规则（如多数表决）得到类别$$y$$。**记住该模型公式**。
 
- $$y = \arg\max_{c_j}\sum_{x_i \in N_k(x)} I(y_i=c_j), \ i = 1, 2, \dots, N; \ j = 1, 2, \dots, K$$
+    $$y = \arg\max_{c_j}\sum_{x_i \in N_k(x)} I(y_i=c_j), \ i = 1, 2, \dots, N; \ j = 1, 2, \dots, K$$
 
  其中训练集$$T=\{(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\}$$；实例$$y_i$$的类别为$$\{ c_1,c_2,\dots,c_K\}$$；待分类样本$$x$$；设定好的最近邻个数$$k$$。
 
@@ -52,34 +52,21 @@ KD树（K-dimensional tree)即**K维树**：考虑这样的问题， 给定一�
 
  5. 最后更新的”近似最近点“是与目标点真正的最近点。
 
- ![](knn2.jpg)
+    ![](/assets/knn2.jpg)
 
 # Code
-
 ```python
-
 #Import Library
-
 from sklearn.neighbors import KNeighborsClassifier
-
 #Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
-
 # Create KNeighbors classifier object model
-
 KNeighborsClassifier(n_neighbors=6)
-
 # default value for n_neighbors is 5
-
 # Train the model using the training sets and check score
-
 model.fit(X, y)
-
 #Predict Output
-
 predicted= model.predict(x_test)
-
 ```
 
 # Reference
-
 - [机器学习之KNN（K近邻）](http://blog.csdn.net/zhang20072844/article/details/51704544)
