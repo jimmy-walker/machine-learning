@@ -22,8 +22,9 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 
     事实上，EM算法是通过迭代步近似极大化$$L(\theta)$$的。假设在第i次迭代后$$\theta$$的估计值$$\theta^i.$$。我们希望新估计值能使$$L(\theta)$$增加，即$$L(\theta)>L(\theta^{(i)})$$，并逐步达到极大值。为此，考虑两者的差： 
 
-    $$$$
+    $$L(\theta)-L(\theta^{(i)})=log(\sum_zP(Y|Z,\theta)P(Z|\theta))-logP(Y|\theta^{(i)})$$
 
+    由此式推得：$$$$
 3. EM算法。
 
     输入：观测数据$$Y$$，隐变量数据$$Z$$，联合分布$$P(Y,Z|\theta)$$，条件分布$$P(Z|Y,\theta)$$；
