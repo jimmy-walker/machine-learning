@@ -34,7 +34,7 @@ $$P(y{\mid}{x};{\theta})={(h_\theta(x))}^{y}{(1-h_\theta(x))}^{1-y}$$
 
   $$l(\theta)=p(Y\mid{X};\theta)=\prod_{i=1}^{m}p(y^{(i)}{\mid}x^{(i)};\theta)=\prod_{i=1}^{m}{(h_\theta(x^{(i)}))^{y(i)}}{(1-h_\theta(x^{(i)}))^{1-y^{(i)}}}$$
 
-  经过上述分析，通过对数进一步将代价函数化简为，**记住此代价函数**：
+  经过上述分析，通过对数进一步将代价函数化简为，**记住remember此代价函数**：
 
   $$J(\theta)=log(l(\theta))=\sum_{i=1}^{m}y^{(i)}logh_\theta(x^{(i)})+(1-y^{(i)})log(1-h_\theta(x^{(i)}))$$
 
