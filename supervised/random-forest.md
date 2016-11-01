@@ -74,7 +74,7 @@ max_features='auto', max_leaf_nodes=None, bootstrap=True, oob_score=False,
 n_jobs=1, random_state=None, verbose=0, warm_start=False, class_weight=None)
 ```
 
-参数调参中主要需要调整3个参数，**记住此调参方法**：
+参数调参中主要需要调整3个参数，**记住remember此调参方法**：
 
 1. max\_features
 
