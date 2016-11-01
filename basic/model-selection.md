@@ -41,7 +41,7 @@
 
     1. 用测试集training set对多个模型(比如直线、二次曲线、三次曲线)进行训练；
 
-    2.** 用交叉验证集cross validation set验证step1得到的多个假设函数，选择交叉验证集误差最小的模型**；
+    2. ** 用交叉验证集cross validation set验证step1得到的多个假设函数，选择交叉验证集误差最小的模型**；
 
     3. 用测试集test set对step2选择的最优模型进行预测；
 
