@@ -165,7 +165,7 @@ p(x|y=c_{k} )=\prod_{j=1}^{n} p(x^{(j)}|y=c_{k})\\
 
     $$P(\theta=\theta_i | x)=\frac{P(x|\theta=\theta_i)P(\theta=\theta_i)}{\sum_{i=1}^N P(x|\theta=\theta_i)P(\theta=\theta_i)} ,\hspace{20pt} 1 \leq i \leq N$$
 
-    **在实验之后，利用实验数据对θ的概率分布进行校正，即得到θ的后验分布，然后求期望，最终得到贝叶斯估计，记住这个思想以及所有事情都是随机的思想**：
+    **在实验之后，利用实验数据对θ的概率分布进行校正，即得到θ的后验分布，然后求期望，最终得到贝叶斯估计，记住remember这个思想以及所有事情都是随机的思想**：
 
     $$\hat{\theta}=\sum_{i=1}^N \theta_i P(\theta=\theta_i|x)$$
 
