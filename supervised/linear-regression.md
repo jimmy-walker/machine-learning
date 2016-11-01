@@ -1,6 +1,6 @@
 # Representation
 
-先简单将$$y$$表示为$$x$$的线性函数：
+先简单将$$y$$表示为$$x$$的线性函数，**记住remember此模型**：
 
 $$h(x) = \sum_{i=0}^{n}\theta _ix_i=\theta^Tx$$
 
