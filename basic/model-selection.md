@@ -74,6 +74,19 @@
             k_scores.append(scores.mean())
         ```
 
+    3. 此外还有一种选参数的方式：GridSearchCV(estimator, param_grid, ...)第一个参数是估计器，第二个参数是包含参数的字典。
+        ```python
+        from sklearn.grid_search import GridSearchCV
+
+        parameter_space = {
+                           "max_depth": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+                           }
+        clf = DecisionTreeClassifier(random_state=14)
+        grid = GridSearchCV(clf, parameter_space)
+        grid.fit(X_homehigher, y_true)
+        print("Accuracy: {0:.1f}%".format(grid.best_score_ * 100))
+        ```
+
 #训练集train set、 验证集validation set、测试集test set
 
 在监督机器学习中，数据集常被分成2~3个部分。
