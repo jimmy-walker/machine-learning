@@ -74,7 +74,7 @@
             k_scores.append(scores.mean())
         ```
 
-    3. 此外还有一种选参数的方式：GridSearchCV(estimator, param_grid, ...)第一个参数是估计器，第二个参数是包含参数的字典。
+    3. 此外还有一种选参数的方式：GridSearchCV(estimator, param_grid, ...)第一个参数是估计器，第二个参数是包含参数的字典。**可以利用grid.best_estimator_得到最佳的模型及参数。**
         ```python
         from sklearn.grid_search import GridSearchCV
 
