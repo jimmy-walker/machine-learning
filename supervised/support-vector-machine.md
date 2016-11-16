@@ -139,7 +139,7 @@
       \end{matrix}$$
 
     得到最终的分类决策函数：
-    $$f(x)=sign(\sum_{i=1}^N\alpha_i^\ast y_iK(x\cdot x_j)+b^\ast)$$
+    $$f(x)=sign(\sum_{i=1}^N\alpha_i^\ast y_iK(x_i\cdot x)+b^\ast)$$
 
   3. 常用核函数
 
