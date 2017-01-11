@@ -250,6 +250,7 @@ sklearn中一共有三种模型：MultinomialNB，BernoulliNB和GaussianNB。
 
 # Reference
 
+* [非常好的贝叶斯例子，结合单词讲通了](http://www.cnblogs.com/ljy2013/p/5102315.html)
 * [朴素贝叶斯法](http://www.wengweitao.com/po-su-bei-xie-si-fa.html)
 * [贝叶斯网络](http://clyyuanzi.github.io/2016/03/17/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BD%91%E7%BB%9C/)
 * [朴素贝叶斯理论推导与三种常见模型](http://blog.csdn.net/u012162613/article/details/48323777)
