@@ -12,5 +12,3 @@ each algorithm will be concluded within items as followed:
 # Code
 # Reference
 ```
-
-Hello, it's test
