@@ -158,8 +158,27 @@
 3. **进行误差分析：**人工检查交叉验证集中我们算法中产生预测误差的实例，看看这些实
 例是否有某种系统化的趋势
 
+# 精确率、召回率、F1 值、ROC、AUC
+假定有一个二分类问题，比如判定商品是否是假货。给系统一个样本，系统将会判断该样本为“真”（Predicted positive），或“假”（Predicted Negative）。但是当然，系统的判断与真实判断（actual positive/negative）是有误差的，将原本是真的判为真，就是TP（True Positive），原本真的判为假，就是FN（False Negative），原本假的判为真，就是FP（False Negative），原本假的判为假，就是TN（True Negative）。 
+
+**注意背诵方式PPAP**
+![](/assets/confusion.png)
+
+精确率(Precision）是指在所有系统判定的“真”的样本中，确实是真的的占比，就是TP/(TP+FN)。
+
+召回率（Recall）是指在所有确实为真的样本中，被判为的“真”的占比，就是TP/(TP+FP)。
+
+TPR（True Positive Rate）的定义，跟Recall一样。
+
+FPR（False Positive Rate），又被称为“Probability of False Alarm”，就是所有被判为“假”的样本中，实际上是真的样本，或者FP/(FP+TN)
+F1值是为了综合考量精确率何召回率而设计的一个指标，一般公式为取P和R的harmonic mean:2*Precision*Recall/(Precision+Recall)。
+
+ROC=Receiver Operating Characteristic，是TPR vs FPR的曲线；与之对应的是Precision-Recall Curve，展示的是Precision vs Recall的曲线。
+
+
 # Reference
 - [ 训练集\(train set\) 验证集\(validation set\) 测试集\(test set\)](http://www.cnblogs.com/xfzhang/archive/2013/05/24/3096412.html)
 
 - [Stanford机器学习-第六周.学习曲线、机器学习系统的设计](http://www.myexception.cn/other/2060415.html)
 
+- [精确率、召回率、F1 值、ROC、AUC 各自的优缺点是什么](https://www.zhihu.com/question/30643044/answer/161955532)
