@@ -1,6 +1,7 @@
 # Summary
 
 * [introduction](README.md)
+* [math basis](basic/math-base.md)
 * [basic knowledge](basic/basic-knowledge.md)
 * [model selection](basic/model-selection.md)
 * [feature engineering](basic/feature-engineering.md)
