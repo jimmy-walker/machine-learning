@@ -1,3 +1,15 @@
+# Update
+结合两个文章的链接和UBM实例，进行的推导。
+基本将EM算法和UBM算法搞懂了。
+
+![](/assets/EM&UBM1.jpg)
+![](/assets/EM&UBM2.jpg)
+![](/assets/EM&UBM3.jpg)
+![](/assets/EM&UBM4.jpg)
+
+
+
+
 # Representation
 
 EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概率模型参数的极大似然估计，记住remember该算法意义**，或极大后验概率估计。EM算法的每次迭代由两步组成：**E步，求期望\(expectation\)；M步，求极大\( maximization \)，所以这一算法称为期望极大算法**\(expectation maximization algorithm\)，简称EM算法。
@@ -73,7 +85,7 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
   7. 给出停止迭代的条件，一般是$$\theta$$或是Q函数更新的差值小于某一较小的正数。
 
 4. EM算法推导在非监督学习中的应用。
-    
+  
     比如在k-means中，**隐变量是每个样例的最佳类别**，先随便制定一个类C给它，**计算各自距离（E步）**，然后让P(x,y)最大**（k-means中是最小化平方误差），再将质心重新指派给样例（M步）**，不断重复，一直到没有更好的。
 
 # Reference
@@ -82,4 +94,6 @@ EM算法是一种迭代算法，**用于含有隐变量\(hidden variable\)的概
 * [EM算法](http://m.it610.com/article/3660270.htm)
 * [统计学习方法 李航---第9章 EM算法及其推广](http://blog.csdn.net/demon7639/article/details/51011424)
 * [EM算法](http://www.itgo.me/a/1561093116381699138/EM)
+* [从最大似然到EM算法浅解（讲得通俗易懂）](https://blog.csdn.net/zouxy09/article/details/8537620)
+* [The EM Algorithm（讲得很细）](http://www.cnblogs.com/jerrylead/archive/2011/04/06/2006936.html)
 
