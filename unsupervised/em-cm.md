@@ -175,7 +175,7 @@ $$
 \end{align}
 $$
 
-将上式记录为$$Q(\theta_c)$$。其中$$P(X|\mathcal{P}{X}=\pmb{p}) \backsim Bernoulli(\theta) $$，因此对于点击行为c对应的参数为$$\theta_c$$，$$\mathcal{Z}$$表示无关项。
+将上式记录为$$Q(\theta_c)$$。其中$$P(X|\mathcal{P}{(X)}=\pmb{p}) \backsim Bernoulli(\theta) $$，因此对于点击行为c对应的参数为$$\theta_c$$，$$\mathcal{Z}$$表示无关项。
 
 对于每一个点击行为其相应的参数，都进行导数求导，令其为0。$$\frac{\partial{Q(\theta_c)}}{\partial{\theta_c}}=0$$
 
