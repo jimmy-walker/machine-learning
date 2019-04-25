@@ -12,7 +12,7 @@
 
 ### 原理推导
 
-假设有三个事件：$C_u = 1 \Leftrightarrow  E_u = 1 \  and \ A_u = 1 $
+假设有三个事件：$$C_u = 1 \Leftrightarrow  E_u = 1 \  and \ A_u = 1 $$
 
 那么对于点击的概率就可以进行分解：
 $$
@@ -22,7 +22,7 @@ P(A_u = 1) &= \alpha_{uq}\\
 P(E_u = 1) &= \gamma_{\gamma_u}
 \end{align}
 $$
-目的就是使用$P(A_u = 1)$进行排序。
+目的就是使用$$P(A_u = 1)$$进行排序。
 
 我们使用user browsing model点击模型。
 $$
@@ -45,7 +45,7 @@ S_{uq} &= \{s_q:u\in s_q\}
 \end{align}
 $$
 
-其中$P(A_u = 1|\ \pmb{C})$推导如下：
+其中$$P(A_u = 1|\ \pmb{C})$$推导如下：
 
 $$
 \begin{align}
@@ -94,9 +94,9 @@ $$
 
 ### EM算法
 
-样本 $x=(x^{(1)},x^{(2)},...x^{(m)})$ ，对应的隐变量为 $z=(z^{(1)},z^{(2)},...z^{(m)})$，模型参数为 $θ$ , 则似然函数为 $P(x^{(i)},z^{(i)};\theta)$ 。
+样本 $$x=(x^{(1)},x^{(2)},...x^{(m)})$$ ，对应的隐变量为 $$z=(z^{(1)},z^{(2)},...z^{(m)})$$，模型参数为 $$θ$$ , 则似然函数为 $$P(x^{(i)},z^{(i)};\theta)$$ 。
 
-目的是找到合适的 $\theta$ 让对数似然函数极大。
+目的是找到合适的 $$\theta$$ 让对数似然函数极大。
 
 ####E步
 
@@ -108,57 +108,57 @@ $$
 \end{align}
 $$
 
-其中$Q_i(z^{(i)})$是引入的一个关于随机变量$z^{(i)}$的概率函数，满足$\sum\limits_{z^{(i)}}Q_i(z^{(i)}) = 1$
+其中$$Q_i(z^{(i)})$$是引入的一个关于随机变量$$z^{(i)}$$的概率函数，满足$$\sum\limits_{z^{(i)}}Q_i(z^{(i)}) = 1$$
 
 此处采用了Jensen不等式进行推导：
 
-如果函数 $f$ 是凸函数， $x$ 是随机变量，假设有 0.5 的概率是 a，有 0.5 的概率是 b，那么：
-$E[f(x)] \ge f(E(x)) \\$ 
+如果函数 $$f$$ 是凸函数， $$x$$ 是随机变量，假设有 0.5 的概率是 a，有 0.5 的概率是 b，那么：
+$$E[f(x)] \ge f(E(x)) \\$$ 
 
-特别地，如果函数 $f$ 是严格凸函数，当且仅当： $p(x = E(x)) = 1$ (即随机变量是常量) 时等号成立。
+特别地，如果函数 $$f$$ 是严格凸函数，当且仅当： $$p(x = E(x)) = 1$$ (即随机变量是常量) 时等号成立。
 
 ![](/assets/Jensen.jpg)
 
-注：若函数 $f$ 是凹函数，Jensen不等式符号相反。
+注：若函数 $$f$$ 是凹函数，Jensen不等式符号相反。
 
 此处对数函数是凹函数：
 
-$log(E(y)) \ge E(log(y)) \\$ 
+$$log(E(y)) \ge E(log(y)) \\$$ 
 其中：
 
-$f:\ log$
+$$f:\ log$$
 
-$E(y) = \sum\limits_i\lambda_iy_i, \lambda_i \geq 0, \sum\limits_i\lambda_i =1 $
+$$E(y) = \sum\limits_i\lambda_iy_i, \lambda_i \geq 0, \sum\limits_i\lambda_i =1 $$
 
-$y_i = \frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})}$
+$$y_i = \frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})}$$
 
-$\lambda_i = Q_i(z^{(i)})$
+$$\lambda_i = Q_i(z^{(i)})$$
 
-那么：$E(log\frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})}) = \sum\limits_{z^{(i)}}Q_i(z^{(i)}) log\frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})} \\$
+那么：$$E(log\frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})}) = \sum\limits_{z^{(i)}}Q_i(z^{(i)}) log\frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})} \\$$
 
-此处设置了下界，又由于$\sum\limits_{z^{(i)}}Q_i(z^{(i)}) = 1$，因此这个下界可看成是$log\frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})}$的期望。就是所谓的**Expectation**。为了取得下界，需要先固定住$\theta$，**J如果不固定住此$\theta$，那么就无法得到固定值$Q_i(z)$** 。然后寻找合适的 $Q_i(z)$ 来使得等号相等。
+此处设置了下界，又由于$$\sum\limits_{z^{(i)}}Q_i(z^{(i)}) = 1$$，因此这个下界可看成是$$log\frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})}$$的期望。就是所谓的**Expectation**。为了取得下界，需要先固定住$$\theta$$，**J如果不固定住此$$\theta$$，那么就无法得到固定值$$Q_i(z)$$** 。然后寻找合适的 $$Q_i(z)$$ 来使得等号相等。
 
-由 Jensen 不等式可知，等式成立的条件是随机变量是常数，则有：$\frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})} =c \\$ 
-其中 c 为常数，对于任意 $i$，得到：
-${P(x^{(i)}， z^{(i)};\theta)} =c{Q_i(z^{(i)})} \\$ 
+由 Jensen 不等式可知，等式成立的条件是随机变量是常数，则有：$$\frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})} =c \\$$ 
+其中 c 为常数，对于任意 $$i$$，得到：
+$${P(x^{(i)}， z^{(i)};\theta)} =c{Q_i(z^{(i)})} \\$$ 
 方程两边同时累加和：
-$\sum\limits_{z} {P(x^{(i)}， z^{(i)};\theta)} = c\sum\limits_{z} {Q_i(z^{(i)})} \\$ 
+$$\sum\limits_{z} {P(x^{(i)}， z^{(i)};\theta)} = c\sum\limits_{z} {Q_i(z^{(i)})} \\$$ 
 因此：
-$\sum\limits_{z} {P(x^{(i)}， z^{(i)};\theta)} = c \\$
+$$\sum\limits_{z} {P(x^{(i)}， z^{(i)};\theta)} = c \\$$
 
-$Q_i(z^{(i)}) = \frac{P(x^{(i)}， z^{(i)};\theta)}{c} = \frac{P(x^{(i)}， z^{(i)};\theta)}{\sum\limits_{z}P(x^{(i)}， z^{(i)};\theta)} = \frac{P(x^{(i)}， z^{(i)};\theta)}{P(x^{(i)};\theta)} = P( z^{(i)}|x^{(i)};\theta) \\$
+$$Q_i(z^{(i)}) = \frac{P(x^{(i)}， z^{(i)};\theta)}{c} = \frac{P(x^{(i)}， z^{(i)};\theta)}{\sum\limits_{z}P(x^{(i)}， z^{(i)};\theta)} = \frac{P(x^{(i)}， z^{(i)};\theta)}{P(x^{(i)};\theta)} = P( z^{(i)}|x^{(i)};\theta) \\$$
 
- $Q(z)$是已知样本和模型参数下的隐变量分布。
+ $$Q(z)$$是已知样本和模型参数下的隐变量分布。
 
 #### M步
 
-由上所述，需要极大化下式：$arg \max \limits_{\theta} \sum\limits_{i=1}^m \sum\limits_{z^{(i)}}Q_i(z^{(i)})log\frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})} \\$ 
+由上所述，需要极大化下式：$$arg \max \limits_{\theta} \sum\limits_{i=1}^m \sum\limits_{z^{(i)}}Q_i(z^{(i)})log\frac{P(x^{(i)}， z^{(i)};\theta)}{Q_i(z^{(i)})} \\$$ 
 
 这就是所谓的**Maximization** 。
 
-固定 $Q_i(z^{(i)})$ 后，调整 $\theta$，去极大化$logL(\theta)$的下界。
+固定 $$Q_i(z^{(i)})$$ 后，调整 $$\theta$$，去极大化$$logL(\theta)$$的下界。
 
-去掉上式中常数的部分 $Q_i(z^{(i)})$ ，则需要极大化的对数似然下界为：$arg \max \limits_{\theta} \sum\limits_{i=1}^m \sum\limits_{z^{(i)}}Q_i(z^{(i)})log{P(x^{(i)}， z^{(i)};\theta)} \\$
+去掉上式中常数的部分 $$Q_i(z^{(i)})$$ ，则需要极大化的对数似然下界为：$$arg \max \limits_{\theta} \sum\limits_{i=1}^m \sum\limits_{z^{(i)}}Q_i(z^{(i)})log{P(x^{(i)}， z^{(i)};\theta)} \\$$
 
 #### EM在点击模型中的应用
 
@@ -175,9 +175,9 @@ $$
 \end{align}
 $$
 
-将上式记录为$Q(\theta_c)$。其中$P(X|\mathcal{P}{X}=\pmb{p}) \backsim Bernoulli(\theta) $，因此对于点击行为c对应的参数为$\theta_c$，$\mathcal{Z}$表示无关项。
+将上式记录为$$Q(\theta_c)$$。其中$$P(X|\mathcal{P}{X}=\pmb{p}) \backsim Bernoulli(\theta) $$，因此对于点击行为c对应的参数为$$\theta_c$$，$$\mathcal{Z}$$表示无关项。
 
-对于每一个点击行为其相应的参数，都进行导数求导，令其为0。$\frac{\partial{Q(\theta_c)}}{\partial{\theta_c}}=0$
+对于每一个点击行为其相应的参数，都进行导数求导，令其为0。$$\frac{\partial{Q(\theta_c)}}{\partial{\theta_c}}=0$$
 
 得到结果为：
 $$
@@ -194,11 +194,11 @@ $$
 
 \end{align}
 $$
-对于实际场景下，每一个对话s中只有一个关于文档或位置的点击，因此省略$c_i \in s$的计算。额外参数$\psi$可以去除。
+对于实际场景下，每一个对话s中只有一个关于文档或位置的点击，因此省略$$c_i \in s$$的计算。额外参数$$\psi$$可以去除。
 
-对于$A_u$来说并没有父节点的约束，因此直接去除$\mathcal{P}(A_u)$的影响。
+对于$$A_u$$来说并没有父节点的约束，因此直接去除$$\mathcal{P}(A_u)$$的影响。
 
-对于$E_r$来说其父节点的约束为$\mathcal{P}(E_r) = {C_{\gamma'},...,C_{\gamma-1}}$，对应的值为$\pmb{p}=[1,0,...,0]$，对于$S_{\gamma\gamma'}$会话而言，因此$ \mathcal{P}(E_r)=\pmb{p}$ ，因此$ P(\mathcal{P}(E_r)=\pmb{p} | \pmb{C}) = 1$，而对于其他会话而言，因此$ \mathcal{P}(E_r)\ \neq\pmb{p}$ ，因此$ P(\mathcal{P}(E_r)=\pmb{p} | \pmb{C}) = 0$。
+对于$$E_r$$来说其父节点的约束为$$\mathcal{P}(E_r) = {C_{\gamma'},...,C_{\gamma-1}}$$，对应的值为$$\pmb{p}=[1,0,...,0]$$，对于$$S_{\gamma\gamma'}$$会话而言，因此$$ \mathcal{P}(E_r)=\pmb{p}$$ ，因此$$ P(\mathcal{P}(E_r)=\pmb{p} | \pmb{C}) = 1$$，而对于其他会话而言，因此$$ \mathcal{P}(E_r)\ \neq\pmb{p}$$ ，因此$$ P(\mathcal{P}(E_r)=\pmb{p} | \pmb{C}) = 0$$。
 
 此外
 $$
