@@ -49,35 +49,35 @@
 ##code
     1. 不需要使用train_test_split分割，而直接使用cross_val_score，传入模型和组数自动帮你得出各个组的得分。
     ```python
-	from sklearn.cross_validation import cross_val_score 
-	knn = KNeighborsClassifier(n_neighbors=5) 
-	scores = cross_val_score(knn, X, y, cv=5, scoring='accuracy')
-	print(scores)
-
-	X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=4) 
-	knn = KNeighborsClassifier(n_neighbors=5) 
-	knn.fit(X_train, y_train) 
-	y_pred = knn.predict(X_test) 
-	print(knn.score(X_test, y_test))
+    from sklearn.cross_validation import cross_val_score 
+    knn = KNeighborsClassifier(n_neighbors=5) 
+    scores = cross_val_score(knn, X, y, cv=5, scoring='accuracy')
+    print(scores)
+    
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=4) 
+    knn = KNeighborsClassifier(n_neighbors=5) 
+    knn.fit(X_train, y_train) 
+    y_pred = knn.predict(X_test) 
+    print(knn.score(X_test, y_test))
     ```
     2. 还可以用来选参数和模型，用for循环传递进去，注意regression时的评分需要加负号。参见：[Model evaluation: quantifying the quality of predictions](http://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter)
         ```python
-	# this is how to use cross_val_score to choose model and configs #
-	from sklearn.cross_validation import cross_val_score
-	import matplotlib.pyplot as plt
-	k_range = range(1, 31)
-	k_scores = []
-	for k in k_range:
+    # this is how to use cross_val_score to choose model and configs #
+    from sklearn.cross_validation import cross_val_score
+    import matplotlib.pyplot as plt
+    k_range = range(1, 31)
+    k_scores = []
+    for k in k_range:
             knn = KNeighborsClassifier(n_neighbors=k)
             ##loss = -cross_val_score(knn, X, y, cv=10, scoring='mean_squared_error') # for regression
             scores = cross_val_score(knn, X, y, cv=10, scoring='accuracy') # for classification
             k_scores.append(scores.mean())
         ```
-
+    
     3. 此外还有一种选参数的方式：GridSearchCV(estimator, param_grid, ...)第一个参数是估计器，第二个参数是包含参数的字典。**可以利用grid.best_estimator_得到最佳的模型及参数。**
         ```python
         from sklearn.grid_search import GridSearchCV
-
+    
         parameter_space = {
                            "max_depth": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
                            }
@@ -164,16 +164,17 @@
 **注意背诵方式PPAP**
 ![](/assets/confusion.png)
 
-精确率(Precision）是指在所有系统判定的“真”的样本中，确实是真的的占比，就是TP/(TP+FN)。
+**精确率(Precision）**是指在所有系统判定的“真”的样本中，确实是真的的占比，就是TP/(TP+FP)。
 
-召回率（Recall）是指在所有确实为真的样本中，被判为的“真”的占比，就是TP/(TP+FP)。
+**召回率（Recall）**是指在所有确实为真的样本中，被判为的“真”的占比，就是TP/(TP+FN)。
 
-TPR（True Positive Rate）的定义，跟Recall一样。
+**TPR（True Positive Rate）**的定义，跟Recall一样。
 
-FPR（False Positive Rate），又被称为“Probability of False Alarm”，就是所有被判为“假”的样本中，实际上是真的样本，或者FP/(FP+TN)
-F1值是为了综合考量精确率何召回率而设计的一个指标，一般公式为取P和R的harmonic mean:2*Precision*Recall/(Precision+Recall)。
+**FPR（False Positive Rate）**，又被称为“Probability of False Alarm”，就是所有确实为“假”的样本中，被误判真的样本，或者FP/(FP+TN)
 
-ROC=Receiver Operating Characteristic，是TPR vs FPR的曲线；与之对应的是Precision-Recall Curve，展示的是Precision vs Recall的曲线。
+**F1值**是为了综合考量精确率和召回率而设计的一个指标，一般公式为取P和R的harmonic mean:2*Precision*Recall/(Precision+Recall)。
+
+**ROC**=Receiver Operating Characteristic，是TPR vs FPR的曲线；与之对应的是Precision-Recall Curve，展示的是Precision vs Recall的曲线。
 
 
 # Reference
