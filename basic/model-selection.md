@@ -170,11 +170,67 @@
 
 **TPR（True Positive Rate）**的定义，跟Recall一样。
 
-**FPR（False Positive Rate）**，又被称为“Probability of False Alarm”，就是所有确实为“假”的样本中，被误判真的样本，或者FP/(FP+TN)
+**FPR（False Positive Rate）**，又被称为“Probability of False Alarm”，就是所有确实为假的样本中，被误判为真的样本，或者FP/(FP+TN)
 
 **F1值**是为了综合考量精确率和召回率而设计的一个指标，一般公式为取P和R的harmonic mean:2*Precision*Recall/(Precision+Recall)。
 
 **ROC**=Receiver Operating Characteristic，是TPR vs FPR的曲线；与之对应的是Precision-Recall Curve，展示的是Precision vs Recall的曲线。
+
+具体画ROC图时这么画：
+
+将置信度（认同为1的概率）从大到小排，从而画出ROC曲线。
+
+```python
+tpr.append(np.sum((y_sort[:i] == 1)) / pos)
+fpr.append(np.sum((y_sort[:i] == 0)) / neg)
+```
+
+置信度很大时，大部分都被判定为0，因此纵坐标的TPR为0，横坐标的FPR为0。
+
+置信度很小时，大部分都被判定为1，因此纵坐标的TPR为1，横坐标的FPR为1。
+
+**可以看出两者是同步增长的！**
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+data_len = 50
+label = np.random.randint(0, 2, size=data_len)
+score = np.random.choice(np.arange(0.1, 1, 0.01), data_len)
+#随机设置标签label和分类器判定为1的置信度score
+def ROC_curve(y,pred):
+    pos = np.sum(y == 1)
+    neg = np.sum(y == 0)
+    pred_sort = np.sort(pred)[::-1]  #从大到小排序
+    index = np.argsort(pred)[::-1]#从大到小排序
+    y_sort = y[index]
+    print(y_sort)
+    tpr = []
+    fpr = []
+    thr = []
+    for i,item in enumerate(pred_sort):
+        tpr.append(np.sum((y_sort[:i] == 1)) / pos)
+        fpr.append(np.sum((y_sort[:i] == 0)) / neg)
+        thr.append(item)
+    print(fpr)
+    print(tpr)
+    print(thr)
+    return fpr, tpr, thr
+
+fpr, tpr, thr = ROC_curve(label, score)
+plt.plot(fpr, tpr, 'k')
+plt.title('Receiver Operating Characteristic')
+plt.plot([(0,0),(1,1)],'r--')
+plt.xlim([-0.01,1.01])
+plt.ylim([-0.01,01.01])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+plt.show()
+
+
+```
+
+
 
 
 # Reference
